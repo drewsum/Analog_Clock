@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Analog_Clock-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
@@ -750,5 +751,184 @@ F 5 "1%" V 8960 2990 50  0001 C CNN "Tolerance"
 F 6 "1/16W" V 9060 2990 50  0001 C CNN "Wattage"
 	1    8760 2990
 	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E94EEC8
+P 1770 5610
+AR Path="/5E939CFF/5E94EEC8" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5E94EEC8" Ref="R?"  Part="1" 
+F 0 "R?" V 1670 5610 50  0000 C CNN
+F 1 "0" V 1770 5610 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 1770 5610 50  0001 C CNN
+F 3 "" H 1770 5610 50  0001 C CNN
+F 4 "0402" V 1870 5610 50  0000 C CNN "display_footprint"
+F 5 "1%" V 1970 5610 50  0000 C CNN "Tolerance"
+F 6 "1/16W" V 2070 5610 50  0000 C CNN "Wattage"
+	1    1770 5610
+	0    1    1    0   
+$EndComp
+Text GLabel 1920 5610 2    50   Output ~ 0
+POS3P3_RUN
+Text GLabel 1620 5610 0    50   Input ~ 0
+POS12_PGOOD
+$Comp
+L Transistor_FET:BSS214NW Q?
+U 1 1 5E951F4A
+P 3190 7350
+F 0 "Q?" H 3390 7425 50  0000 L CNN
+F 1 "BSS214NW" H 3390 7350 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-323_SC-70" H 3390 7275 50  0001 L CIN
+F 3 "https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde" H 3190 7350 50  0001 L CNN
+	1    3190 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E954057
+P 3290 6720
+AR Path="/5BB27BA3/5E954057" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5E954057" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5E954057" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5E954057" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5E954057" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E954057" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E954057" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E954057" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5E954057" Ref="R?"  Part="1" 
+F 0 "R?" H 3210 6720 50  0000 R CNN
+F 1 "10k" V 3290 6720 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 3290 6720 50  0001 C CNN
+F 3 "" H 3290 6720 50  0001 C CNN
+F 4 "0402" H 3390 6800 50  0000 L CNN "display_footprint"
+F 5 "1%" H 3390 6720 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 3400 6640 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 3590 7120 60  0001 C CNN "Digi-Key PN"
+	1    3290 6720
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E954CDC
+P 3290 7550
+F 0 "#PWR?" H 3290 7300 50  0001 C CNN
+F 1 "GND" H 3290 7400 50  0000 C CNN
+F 2 "" H 3290 7550 50  0001 C CNN
+F 3 "" H 3290 7550 50  0001 C CNN
+	1    3290 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5E9552D1
+P 3290 6570
+AR Path="/5CB7718D/5E9552D1" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E9552D1" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E9552D1" Ref="#PWR?"  Part="1" 
+AR Path="/5E939D31/5E9552D1" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3290 6420 50  0001 C CNN
+F 1 "+12V" H 3290 6710 50  0000 C CNN
+F 2 "" H 3290 6570 50  0001 C CNN
+F 3 "" H 3290 6570 50  0001 C CNN
+	1    3290 6570
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3290 6870 3290 7070
+Text GLabel 2990 7350 0    50   Input ~ 0
+POS3P3_RUN
+$Comp
+L Transistor_FET:Si1442DH Q?
+U 1 1 5E960022
+P 4650 7070
+F 0 "Q?" H 4850 7120 50  0000 L CNN
+F 1 "Si1442DH" H 4850 7020 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4750 6670 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/63772/si1442dh.pdf" H 4650 7070 50  0001 C CNN
+	1    4650 7070
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:DZ2S033X0L D?
+U 1 1 5E965C70
+P 3950 7400
+AR Path="/5E98CF45/5E965C70" Ref="D?"  Part="1" 
+AR Path="/5E939D31/5E965C70" Ref="D?"  Part="1" 
+F 0 "D?" V 3890 7510 50  0000 L CNN
+F 1 "DZ2S033X0L" V 3990 7510 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 7225 50  0001 C CNN
+F 3 "https://industrial.panasonic.com/content/data/SC/ds/ds4/DZ2S03300L_E.pdf" H 3950 7400 50  0001 C CNN
+	1    3950 7400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E966579
+P 3950 7550
+F 0 "#PWR?" H 3950 7300 50  0001 C CNN
+F 1 "GND" H 3950 7400 50  0000 C CNN
+F 2 "" H 3950 7550 50  0001 C CNN
+F 3 "" H 3950 7550 50  0001 C CNN
+	1    3950 7550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E9674AD
+P 4750 7270
+F 0 "#PWR?" H 4750 7020 50  0001 C CNN
+F 1 "GND" H 4750 7120 50  0000 C CNN
+F 2 "" H 4750 7270 50  0001 C CNN
+F 3 "" H 4750 7270 50  0001 C CNN
+	1    4750 7270
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4450 7070 3950 7070
+Connection ~ 3290 7070
+Wire Wire Line
+	3290 7070 3290 7150
+Wire Wire Line
+	3950 7250 3950 7070
+Connection ~ 3950 7070
+Wire Wire Line
+	3950 7070 3290 7070
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E96D7A6
+P 4750 6570
+AR Path="/5CB7718D/5E96D7A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E0DC082/5E96D7A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E0F263A/5E96D7A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E939D31/5E96D7A6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4750 6420 50  0001 C CNN
+F 1 "+3.3V" H 4750 6710 50  0000 C CNN
+F 2 "" H 4750 6570 50  0001 C CNN
+F 3 "" H 4750 6570 50  0001 C CNN
+	1    4750 6570
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5E971822
+P 4750 6720
+AR Path="/5BB27BA3/5E971822" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5E971822" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5E971822" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5E971822" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5E971822" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5E971822" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5E971822" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5E971822" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5E971822" Ref="R?"  Part="1" 
+F 0 "R?" H 4670 6720 50  0000 R CNN
+F 1 "27" V 4750 6720 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 4750 6720 50  0001 C CNN
+F 3 "" H 4750 6720 50  0001 C CNN
+F 4 "0402" H 4850 6800 50  0000 L CNN "display_footprint"
+F 5 "1%" H 4850 6720 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 4860 6640 50  0000 L CNN "Wattage"
+	1    4750 6720
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Analog_Clock-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
@@ -149,4 +150,6 @@ F 3 "" H 4810 880 50  0001 C CNN
 	1    4810 880 
 	1    0    0    -1  
 $EndComp
+Text Notes 2710 4640 0    100  ~ 20
+ADD I2C PULLUPS ON THIS PAGE SINCE THERE IS NO LEVEL SHIFTER
 $EndSCHEMATC

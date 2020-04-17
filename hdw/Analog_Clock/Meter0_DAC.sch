@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Analog_Clock-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500

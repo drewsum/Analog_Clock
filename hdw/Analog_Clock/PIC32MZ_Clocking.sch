@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:Analog_Clock-cache
 EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
@@ -37,7 +38,7 @@ F 3 "" H 4880 2910 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6180 2610 2    50   Output ~ 0
-MCU_POSC
+PIC32MZ_POSC
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E021EF5
@@ -247,7 +248,7 @@ F 3 "" H 4880 5400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 6180 5100 2    50   Output ~ 0
-MCU_SOSC
+PIC32MZ_SOSC
 $Comp
 L Custom_Library:R_Custom R?
 U 1 1 5E0562A6
@@ -523,4 +524,8 @@ Wire Wire Line
 Connection ~ 4880 2150
 Wire Wire Line
 	4880 2150 4880 2310
+Text Notes 6370 2910 0    50   ~ 0
+8MHz
+Text Notes 6370 5360 0    50   ~ 0
+32.768kHz
 $EndSCHEMATC
