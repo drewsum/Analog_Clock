@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 10 20
+Sheet 11 21
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -53,6 +53,7 @@ AR Path="/5CB7A8BC/5E021EF5" Ref="R?"  Part="1"
 AR Path="/5E01BCC3/5E021EF5" Ref="R?"  Part="1" 
 AR Path="/5E697952/5E021EF5" Ref="R?"  Part="1" 
 AR Path="/5EAE2F15/5E021EF5" Ref="R?"  Part="1" 
+AR Path="/5E939EDE/5E021EF5" Ref="R?"  Part="1" 
 F 0 "R?" H 6500 2930 50  0000 R CNN
 F 1 "10k" V 6560 2930 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 6560 2930 50  0001 C CNN
@@ -72,6 +73,7 @@ AR Path="/5CB7A8BC/5E021EFB" Ref="#PWR?"  Part="1"
 AR Path="/5E01BCC3/5E021EFB" Ref="#PWR?"  Part="1" 
 AR Path="/5E697952/5E021EFB" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F15/5E021EFB" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EDE/5E021EFB" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 6560 2830 50  0001 C CNN
 F 1 "GND" H 6560 2930 50  0000 C CNN
 F 2 "" H 6560 3080 50  0001 C CNN
@@ -96,6 +98,7 @@ AR Path="/5CAD2DA3/5E024C29" Ref="R?"  Part="1"
 AR Path="/5E01BCC3/5E024C29" Ref="R?"  Part="1" 
 AR Path="/5E697952/5E024C29" Ref="R?"  Part="1" 
 AR Path="/5EAE2F15/5E024C29" Ref="R?"  Part="1" 
+AR Path="/5E939EDE/5E024C29" Ref="R?"  Part="1" 
 F 0 "R?" V 6070 2560 50  0000 R CNN
 F 1 "100" V 6110 2700 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 6110 2700 50  0001 C CNN
@@ -125,6 +128,7 @@ AR Path="/5CB7A8BC/5E0269C4" Ref="R?"  Part="1"
 AR Path="/5E01BCC3/5E0269C4" Ref="R?"  Part="1" 
 AR Path="/5E697952/5E0269C4" Ref="R?"  Part="1" 
 AR Path="/5EAE2F15/5E0269C4" Ref="R?"  Part="1" 
+AR Path="/5E939EDE/5E0269C4" Ref="R?"  Part="1" 
 F 0 "R?" H 4900 2930 50  0000 R CNN
 F 1 "10k" V 4960 2930 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 4960 2930 50  0001 C CNN
@@ -144,6 +148,7 @@ AR Path="/5CB7A8BC/5E0269CA" Ref="#PWR?"  Part="1"
 AR Path="/5E01BCC3/5E0269CA" Ref="#PWR?"  Part="1" 
 AR Path="/5E697952/5E0269CA" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F15/5E0269CA" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EDE/5E0269CA" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 4960 2830 50  0001 C CNN
 F 1 "GND" H 4960 2930 50  0000 C CNN
 F 2 "" H 4960 3080 50  0001 C CNN
@@ -168,6 +173,7 @@ AR Path="/5CB25152/5E03ADCE" Ref="#PWR?"  Part="1"
 AR Path="/5E01BCC3/5E03ADCE" Ref="#PWR?"  Part="1" 
 AR Path="/5E697952/5E03ADCE" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F15/5E03ADCE" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EDE/5E03ADCE" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 6400 2050 50  0001 C CNN
 F 1 "GND" H 6400 2150 50  0000 C CNN
 F 2 "" H 6400 2300 50  0000 C CNN
@@ -183,6 +189,7 @@ AR Path="/5CB25152/5E03ADD8" Ref="C?"  Part="1"
 AR Path="/5E01BCC3/5E03ADD8" Ref="C?"  Part="1" 
 AR Path="/5E697952/5E03ADD8" Ref="C?"  Part="1" 
 AR Path="/5EAE2F15/5E03ADD8" Ref="C?"  Part="1" 
+AR Path="/5E939EDE/5E03ADD8" Ref="C?"  Part="1" 
 F 0 "C?" H 6105 2170 50  0000 L CNN
 F 1 "0.1uF" H 6105 1970 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 6118 1920 50  0001 C CNN
@@ -202,6 +209,7 @@ AR Path="/5CB25152/5E03ADE2" Ref="C?"  Part="1"
 AR Path="/5E01BCC3/5E03ADE2" Ref="C?"  Part="1" 
 AR Path="/5E697952/5E03ADE2" Ref="C?"  Part="1" 
 AR Path="/5EAE2F15/5E03ADE2" Ref="C?"  Part="1" 
+AR Path="/5E939EDE/5E03ADE2" Ref="C?"  Part="1" 
 F 0 "C?" H 6745 2170 50  0000 L CNN
 F 1 "1nF" H 6745 1970 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 6758 1920 50  0001 C CNN
@@ -221,6 +229,7 @@ AR Path="/5CB25152/5E03ADEC" Ref="C?"  Part="1"
 AR Path="/5E01BCC3/5E03ADEC" Ref="C?"  Part="1" 
 AR Path="/5E697952/5E03ADEC" Ref="C?"  Part="1" 
 AR Path="/5EAE2F15/5E03ADEC" Ref="C?"  Part="1" 
+AR Path="/5E939EDE/5E03ADEC" Ref="C?"  Part="1" 
 F 0 "C?" H 6425 2170 50  0000 L CNN
 F 1 "10nF" H 6425 1970 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 6438 1920 50  0001 C CNN
@@ -264,6 +273,7 @@ AR Path="/5CAD2D97/5E053473" Ref="L?"  Part="1"
 AR Path="/5E01BCC3/5E053473" Ref="L?"  Part="1" 
 AR Path="/5E697952/5E053473" Ref="L?"  Part="1" 
 AR Path="/5EAE2F15/5E053473" Ref="L?"  Part="1" 
+AR Path="/5E939EDE/5E053473" Ref="L?"  Part="1" 
 F 0 "L?" V 4890 1825 50  0000 C CNN
 F 1 "600R 0.5A" V 5190 1800 50  0000 C CNN
 F 2 "Inductors_SMD:L_0402" V 4970 1800 50  0001 C CNN
@@ -325,6 +335,7 @@ AR Path="/5CB7A8BC/5EC05874" Ref="R?"  Part="1"
 AR Path="/5E01BCC3/5EC05874" Ref="R?"  Part="1" 
 AR Path="/5E697952/5EC05874" Ref="R?"  Part="1" 
 AR Path="/5EAE2F15/5EC05874" Ref="R?"  Part="1" 
+AR Path="/5E939EDE/5EC05874" Ref="R?"  Part="1" 
 F 0 "R?" H 2700 5360 50  0000 R CNN
 F 1 "10k" V 2760 5360 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 2760 5360 50  0001 C CNN
@@ -362,6 +373,7 @@ AR Path="/5E939CFF/5EC0AF1F" Ref="TP?"  Part="1"
 AR Path="/5E9E0E87/5EC0AF1F" Ref="TP?"  Part="1" 
 AR Path="/5EAE2D66/5EC0AF1F" Ref="TP?"  Part="1" 
 AR Path="/5EAE2F15/5EC0AF1F" Ref="TP?"  Part="1" 
+AR Path="/5E939EDE/5EC0AF1F" Ref="TP?"  Part="1" 
 F 0 "TP?" V 2840 5280 50  0000 L CNN
 F 1 "TP" H 2840 5280 50  0001 C CNN
 F 2 "Custom Footprints Library:Test_Point" H 2840 5130 60  0001 C CNN

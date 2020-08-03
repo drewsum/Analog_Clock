@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 12 20
+Sheet 12 21
 Title ""
 Date ""
 Rev ""
@@ -212,4 +212,6 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/mic845.pdf" H 6380 5820 50 
 $EndComp
 Text Notes 5780 5640 0    50   ~ 0
 REPLACE WITH SOMETHING SIMILAR
+Text Notes 1740 4520 0    100  ~ 20
+Replace with smaller battery?
 $EndSCHEMATC

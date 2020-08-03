@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 9 20
+Sheet 9 21
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -503,6 +503,7 @@ AR Path="/5CAD2D97/5CB5F840" Ref="L?"  Part="1"
 AR Path="/5CB25152/5CB5F840" Ref="L?"  Part="1" 
 AR Path="/5E697934/5CB5F840" Ref="L?"  Part="1" 
 AR Path="/5EAE2F02/5CB5F840" Ref="L?"  Part="1" 
+AR Path="/5E939EC2/5CB5F840" Ref="L?"  Part="1" 
 F 0 "L?" V 8110 4145 50  0000 C CNN
 F 1 "600R 0.5A" V 8410 4120 50  0000 C CNN
 F 2 "Inductors_SMD:L_0402" V 8190 4120 50  0001 C CNN
@@ -519,6 +520,7 @@ AR Path="/5CAD2D97/5CB61DC3" Ref="L?"  Part="1"
 AR Path="/5CB25152/5CB61DC3" Ref="L?"  Part="1" 
 AR Path="/5E697934/5CB61DC3" Ref="L?"  Part="1" 
 AR Path="/5EAE2F02/5CB61DC3" Ref="L?"  Part="1" 
+AR Path="/5E939EC2/5CB61DC3" Ref="L?"  Part="1" 
 F 0 "L?" V 8110 4705 50  0000 C CNN
 F 1 "600R 0.5A" V 8410 4680 50  0000 C CNN
 F 2 "Inductors_SMD:L_0402" V 8190 4680 50  0001 C CNN
@@ -546,6 +548,7 @@ AR Path="/5E0CF7BC/5E23ABF4" Ref="#PWR?"  Part="1"
 AR Path="/5CB25152/5E23ABF4" Ref="#PWR?"  Part="1" 
 AR Path="/5E697934/5E23ABF4" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F02/5E23ABF4" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EC2/5E23ABF4" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 2920 2140 50  0001 C CNN
 F 1 "GND" H 2920 2240 50  0000 C CNN
 F 2 "" H 2920 2390 50  0001 C CNN
@@ -561,6 +564,7 @@ AR Path="/5E0CF7BC/5E242F54" Ref="#PWR?"  Part="1"
 AR Path="/5CB25152/5E242F54" Ref="#PWR?"  Part="1" 
 AR Path="/5E697934/5E242F54" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F02/5E242F54" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EC2/5E242F54" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 4220 2140 50  0001 C CNN
 F 1 "GND" H 4220 2240 50  0000 C CNN
 F 2 "" H 4220 2390 50  0001 C CNN
@@ -579,6 +583,7 @@ AR Path="/5A557C58/5E325341" Ref="C?"  Part="1"
 AR Path="/5CB25152/5E325341" Ref="C?"  Part="1" 
 AR Path="/5E697934/5E325341" Ref="C?"  Part="1" 
 AR Path="/5EAE2F02/5E325341" Ref="C?"  Part="1" 
+AR Path="/5E939EC2/5E325341" Ref="C?"  Part="1" 
 F 0 "C?" H 2945 2340 50  0000 L CNN
 F 1 "10uF" H 2945 2140 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 2958 2090 50  0001 C CNN
@@ -601,6 +606,7 @@ AR Path="/5A557C58/5E32800A" Ref="C?"  Part="1"
 AR Path="/5CB25152/5E32800A" Ref="C?"  Part="1" 
 AR Path="/5E697934/5E32800A" Ref="C?"  Part="1" 
 AR Path="/5EAE2F02/5E32800A" Ref="C?"  Part="1" 
+AR Path="/5E939EC2/5E32800A" Ref="C?"  Part="1" 
 F 0 "C?" H 4245 2340 50  0000 L CNN
 F 1 "10uF" H 4245 2140 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4258 2090 50  0001 C CNN
@@ -620,6 +626,7 @@ AR Path="/5E0CF7BC/5E32A542" Ref="#PWR?"  Part="1"
 AR Path="/5CB25152/5E32A542" Ref="#PWR?"  Part="1" 
 AR Path="/5E697934/5E32A542" Ref="#PWR?"  Part="1" 
 AR Path="/5EAE2F02/5E32A542" Ref="#PWR?"  Part="1" 
+AR Path="/5E939EC2/5E32A542" Ref="#PWR?"  Part="1" 
 F 0 "#PWR?" H 5520 2140 50  0001 C CNN
 F 1 "GND" H 5520 2240 50  0000 C CNN
 F 2 "" H 5520 2390 50  0001 C CNN
@@ -638,6 +645,7 @@ AR Path="/5A557C58/5E32A559" Ref="C?"  Part="1"
 AR Path="/5CB25152/5E32A559" Ref="C?"  Part="1" 
 AR Path="/5E697934/5E32A559" Ref="C?"  Part="1" 
 AR Path="/5EAE2F02/5E32A559" Ref="C?"  Part="1" 
+AR Path="/5E939EC2/5E32A559" Ref="C?"  Part="1" 
 F 0 "C?" H 5545 2340 50  0000 L CNN
 F 1 "10uF" H 5545 2140 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 5558 2090 50  0001 C CNN

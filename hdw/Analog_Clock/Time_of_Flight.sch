@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 15 20
+Sheet 15 21
 Title ""
 Date ""
 Rev ""
@@ -256,6 +256,18 @@ $EndComp
 Wire Wire Line
 	5320 2810 5320 2890
 Connection ~ 5320 2890
-Text Notes 2580 2690 0    50   ~ 0
-find smaller diode
+$Comp
+L Diode:BAT48JFILM D?
+U 1 1 5F32DF32
+P 2880 2660
+AR Path="/5E939D31/5F32DF32" Ref="D?"  Part="1" 
+AR Path="/5E93A1E8/5F32DF32" Ref="D?"  Part="1" 
+F 0 "D?" V 2950 2540 50  0000 R CNN
+F 1 "BAT48JFILM" V 2850 2540 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-323" H 2880 2485 50  0001 C CNN
+F 3 "www.st.com/resource/en/datasheet/bat48.pdf" H 2880 2660 50  0001 C CNN
+F 4 "497-5711-1-ND" H 2880 2660 50  0001 C CNN "Digi-Key PN"
+	1    2880 2660
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

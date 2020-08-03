@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 4 20
+Sheet 4 21
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"

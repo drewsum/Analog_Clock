@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 8 20
+Sheet 8 21
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -84,6 +84,7 @@ AR Path="/5C1D5CB6/5BC152E5" Ref="R?"  Part="1"
 AR Path="/5CB0BC26/5BC152E5" Ref="R?"  Part="1" 
 AR Path="/5E697920/5BC152E5" Ref="R?"  Part="1" 
 AR Path="/5EAE2EF2/5BC152E5" Ref="R?"  Part="1" 
+AR Path="/5E939EAF/5BC152E5" Ref="R?"  Part="1" 
 F 0 "R?" H 7490 2020 50  0000 R CNN
 F 1 "10k" V 7550 2020 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 7550 2020 50  0001 C CNN
@@ -194,6 +195,7 @@ AR Path="/5C1D5CB6/5BE087D6" Ref="R?"  Part="1"
 AR Path="/5CB0BC26/5BE087D6" Ref="R?"  Part="1" 
 AR Path="/5E697920/5BE087D6" Ref="R?"  Part="1" 
 AR Path="/5EAE2EF2/5BE087D6" Ref="R?"  Part="1" 
+AR Path="/5E939EAF/5BE087D6" Ref="R?"  Part="1" 
 F 0 "R?" H 5860 3000 50  0000 R CNN
 F 1 "10k" V 5920 3000 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 5920 3000 50  0001 C CNN

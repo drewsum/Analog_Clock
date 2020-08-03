@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 20
+Sheet 1 21
 Title ""
 Date ""
 Rev ""
@@ -115,19 +115,25 @@ ADD MECH SHEET
 $Sheet
 S 6300 1360 500  150 
 U 5E98CF45
-F0 "Meter0 DAC" 50
-F1 "Meter0_DAC.sch" 50
+F0 "Meter0" 50
+F1 "Meter0.sch" 50
 $EndSheet
 $Sheet
 S 6300 1710 500  150 
-U 5E98E7F7
-F0 "Meter1 DAC" 50
-F1 "Meter1_DAC.sch" 50
+U 5F27FE32
+F0 "Meter1" 50
+F1 "Meter1.sch" 50
 $EndSheet
 $Sheet
 S 6300 2060 500  150 
-U 5E99007F
-F0 "Meter2 DAC" 50
-F1 "Meter2_DAC.sch" 50
+U 5F280DC7
+F0 "Meter2" 50
+F1 "Meter2.sch" 50
+$EndSheet
+$Sheet
+S 6300 2410 500  150 
+U 5F280E04
+F0 "LED Driver" 50
+F1 "LED_Driver.sch" 50
 $EndSheet
 $EndSCHEMATC

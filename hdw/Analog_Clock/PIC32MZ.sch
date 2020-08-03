@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 11 20
+Sheet 10 21
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -160,30 +160,6 @@ F 4 "PIC32MZ0512EFE064T-I/PTCT-ND" H 5420 3730 50  0001 C CNN "Digi-Key PN"
 	1    5420 3730
 	1    0    0    -1  
 $EndComp
-Text GLabel 7520 3480 2    50   Output ~ 0
-LCD_BACKLIGHT_PWM
-Text GLabel 3320 3180 0    50   Output ~ 0
-LCD_PMP_RS
-Text GLabel 3320 4780 0    50   Output ~ 0
-LCD_PMP_R_W
-Text GLabel 3320 4680 0    50   Output ~ 0
-LCD_PMP_E
-Text GLabel 7520 1380 2    50   Output ~ 0
-LCD_PMP_DB0
-Text GLabel 7520 1480 2    50   Output ~ 0
-LCD_PMP_DB1
-Text GLabel 7520 1580 2    50   Output ~ 0
-LCD_PMP_DB2
-Text GLabel 7520 1680 2    50   Output ~ 0
-LCD_PMP_DB3
-Text GLabel 7520 1780 2    50   Output ~ 0
-LCD_PMP_DB4
-Text GLabel 7520 1880 2    50   Output ~ 0
-LCD_PMP_DB5
-Text GLabel 7520 1980 2    50   Output ~ 0
-LCD_PMP_DB6
-Text GLabel 7520 2080 2    50   Output ~ 0
-LCD_PMP_DB7
 Text GLabel 3320 3680 0    50   Output ~ 0
 PIC32MZ_REFCLK1
 Text GLabel 9630 2880 2    50   Output ~ 0
@@ -211,6 +187,7 @@ AR Path="/5E9E0E87/5EB7DAD1" Ref="R?"  Part="1"
 AR Path="/5EAE2D66/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5EAE4A89/5EB7DAD1" Ref="R?"  Part="1" 
 AR Path="/5EAE2F23/5EB7DAD1" Ref="R?"  Part="1" 
+AR Path="/5E939ED2/5EB7DAD1" Ref="R?"  Part="1" 
 F 0 "R?" H 9250 2550 50  0000 R CNN
 F 1 "10k" V 9330 2550 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 9330 2550 50  0001 C CNN
@@ -250,6 +227,7 @@ AR Path="/5E9E0E87/5EB7DEAB" Ref="R?"  Part="1"
 AR Path="/5EAE2D66/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5EAE4A89/5EB7DEAB" Ref="R?"  Part="1" 
 AR Path="/5EAE2F23/5EB7DEAB" Ref="R?"  Part="1" 
+AR Path="/5E939ED2/5EB7DEAB" Ref="R?"  Part="1" 
 F 0 "R?" H 8660 2550 50  0000 R CNN
 F 1 "10k" V 8740 2550 50  0000 C CNN
 F 2 "Resistors_SMD:R_0402" H 8740 2550 50  0001 C CNN
@@ -282,35 +260,10 @@ Wire Wire Line
 Connection ~ 9330 2880
 Wire Wire Line
 	9330 2880 9630 2880
-Text GLabel 3320 5080 0    50   UnSpc ~ 0
-Telemetry_Config
-Text GLabel 3320 4280 0    50   Input ~ 0
-POS1P8_PGOOD
-Text GLabel 3320 4380 0    50   Output ~ 0
-POS1P8_RUN
-Text GLabel 3320 1680 0    50   Output ~ 0
-POX_I2C_Enable
-Text GLabel 3320 1780 0    50   Output ~ 0
-POS3P3_POX_Enable
-Text GLabel 3320 1880 0    40   Output ~ 0
-~POX_INT
-Text GLabel 3320 1980 0    50   Input ~ 0
-Cap_Touch_Power
-Text GLabel 7520 2480 2    50   Output ~ 0
-Reset_LED
-Text GLabel 3320 4980 0    50   Output ~ 0
-CPU_Trap_LED
-Text GLabel 7520 2580 2    50   Output ~ 0
-Heartbeat_LED
-Text GLabel 3320 4880 0    50   Output ~ 0
-Error_LED
-Text GLabel 7520 3380 2    50   Input ~ 0
-POS3P3_POX_ADC
 NoConn ~ 3320 2080
 NoConn ~ 3320 2180
 NoConn ~ 3320 2780
 NoConn ~ 3320 2880
-NoConn ~ 3320 3780
 NoConn ~ 7520 3280
 NoConn ~ 7520 3580
 NoConn ~ 3320 2480
@@ -318,4 +271,8 @@ NoConn ~ 3320 2580
 NoConn ~ 3320 2680
 NoConn ~ 3320 2980
 NoConn ~ 3320 3080
+Text Notes 4580 5630 0    100  ~ 20
+ADD EMI FILTERING STUFF FROM\nMICROCHIP APP NOTE
+Text GLabel 3320 3780 0    50   Input ~ 0
+PIC32MZ_SOSC
 $EndSCHEMATC
