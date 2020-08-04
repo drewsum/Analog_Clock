@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 21
+Sheet 1 23
 Title ""
 Date ""
 Rev ""
@@ -135,5 +135,17 @@ S 6300 2410 500  150
 U 5F280E04
 F0 "LED Driver" 50
 F1 "LED_Driver.sch" 50
+$EndSheet
+$Sheet
+S 6300 2760 500  150 
+U 5F28EEB2
+F0 "Pushbuttons" 50
+F1 "Pushbuttons.sch" 50
+$EndSheet
+$Sheet
+S 6300 3110 500  150 
+U 5F31BE01
+F0 "Function LEDs" 50
+F1 "Function_LEDs.sch" 50
 $EndSheet
 $EndSCHEMATC

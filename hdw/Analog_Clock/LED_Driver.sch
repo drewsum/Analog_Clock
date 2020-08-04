@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 21 21
+Sheet 21 23
 Title ""
 Date ""
 Rev ""
@@ -326,6 +326,7 @@ AR Path="/5EAE2F02/5F34ADC0" Ref="C?"  Part="1"
 AR Path="/5EAE3021/5F34ADC0" Ref="C?"  Part="1" 
 AR Path="/5EAE2D8A/5F34ADC0" Ref="C?"  Part="1" 
 AR Path="/5E939D31/5F34ADC0" Ref="C?"  Part="1" 
+AR Path="/5F280E04/5F34ADC0" Ref="C?"  Part="1" 
 F 0 "C?" H 5325 2680 50  0000 L CNN
 F 1 "10uF" H 5325 2480 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 5338 2430 50  0001 C CNN
