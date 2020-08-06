@@ -430,6 +430,7 @@ AR Path="/5EAE2F02/5F2CCEB4" Ref="C?"  Part="1"
 AR Path="/5EAE3021/5F2CCEB4" Ref="C?"  Part="1" 
 AR Path="/5EAE2D8A/5F2CCEB4" Ref="C?"  Part="1" 
 AR Path="/5E939D31/5F2CCEB4" Ref="C?"  Part="1" 
+AR Path="/5E939EED/5F2CCEB4" Ref="C?"  Part="1" 
 F 0 "C?" H 4325 3910 50  0000 L CNN
 F 1 "10uF" H 4325 3710 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0402" H 4338 3660 50  0001 C CNN
