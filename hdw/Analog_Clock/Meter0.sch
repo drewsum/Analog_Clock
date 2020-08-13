@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 18 23
+Sheet 18 24
 Title ""
 Date ""
 Rev ""
@@ -1141,4 +1141,9 @@ Text GLabel 3050 6740 3    50   UnSpc ~ 0
 METER0_LED_G
 Text GLabel 3250 6740 3    50   UnSpc ~ 0
 METER0_LED_B
+Text GLabel 4880 1850 2    50   Output ~ 0
+DAC0_VREF
+Wire Wire Line
+	4880 1850 4800 1850
+Connection ~ 4800 1850
 $EndSCHEMATC

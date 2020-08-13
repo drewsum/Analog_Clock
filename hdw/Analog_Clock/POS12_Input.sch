@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 2 23
+Sheet 2 24
 Title "Incrementor"
 Date "2019-09-03"
 Rev "A"
@@ -135,7 +135,7 @@ $EndComp
 Wire Wire Line
 	2770 2320 2770 2240
 Text Notes 1350 5280 0    50   ~ 0
-UVLO threshold set to 10.8V\nOVLO threshold set to 13.2V\n\nMODE set to Circuit Breaker with Auto-Retry
+UVLO threshold set to 10.8V\nOVLO threshold set to 13.2V\n\nMODE set to Circuit Breaker with Auto-Retry\n\nOutput Current Limit set to 1.2A
 $Comp
 L power:PWR_FLAG #FLG?
 U 1 1 5BB80368
@@ -337,25 +337,6 @@ Wire Wire Line
 Connection ~ 6610 4140
 Wire Wire Line
 	6200 4140 6610 4140
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5DDA6EDA
-P 6540 5210
-AR Path="/5D6B2673/5DDA6EDA" Ref="R?"  Part="1" 
-AR Path="/5D6C0D23/5DDA6EDA" Ref="R?"  Part="1" 
-AR Path="/5D77A516/5DDA6EDA" Ref="R?"  Part="1" 
-AR Path="/5E939CFF/5DDA6EDA" Ref="R?"  Part="1" 
-F 0 "R?" H 6450 5210 50  0000 R CNN
-F 1 "6.04k" V 6540 5210 40  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 6540 5210 50  0001 C CNN
-F 3 "" H 6540 5210 50  0001 C CNN
-F 4 "0603" H 6640 5280 50  0000 L CNN "display_footprint"
-F 5 "1%" H 6640 5180 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 6640 5080 50  0000 L CNN "Wattage"
-F 7 "RMCF0603FT10K0CT-ND" H 6840 5610 60  0001 C CNN "Digi-Key PN"
-	1    6540 5210
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6540 5060 6540 4940
 Wire Wire Line
@@ -771,6 +752,33 @@ F 5 "1%" H 6710 4340 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6710 4240 50  0000 L CNN "Wattage"
 F 7 "RMCF0603FT10K0CT-ND" H 6910 4770 60  0001 C CNN "Digi-Key PN"
 	1    6610 4370
+	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F374B48
+P 6540 5210
+AR Path="/5BB27BA3/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5BB27BF7/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5C1DE17A/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5C1E3A08/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5D779AE1/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5E0DC082/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5E0F263A/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5E98CF45/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5F280E04/5F374B48" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5F374B48" Ref="R?"  Part="1" 
+F 0 "R?" H 6460 5210 50  0000 R CNN
+F 1 "10k" V 6540 5210 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 6540 5210 50  0001 C CNN
+F 3 "" H 6540 5210 50  0001 C CNN
+F 4 "0402" H 6640 5290 50  0000 L CNN "display_footprint"
+F 5 "1%" H 6640 5210 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 6650 5130 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 6840 5610 60  0001 C CNN "Digi-Key PN"
+	1    6540 5210
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

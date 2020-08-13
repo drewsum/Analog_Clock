@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 10 23
+Sheet 10 24
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -148,18 +148,6 @@ $EndComp
 NoConn ~ 3320 5480
 NoConn ~ 3320 5680
 NoConn ~ 3320 5780
-$Comp
-L Custom_Library:PIC32MZ0512EFE064T-I_PT U?
-U 1 1 5EB2446C
-P 5420 3730
-F 0 "U?" H 7220 1230 50  0000 R CNN
-F 1 "PIC32MZ0512EFE064T-I_PT" H 5420 3730 50  0000 C CNN
-F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5420 3730 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5420 3730 50  0001 C CNN
-F 4 "PIC32MZ0512EFE064T-I/PTCT-ND" H 5420 3730 50  0001 C CNN "Digi-Key PN"
-	1    5420 3730
-	1    0    0    -1  
-$EndComp
 Text GLabel 3320 3680 0    50   Output ~ 0
 PIC32MZ_REFCLK1
 Text GLabel 9630 2880 2    50   Output ~ 0
@@ -260,19 +248,78 @@ Wire Wire Line
 Connection ~ 9330 2880
 Wire Wire Line
 	9330 2880 9630 2880
-NoConn ~ 3320 2080
-NoConn ~ 3320 2180
-NoConn ~ 3320 2780
-NoConn ~ 3320 2880
-NoConn ~ 7520 3280
-NoConn ~ 7520 3580
-NoConn ~ 3320 2480
-NoConn ~ 3320 2580
-NoConn ~ 3320 2680
-NoConn ~ 3320 2980
-NoConn ~ 3320 3080
-Text Notes 4580 5630 0    100  ~ 20
-ADD EMI FILTERING STUFF FROM\nMICROCHIP APP NOTE
 Text GLabel 3320 3780 0    50   Input ~ 0
 PIC32MZ_SOSC
+$Comp
+L Custom_Library:PIC32MZ0512EFE064T-I_PT U?
+U 1 1 5F3A240D
+P 5420 3730
+F 0 "U?" H 7220 1230 50  0000 R CNN
+F 1 "PIC32MZ0512EFE064T-I_PT" H 5420 3730 50  0000 C CNN
+F 2 "Package_QFP:TQFP-64_10x10mm_P0.5mm" H 5420 3730 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf" H 5420 3730 50  0001 C CNN
+F 4 "PIC32MZ0512EFE064T-I/PTCT-ND" H 5420 3730 50  0001 C CNN "Digi-Key PN"
+	1    5420 3730
+	1    0    0    -1  
+$EndComp
+Text Notes 10070 2870 0    50   ~ 0
+I2C5
+Text Notes 1500 4580 0    50   ~ 0
+PPS: UART1
+Text Notes 1500 3720 0    50   ~ 0
+PPS: REFCLK1
+Text GLabel 3320 2680 0    50   Output ~ 0
+DAC_SPI_MOSI
+Text GLabel 3320 3080 0    50   Output ~ 0
+DAC_SPI_SCLK
+Text GLabel 3320 2780 0    40   Output ~ 0
+~DAC_SPI_SYNC_0
+Text GLabel 3320 2880 0    40   Output ~ 0
+~DAC_SPI_SYNC_1
+Text GLabel 3320 2980 0    40   Output ~ 0
+~DAC_SPI_SYNC_2
+Text Notes 1500 2910 0    50   ~ 0
+PPS: SPI3
+Text GLabel 8730 5230 2    50   Output ~ 0
+VDAC_0_ADC
+Text GLabel 8730 5330 2    50   Output ~ 0
+VDAC_1_ADC
+Text GLabel 8730 5430 2    50   Output ~ 0
+VDAC_2_ADC
+Text Notes 1500 2370 0    50   ~ 0
+ICSP2
+Text GLabel 3320 4280 0    50   Output ~ 0
+PIC32MZ_RTCC_CLK
+Text GLabel 9230 4880 0    50   Input ~ 0
+Meter_LED_Enable
+Text GLabel 8580 4020 2    50   Output ~ 0
+Cap_Touch_Power
+Text GLabel 8580 6550 2    50   Output ~ 0
+Cap_Touch_Function
+Text GLabel 9200 4620 0    50   Input ~ 0
+POS20_RUN
+Text GLabel 8750 4370 2    50   Output ~ 0
+POS20_PGOOD
+Text GLabel 8920 5880 0    50   Input ~ 0
+POS12_PGOOD
+Text GLabel 9630 3420 0    50   Output ~ 0
+POS3P3_PGOOD
+Text GLabel 8700 5650 2    50   Output ~ 0
+POS5_USB_PGOOD
+Text GLabel 9980 3750 0    50   Input ~ 0
+Heartbeat_LED
+Text GLabel 9980 5750 0    50   Input ~ 0
+Error_LED
+Text GLabel 10220 4530 0    50   Input ~ 0
+Reset_LED
+Text GLabel 10220 6530 0    50   Input ~ 0
+CPU_Trap_LED
+Text GLabel 7800 4540 2    50   Output ~ 0
+DAC0_VREF
+Text GLabel 7800 4640 2    50   Output ~ 0
+DAC1_VREF
+Text GLabel 7800 4740 2    50   Output ~ 0
+DAC2_VREF
+Text GLabel 7640 3770 2    50   UnSpc ~ 0
+Telemetry_Hardstrap
 $EndSCHEMATC

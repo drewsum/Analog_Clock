@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 23
+Sheet 1 24
 Title ""
 Date ""
 Rev ""
@@ -147,5 +147,11 @@ S 6300 3110 500  150
 U 5F31BE01
 F0 "Function LEDs" 50
 F1 "Function_LEDs.sch" 50
+$EndSheet
+$Sheet
+S 6300 3460 500  150 
+U 5F360CB6
+F0 "Misc Circuits" 50
+F1 "Misc_Circuits.sch" 50
 $EndSheet
 $EndSCHEMATC

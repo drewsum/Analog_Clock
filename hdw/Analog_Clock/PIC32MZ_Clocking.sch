@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 11 23
+Sheet 11 24
 Title "Pulse Oximeter"
 Date "2020-08-01"
 Rev "A"
@@ -647,4 +647,69 @@ Wire Wire Line
 Connection ~ 5510 4750
 Wire Wire Line
 	5510 4750 5510 4830
+Text GLabel 2680 4220 0    50   Input ~ 0
+PIC32MZ_RTCC_CLK
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F3B80FA
+P 2760 4450
+AR Path="/5BAAE1F3/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5BAAE1DC/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5BAAE16C/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5BB844FD/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5BF346B3/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5CAD2D97/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5CB7A8BC/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5E01BCC3/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5E697952/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5EAE2F15/5F3B80FA" Ref="R?"  Part="1" 
+AR Path="/5E939EDE/5F3B80FA" Ref="R?"  Part="1" 
+F 0 "R?" H 2700 4450 50  0000 R CNN
+F 1 "10k" V 2760 4450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402" H 2760 4450 50  0001 C CNN
+F 3 "" H 2760 4450 50  0001 C CNN
+F 4 "0402" H 2830 4530 50  0000 L CNN "display_footprint"
+F 5 "1%" H 2830 4450 50  0000 L CNN "Tolerance"
+F 6 "1/16W" H 2830 4380 50  0000 L CNN "Wattage"
+F 7 "RMCF0402FT10K0CT-ND" H 2760 4450 50  0001 C CNN "Digi-Key PN"
+	1    2760 4450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F3B8104
+P 2760 4600
+F 0 "#PWR?" H 2760 4350 50  0001 C CNN
+F 1 "GND" H 2760 4450 50  0000 C CNN
+F 2 "" H 2760 4600 50  0001 C CNN
+F 3 "" H 2760 4600 50  0001 C CNN
+	1    2760 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2760 4300 2760 4220
+Wire Wire Line
+	2760 4220 2680 4220
+$Comp
+L Custom_Library:TP TP?
+U 1 1 5F3B8110
+P 2840 4220
+AR Path="/5C1D5CD8/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5C1D5C9E/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5CB6F1ED/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5E939CFF/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5E9E0E87/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5EAE2D66/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5EAE2F15/5F3B8110" Ref="TP?"  Part="1" 
+AR Path="/5E939EDE/5F3B8110" Ref="TP?"  Part="1" 
+F 0 "TP?" V 2840 4370 50  0000 L CNN
+F 1 "TP" H 2840 4370 50  0001 C CNN
+F 2 "Custom Footprints Library:Test_Point" H 2840 4220 60  0001 C CNN
+F 3 "" H 2840 4220 60  0000 C CNN
+	1    2840 4220
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2840 4220 2760 4220
+Connection ~ 2760 4220
 $EndSCHEMATC

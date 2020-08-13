@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 13 23
+Sheet 13 24
 Title "VFD Clock"
 Date "2019-04-11"
 Rev "A"
@@ -458,17 +458,6 @@ F 7 "X7R" H 3390 7450 50  0000 R CNN "Dielectric"
 	1    3540 7550
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:+5V_USB #PWR?
-U 1 1 5C037C4F
-P 3540 7400
-F 0 "#PWR?" H 3540 7250 50  0001 C CNN
-F 1 "+5V_USB" H 3540 7540 50  0000 C CNN
-F 2 "" H 3540 7400 50  0001 C CNN
-F 3 "" H 3540 7400 50  0001 C CNN
-	1    3540 7400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5730 3840 6980 3840
 $Comp
@@ -723,8 +712,6 @@ Wire Wire Line
 	8580 2750 8580 2670
 Wire Wire Line
 	8580 2670 7900 2670
-Text Notes 770  4270 0    50   ~ 0
-ADD LEVEL SHIFTER/TRISTATE BUFFER STUFF
 $Comp
 L power:GND #PWR?
 U 1 1 5E9AF283
@@ -1215,6 +1202,17 @@ F 1 "+3.3V_USB" H 2660 1880 50  0000 C CNN
 F 2 "" H 2660 1740 50  0001 C CNN
 F 3 "" H 2660 1740 50  0001 C CNN
 	1    2660 1740
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F35E4BA
+P 3540 7400
+F 0 "#PWR?" H 3540 7250 50  0001 C CNN
+F 1 "+3.3V" H 3540 7540 50  0000 C CNN
+F 2 "" H 3540 7400 50  0001 C CNN
+F 3 "" H 3540 7400 50  0001 C CNN
+	1    3540 7400
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
