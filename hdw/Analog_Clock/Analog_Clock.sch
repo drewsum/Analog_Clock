@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 24
+Sheet 1 25
 Title ""
 Date ""
 Rev ""
@@ -110,8 +110,6 @@ U 5E93E000
 F0 "Status LEDs" 50
 F1 "Status_LEDs.sch" 50
 $EndSheet
-Text Notes 6780 6640 0    250  ~ 50
-ADD MECH SHEET
 $Sheet
 S 6300 1360 500  150 
 U 5E98CF45
@@ -153,5 +151,11 @@ S 6300 3460 500  150
 U 5F360CB6
 F0 "Misc Circuits" 50
 F1 "Misc_Circuits.sch" 50
+$EndSheet
+$Sheet
+S 6300 3810 500  150 
+U 5F4453D4
+F0 "Mechanical" 50
+F1 "Mechanical.sch" 50
 $EndSheet
 $EndSCHEMATC
