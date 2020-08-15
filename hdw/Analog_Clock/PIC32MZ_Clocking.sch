@@ -5,8 +5,8 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 11 25
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -61,7 +61,7 @@ F 3 "" H 6560 2930 50  0001 C CNN
 F 4 "0603" H 6630 3010 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6630 2930 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6630 2860 50  0000 L CNN "Wattage"
-F 7 "" H 6560 2930 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 6560 2930 50  0001 C CNN "Digi-Key PN"
 	1    6560 2930
 	-1   0    0    -1  
 $EndComp
@@ -106,7 +106,7 @@ F 3 "" H 6110 2700 50  0001 C CNN
 F 4 "0603" V 6210 2700 50  0001 C CNN "display_footprint"
 F 5 "1%" V 6310 2700 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 6410 2700 50  0001 C CNN "Wattage"
-F 7 "" H 6410 3100 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT100RCT-ND" H 6410 3100 60  0001 C CNN "Digi-Key PN"
 	1    6110 2700
 	0    -1   1    0   
 $EndComp
@@ -136,7 +136,7 @@ F 3 "" H 4960 2930 50  0001 C CNN
 F 4 "0603" H 5030 3010 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5030 2930 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5030 2860 50  0000 L CNN "Wattage"
-F 7 "" H 4960 2930 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 4960 2930 50  0001 C CNN "Digi-Key PN"
 	1    4960 2930
 	-1   0    0    -1  
 $EndComp
@@ -343,7 +343,7 @@ F 3 "" H 2760 5360 50  0001 C CNN
 F 4 "0603" H 2830 5440 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2830 5360 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2830 5290 50  0000 L CNN "Wattage"
-F 7 "" H 2760 5360 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 2760 5360 50  0001 C CNN "Digi-Key PN"
 	1    2760 5360
 	-1   0    0    -1  
 $EndComp
@@ -419,7 +419,7 @@ F 3 "" H 6560 5360 50  0001 C CNN
 F 4 "0603" H 6630 5440 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6630 5360 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6630 5290 50  0000 L CNN "Wattage"
-F 7 "" H 6560 5360 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 6560 5360 50  0001 C CNN "Digi-Key PN"
 	1    6560 5360
 	-1   0    0    -1  
 $EndComp
@@ -464,7 +464,7 @@ F 3 "" H 6110 5130 50  0001 C CNN
 F 4 "0603" V 6210 5130 50  0001 C CNN "display_footprint"
 F 5 "1%" V 6310 5130 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 6410 5130 50  0001 C CNN "Wattage"
-F 7 "" H 6410 5530 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT100RCT-ND" H 6410 5530 60  0001 C CNN "Digi-Key PN"
 	1    6110 5130
 	0    -1   1    0   
 $EndComp
@@ -671,7 +671,7 @@ F 3 "" H 2760 4450 50  0001 C CNN
 F 4 "0603" H 2830 4530 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2830 4450 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2830 4380 50  0000 L CNN "Wattage"
-F 7 "" H 2760 4450 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 2760 4450 50  0001 C CNN "Digi-Key PN"
 	1    2760 4450
 	-1   0    0    -1  
 $EndComp

@@ -5,8 +5,8 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 6 25
-Title "VFD Clock"
-Date "2019-04-11"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -127,7 +127,7 @@ F 3 "" H 4090 6060 50  0001 C CNN
 F 4 "0603" H 4160 6140 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4160 6060 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4160 5990 50  0000 L CNN "Wattage"
-F 7 "" H 0   470 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 0   470 50  0001 C CNN "Digi-Key PN"
 	1    4090 6060
 	-1   0    0    1   
 $EndComp
@@ -447,6 +447,7 @@ F 3 "" H 2460 3570 50  0001 C CNN
 F 4 "0603" H 2530 3620 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2530 3530 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2530 3440 50  0000 L CNN "Wattage"
+F 7 "311-11.5KHRCT-ND" H 2460 3570 50  0001 C CNN "Digi-Key PN"
 	1    2460 3570
 	-1   0    0    -1  
 $EndComp
@@ -461,6 +462,7 @@ F 3 "" H 9310 4110 50  0001 C CNN
 F 4 "0603" H 9380 4160 50  0000 L CNN "display_footprint"
 F 5 "1%" H 9380 4070 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 9380 3980 50  0000 L CNN "Wattage"
+F 7 "311-1.00KHRCT-ND" H 9310 4110 50  0001 C CNN "Digi-Key PN"
 	1    9310 4110
 	1    0    0    -1  
 $EndComp
@@ -475,7 +477,7 @@ F 3 "" H 3710 4280 50  0001 C CNN
 F 4 "0603" H 3780 4330 50  0000 L CNN "display_footprint"
 F 5 "1%" H 3780 4240 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3780 4150 50  0000 L CNN "Wattage"
-F 7 "" H 4010 4680 60  0001 C CNN "Digi-Key PN"
+F 7 "311-22KLDCT-ND" H 4010 4680 60  0001 C CNN "Digi-Key PN"
 	1    3710 4280
 	-1   0    0    -1  
 $EndComp
@@ -514,12 +516,13 @@ L Custom_Library:R_Custom R609
 U 1 1 5CB88EC1
 P 5440 3380
 F 0 "R609" H 5510 3510 50  0000 L CNN
-F 1 "140m" V 5440 3380 40  0000 C CNN
+F 1 "130m" V 5440 3380 40  0000 C CNN
 F 2 "Resistors_SMD:R_0805" H 5440 3380 50  0001 C CNN
 F 3 "" H 5440 3380 50  0001 C CNN
 F 4 "0805" H 5510 3430 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5510 3340 50  0000 L CNN "Tolerance"
 F 6 "1/4W" H 5510 3250 50  0000 L CNN "Wattage"
+F 7 "RL12S.13FCT-ND" H 5440 3380 50  0001 C CNN "Digi-Key PN"
 	1    5440 3380
 	1    0    0    -1  
 $EndComp
@@ -568,7 +571,7 @@ F 3 "" H 2920 2550 50  0001 C CNN
 F 4 "0603" H 2990 2450 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2990 2530 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2980 2600 50  0000 L CNN "Wattage"
-F 7 "" H -1690 -80 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H -1690 -80 50  0001 C CNN "Digi-Key PN"
 	1    2920 2550
 	-1   0    0    -1  
 $EndComp
@@ -649,7 +652,7 @@ F 3 "" H 7750 1810 50  0001 C CNN
 F 4 "0603" V 7850 1810 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7950 1810 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 8050 1810 50  0001 C CNN "Wattage"
-F 7 "" H 8050 2210 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT100RCT-ND" H 8050 2210 60  0001 C CNN "Digi-Key PN"
 	1    7750 1810
 	-1   0    0    1   
 $EndComp
@@ -670,7 +673,7 @@ F 3 "" H 8210 1810 50  0001 C CNN
 F 4 "0603" V 8310 1810 50  0001 C CNN "display_footprint"
 F 5 "1%" V 8410 1810 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 8510 1810 50  0001 C CNN "Wattage"
-F 7 "" H 8510 2210 60  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT100RCT-ND" H 8510 2210 60  0001 C CNN "Digi-Key PN"
 	1    8210 1810
 	-1   0    0    1   
 $EndComp
@@ -739,6 +742,7 @@ F 3 "" H 9310 2760 50  0001 C CNN
 F 4 "0603" H 9380 2810 50  0000 L CNN "display_footprint"
 F 5 "1%" H 9380 2720 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 9380 2630 50  0000 L CNN "Wattage"
+F 7 "311-11.5KHRCT-ND" H 9310 2760 50  0001 C CNN "Digi-Key PN"
 	1    9310 2760
 	1    0    0    -1  
 $EndComp
@@ -773,6 +777,7 @@ F 3 "" H 2050 7100 50  0001 C CNN
 F 4 "0603" H 2120 7150 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2120 7060 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2120 6970 50  0000 L CNN "Wattage"
+F 7 "311-1.87KHRCT-ND" H 2050 7100 50  0001 C CNN "Digi-Key PN"
 	1    2050 7100
 	-1   0    0    -1  
 $EndComp
@@ -787,6 +792,7 @@ F 3 "" H 2050 6600 50  0001 C CNN
 F 4 "0603" H 2120 6650 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2120 6560 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2120 6470 50  0000 L CNN "Wattage"
+F 7 "311-383HRCT-ND" H 2050 6600 50  0001 C CNN "Digi-Key PN"
 	1    2050 6600
 	-1   0    0    -1  
 $EndComp
@@ -801,6 +807,7 @@ F 3 "" H 2050 6100 50  0001 C CNN
 F 4 "0603" H 2120 6150 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2120 6060 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2120 5970 50  0000 L CNN "Wattage"
+F 7 "RMCF0603FT100KCT-ND" H 2050 6100 50  0001 C CNN "Digi-Key PN"
 	1    2050 6100
 	-1   0    0    -1  
 $EndComp
@@ -855,7 +862,7 @@ F 0 "R608" V 4850 2340 50  0000 C CNN
 F 1 "10" V 4950 2340 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 4950 2340 50  0001 C CNN
 F 3 "" H 4950 2340 50  0001 C CNN
-F 4 "" H 5250 2740 60  0001 C CNN "Digi-Key PN"
+F 4 "YAG2321CT-ND" H 5250 2740 60  0001 C CNN "Digi-Key PN"
 F 5 "0603" V 5050 2340 50  0000 C CNN "display_footprint"
 F 6 "1%" V 5150 2340 50  0000 C CNN "Tolerance"
 F 7 "1/10W" V 5250 2340 50  0000 C CNN "Wattage"

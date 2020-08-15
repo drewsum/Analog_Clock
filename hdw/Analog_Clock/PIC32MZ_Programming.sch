@@ -5,8 +5,8 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 8 25
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -81,7 +81,7 @@ F 3 "" H 5770 4770 50  0001 C CNN
 F 4 "0603" H 5960 4850 50  0000 C CNN "display_footprint"
 F 5 "1%" H 5950 4770 50  0000 C CNN "Tolerance"
 F 6 "1/10W" H 5980 4700 50  0000 C CNN "Wattage"
-F 7 "" H 6070 5170 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 6070 5170 60  0001 C CNN "Digi-Key PN"
 	1    5770 4770
 	-1   0    0    -1  
 $EndComp
@@ -122,7 +122,7 @@ F 3 "" H 6300 5000 50  0001 C CNN
 F 4 "0603" V 6400 5000 50  0000 C CNN "display_footprint"
 F 5 "1%" V 6500 5000 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 6600 5000 50  0000 C CNN "Wattage"
-F 7 "" H 6600 5400 60  0001 C CNN "Digi-Key PN"
+F 7 "311-1.00KHRCT-ND" H 6600 5400 60  0001 C CNN "Digi-Key PN"
 	1    6300 5000
 	0    1    1    0   
 $EndComp
@@ -166,7 +166,7 @@ F 3 "" H 3690 5520 50  0001 C CNN
 F 4 "0603" V 3790 5520 50  0000 C CNN "display_footprint"
 F 5 "1%" V 3890 5520 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 3990 5520 50  0000 C CNN "Wattage"
-F 7 "" H 3990 5920 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3990 5920 60  0001 C CNN "Digi-Key PN"
 	1    3690 5520
 	0    -1   -1   0   
 $EndComp
@@ -190,7 +190,7 @@ F 3 "" H 4140 5750 50  0001 C CNN
 F 4 "0603" H 4330 5830 50  0000 C CNN "display_footprint"
 F 5 "1%" H 4320 5750 50  0000 C CNN "Tolerance"
 F 6 "1/10W" H 4350 5680 50  0000 C CNN "Wattage"
-F 7 "" H 4440 6150 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 4440 6150 60  0001 C CNN "Digi-Key PN"
 	1    4140 5750
 	1    0    0    -1  
 $EndComp
@@ -448,7 +448,7 @@ F 3 "" H 5080 5000 50  0001 C CNN
 F 4 "0603" V 5180 5000 50  0000 C CNN "display_footprint"
 F 5 "1%" V 5280 5000 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 5380 5000 50  0000 C CNN "Wattage"
-F 7 "" H 5380 5400 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 5380 5400 60  0001 C CNN "Digi-Key PN"
 	1    5080 5000
 	0    -1   -1   0   
 $EndComp

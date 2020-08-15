@@ -5,8 +5,8 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 10 25
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -183,7 +183,7 @@ F 3 "" H 9330 2550 50  0001 C CNN
 F 4 "0603" H 9430 2630 50  0000 L CNN "display_footprint"
 F 5 "1%" H 9430 2550 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 9440 2470 50  0000 L CNN "Wattage"
-F 7 "" H 9330 2550 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 9330 2550 50  0001 C CNN "Digi-Key PN"
 	1    9330 2550
 	1    0    0    -1  
 $EndComp
@@ -223,7 +223,7 @@ F 3 "" H 8740 2550 50  0001 C CNN
 F 4 "0603" H 8840 2630 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8840 2550 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8850 2470 50  0000 L CNN "Wattage"
-F 7 "" H 8740 2550 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 8740 2550 50  0001 C CNN "Digi-Key PN"
 	1    8740 2550
 	1    0    0    -1  
 $EndComp

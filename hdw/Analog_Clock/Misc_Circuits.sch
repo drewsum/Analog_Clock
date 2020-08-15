@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 24 25
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Analog Clock"
+Date "2020-08-15"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -210,7 +210,7 @@ F 3 "" H 5380 5490 50  0001 C CNN
 F 4 "0603" H 5450 5570 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5450 5490 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5450 5420 50  0000 L CNN "Wattage"
-F 7 "" H 1290 -100 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 1290 -100 50  0001 C CNN "Digi-Key PN"
 	1    5380 5490
 	-1   0    0    1   
 $EndComp
@@ -228,7 +228,7 @@ F 3 "" H 4750 5490 50  0001 C CNN
 F 4 "0603" H 4820 5570 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4820 5490 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4820 5420 50  0000 L CNN "Wattage"
-F 7 "" H 660 -100 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 660 -100 50  0001 C CNN "Digi-Key PN"
 	1    4750 5490
 	-1   0    0    1   
 $EndComp
@@ -359,7 +359,7 @@ F 3 "" H 7530 5440 50  0001 C CNN
 F 4 "0603" H 7600 5520 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7600 5440 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 7600 5370 50  0000 L CNN "Wattage"
-F 7 "" H 3440 -150 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3440 -150 50  0001 C CNN "Digi-Key PN"
 	1    7530 5440
 	-1   0    0    1   
 $EndComp
@@ -386,7 +386,7 @@ F 0 "R2406" V 6800 5210 50  0000 C CNN
 F 1 "10" V 6900 5210 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 6900 5210 50  0001 C CNN
 F 3 "" H 6900 5210 50  0001 C CNN
-F 4 "" H 7200 5610 60  0001 C CNN "Digi-Key PN"
+F 4 "YAG2321CT-ND" H 7200 5610 60  0001 C CNN "Digi-Key PN"
 F 5 "0603" V 7000 5210 50  0000 C CNN "display_footprint"
 F 6 "1%" V 7100 5210 50  0000 C CNN "Tolerance"
 F 7 "1/10W" V 7200 5210 50  0000 C CNN "Wattage"
@@ -611,7 +611,7 @@ F 3 "" H 2440 4830 50  0001 C CNN
 F 4 "0603" H 2540 4910 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2540 4830 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2550 4750 50  0000 L CNN "Wattage"
-F 7 "" H 2440 4830 50  0001 C CNN "Digi-Key PN"
+F 7 "RMCF0603FT1M07CT-ND" H 2440 4830 50  0001 C CNN "Digi-Key PN"
 	1    2440 4830
 	-1   0    0    -1  
 $EndComp
@@ -742,7 +742,7 @@ F 3 "" H 4910 3200 50  0001 C CNN
 F 4 "0603" H 5010 3280 50  0000 L CNN "display_footprint"
 F 5 "1%" H 5010 3200 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5020 3120 50  0000 L CNN "Wattage"
-F 7 "" H 5210 3600 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 5210 3600 60  0001 C CNN "Digi-Key PN"
 	1    4910 3200
 	1    0    0    -1  
 $EndComp

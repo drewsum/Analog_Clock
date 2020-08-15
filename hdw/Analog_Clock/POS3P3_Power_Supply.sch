@@ -5,8 +5,8 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 4 25
-Title "Pulse Oximeter"
-Date "2020-08-01"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
 Comp "Drew Maatman"
 Comment1 ""
@@ -231,7 +231,7 @@ F 3 "" H 8220 3810 50  0001 C CNN
 F 4 "0603" H 8320 3890 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8320 3810 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8330 3730 50  0000 L CNN "Wattage"
-F 7 "" H 8220 3810 50  0001 C CNN "Digi-Key PN"
+F 7 "311-562KHRCT-ND" H 8220 3810 50  0001 C CNN "Digi-Key PN"
 	1    8220 3810
 	1    0    0    -1  
 $EndComp
@@ -256,7 +256,7 @@ F 3 "" H 8220 4720 50  0001 C CNN
 F 4 "0603" H 8320 4800 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8320 4720 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8330 4640 50  0000 L CNN "Wattage"
-F 7 "" H 8220 4720 50  0001 C CNN "Digi-Key PN"
+F 7 "311-180KHRCT-ND" H 8220 4720 50  0001 C CNN "Digi-Key PN"
 	1    8220 4720
 	1    0    0    -1  
 $EndComp
@@ -451,7 +451,7 @@ F 3 "" H 7290 2710 50  0001 C CNN
 F 4 "0603" V 7390 2710 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7490 2710 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 7590 2710 50  0001 C CNN "Wattage"
-F 7 "" H 7290 2710 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 7290 2710 50  0001 C CNN "Digi-Key PN"
 	1    7290 2710
 	-1   0    0    -1  
 $EndComp
@@ -472,7 +472,7 @@ F 3 "" H 7750 2710 50  0001 C CNN
 F 4 "0603" V 7850 2710 50  0001 C CNN "display_footprint"
 F 5 "1%" V 7950 2710 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 8050 2710 50  0001 C CNN "Wattage"
-F 7 "" H 7750 2710 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 7750 2710 50  0001 C CNN "Digi-Key PN"
 	1    7750 2710
 	-1   0    0    -1  
 $EndComp
@@ -592,7 +592,7 @@ F 3 "" H 4390 6980 50  0001 C CNN
 F 4 "0603" H 4490 7060 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4490 6980 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4500 6900 50  0000 L CNN "Wattage"
-F 7 "" H 4690 7380 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 4690 7380 60  0001 C CNN "Digi-Key PN"
 	1    4390 6980
 	1    0    0    -1  
 $EndComp
@@ -659,7 +659,7 @@ F 0 "R401" V 2030 6700 50  0000 C CNN
 F 1 "10" V 2130 6700 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" H 2130 6700 50  0001 C CNN
 F 3 "" H 2130 6700 50  0001 C CNN
-F 4 "" H 2430 7100 60  0001 C CNN "Digi-Key PN"
+F 4 "YAG2321CT-ND" H 2430 7100 60  0001 C CNN "Digi-Key PN"
 F 5 "0603" V 2230 6700 50  0000 C CNN "display_footprint"
 F 6 "1%" V 2330 6700 50  0000 C CNN "Tolerance"
 F 7 "1/10W" V 2430 6700 50  0000 C CNN "Wattage"
@@ -762,7 +762,7 @@ F 3 "" H 2770 3810 50  0001 C CNN
 F 4 "0603" H 2870 3890 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2870 3810 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2880 3730 50  0000 L CNN "Wattage"
-F 7 "" H 3070 4210 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3070 4210 60  0001 C CNN "Digi-Key PN"
 	1    2770 3810
 	1    0    0    -1  
 $EndComp

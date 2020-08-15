@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 21 25
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Analog Clock"
+Date "2020-08-15"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -123,6 +123,7 @@ F 3 "" H 4930 4430 50  0001 C CNN
 F 4 "0603" H 5030 4510 50  0000 L CNN "display_footprint"
 F 5 "0.1%" H 5030 4430 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5040 4350 50  0000 L CNN "Wattage"
+F 7 "YAG4547CT-ND" H 4930 4430 50  0001 C CNN "Digi-Key PN"
 	1    4930 4430
 	1    0    0    -1  
 $EndComp
@@ -225,7 +226,7 @@ F 3 "" H 3550 4430 50  0001 C CNN
 F 4 "0603" H 3650 4510 50  0000 L CNN "display_footprint"
 F 5 "1%" H 3650 4430 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3660 4350 50  0000 L CNN "Wattage"
-F 7 "" H 3850 4830 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3850 4830 60  0001 C CNN "Digi-Key PN"
 	1    3550 4430
 	1    0    0    -1  
 $EndComp

@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 25 25
-Title "QI Charger"
-Date "2019-01-03"
+Title "Analog Clock"
+Date "2020-08-15"
 Rev "A"
-Comp ""
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""

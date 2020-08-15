@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 18 25
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Analog Clock"
+Date "2020-08-15"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -67,6 +67,7 @@ F 3 "" H 2330 3680 50  0001 C CNN
 F 4 "0603" V 2430 3680 50  0001 C CNN "display_footprint"
 F 5 "1%" V 2530 3680 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 2630 3680 50  0001 C CNN "Wattage"
+F 7 "YAG2321CT-ND" H 2330 3680 50  0001 C CNN "Digi-Key PN"
 	1    2330 3680
 	0    -1   1    0   
 $EndComp
@@ -83,6 +84,7 @@ F 3 "" H 2330 3580 50  0001 C CNN
 F 4 "0603" V 2430 3580 50  0001 C CNN "display_footprint"
 F 5 "1%" V 2530 3580 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 2630 3580 50  0001 C CNN "Wattage"
+F 7 "YAG2321CT-ND" H 2330 3580 50  0001 C CNN "Digi-Key PN"
 	1    2330 3580
 	0    -1   1    0   
 $EndComp
@@ -99,6 +101,7 @@ F 3 "" H 2330 3480 50  0001 C CNN
 F 4 "0603" V 2430 3480 50  0001 C CNN "display_footprint"
 F 5 "1%" V 2530 3480 50  0001 C CNN "Tolerance"
 F 6 "1/10W" V 2630 3480 50  0001 C CNN "Wattage"
+F 7 "YAG2321CT-ND" H 2330 3480 50  0001 C CNN "Digi-Key PN"
 	1    2330 3480
 	0    -1   1    0   
 $EndComp
@@ -123,7 +126,7 @@ F 3 "" H 2830 3250 50  0001 C CNN
 F 4 "0603" H 2930 3330 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2930 3250 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2940 3170 50  0000 L CNN "Wattage"
-F 7 "" H 3130 3650 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3130 3650 60  0001 C CNN "Digi-Key PN"
 	1    2830 3250
 	1    0    0    -1  
 $EndComp
@@ -166,7 +169,7 @@ F 3 "" H 3570 3910 50  0001 C CNN
 F 4 "0603" H 3670 3990 50  0000 L CNN "display_footprint"
 F 5 "1%" H 3670 3910 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 3680 3830 50  0000 L CNN "Wattage"
-F 7 "" H 3870 4310 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3870 4310 60  0001 C CNN "Digi-Key PN"
 	1    3570 3910
 	1    0    0    -1  
 $EndComp
@@ -202,7 +205,7 @@ F 3 "" H 2830 3910 50  0001 C CNN
 F 4 "0603" H 2930 3990 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2930 3910 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2940 3830 50  0000 L CNN "Wattage"
-F 7 "" H 3130 4310 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 3130 4310 60  0001 C CNN "Digi-Key PN"
 	1    2830 3910
 	1    0    0    -1  
 $EndComp
@@ -536,7 +539,7 @@ F 3 "" H 6910 2630 50  0001 C CNN
 F 4 "0603" V 7010 2630 50  0000 C CNN "display_footprint"
 F 5 "0.1%" V 7110 2630 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 7210 2630 50  0000 C CNN "Wattage"
-F 7 "PN" H 7210 3030 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG1755CT-ND" H 7210 3030 60  0001 C CNN "Digi-Key PN"
 	1    6910 2630
 	0    1    -1   0   
 $EndComp
@@ -573,6 +576,7 @@ F 3 "" H 6100 3210 50  0001 C CNN
 F 4 "0603" H 6200 3290 50  0000 L CNN "display_footprint"
 F 5 "0.1%" H 6200 3210 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6210 3130 50  0000 L CNN "Wattage"
+F 7 "YAG4489CT-ND" H 6100 3210 50  0001 C CNN "Digi-Key PN"
 	1    6100 3210
 	1    0    0    -1  
 $EndComp
@@ -683,7 +687,7 @@ F 3 "" H 7370 4510 50  0001 C CNN
 F 4 "0603" V 7470 4510 50  0000 C CNN "display_footprint"
 F 5 "1%" V 7570 4510 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 7670 4510 50  0000 C CNN "Wattage"
-F 7 "" H 7670 4910 60  0001 C CNN "Digi-Key PN"
+F 7 "311-1.00KHRCT-ND" H 7670 4910 60  0001 C CNN "Digi-Key PN"
 	1    7370 4510
 	0    1    1    0   
 $EndComp
@@ -711,7 +715,7 @@ U 1 1 5EA64BB1
 P 8400 2230
 F 0 "MES1801" H 8270 2270 50  0000 R CNN
 F 1 "Voltmeter_DC" H 8270 2200 50  0000 R CNN
-F 2 "" V 8400 2330 50  0001 C CNN
+F 2 "FIX ME" V 8400 2330 50  0001 C CNN
 F 3 "~" V 8400 2330 50  0001 C CNN
 	1    8400 2230
 	1    0    0    -1  
@@ -774,6 +778,7 @@ F 3 "" H 5670 4740 50  0001 C CNN
 F 4 "0603" H 5770 4820 50  0000 L CNN "display_footprint"
 F 5 "0.1%" H 5770 4740 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 5780 4660 50  0000 L CNN "Wattage"
+F 7 "YAG4489CT-ND" H 5670 4740 50  0001 C CNN "Digi-Key PN"
 	1    5670 4740
 	1    0    0    -1  
 $EndComp
@@ -799,7 +804,7 @@ F 3 "" H 6530 4020 50  0001 C CNN
 F 4 "0603" V 6630 4020 50  0000 C CNN "display_footprint"
 F 5 "0.1%" V 6730 4020 50  0000 C CNN "Tolerance"
 F 6 "1/10W" V 6830 4020 50  0000 C CNN "Wattage"
-F 7 "PN" H 6830 4420 60  0001 C CNN "Digi-Key PN"
+F 7 "YAG1755CT-ND" H 6830 4420 60  0001 C CNN "Digi-Key PN"
 	1    6530 4020
 	0    1    -1   0   
 $EndComp
@@ -1289,7 +1294,7 @@ F 3 "" H 2890 5880 50  0001 C CNN
 F 4 "0603" H 2960 5960 50  0000 L CNN "display_footprint"
 F 5 "1%" H 2960 5880 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 2960 5810 50  0000 L CNN "Wattage"
-F 7 "" H 3190 6280 60  0001 C CNN "Digi-Key PN"
+F 7 "311-1.00KHRCT-ND" H 3190 6280 60  0001 C CNN "Digi-Key PN"
 	1    2890 5880
 	-1   0    0    -1  
 $EndComp

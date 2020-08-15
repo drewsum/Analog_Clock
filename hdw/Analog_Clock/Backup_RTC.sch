@@ -5,10 +5,10 @@ EELAYER END
 $Descr A 11000 8500
 encoding utf-8
 Sheet 12 25
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "Analog Clock"
+Date "2020-08-15"
+Rev "A"
+Comp "Drew Maatman"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -282,6 +282,7 @@ F 3 "" H 4130 4390 50  0001 C CNN
 F 4 "0603" H 4200 4470 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4200 4390 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4200 4320 50  0000 L CNN "Wattage"
+F 7 "RMCF0603FT105KCT-ND" H 4130 4390 50  0001 C CNN "Digi-Key PN"
 	1    4130 4390
 	-1   0    0    -1  
 $EndComp
@@ -322,7 +323,7 @@ F 3 "" H 6210 4390 50  0001 C CNN
 F 4 "0603" H 6280 4470 50  0000 L CNN "display_footprint"
 F 5 "1%" H 6280 4390 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 6280 4320 50  0000 L CNN "Wattage"
-F 7 "" H 6210 4390 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 6210 4390 50  0001 C CNN "Digi-Key PN"
 	1    6210 4390
 	-1   0    0    -1  
 $EndComp
@@ -421,7 +422,7 @@ F 3 "" H 7920 2030 50  0001 C CNN
 F 4 "0603" H 7990 2110 50  0000 L CNN "display_footprint"
 F 5 "1%" H 7990 2030 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 7990 1960 50  0000 L CNN "Wattage"
-F 7 "" H 7920 2030 50  0001 C CNN "Digi-Key PN"
+F 7 "YAG2321CT-ND" H 7920 2030 50  0001 C CNN "Digi-Key PN"
 	1    7920 2030
 	-1   0    0    -1  
 $EndComp
@@ -480,7 +481,7 @@ F 3 "" H 4130 4850 50  0001 C CNN
 F 4 "0603" H 4200 4900 50  0000 L CNN "display_footprint"
 F 5 "1%" H 4200 4810 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 4200 4720 50  0000 L CNN "Wattage"
-F 7 "" H 4430 5250 60  0001 C CNN "Digi-Key PN"
+F 7 "311-22KLDCT-ND" H 4430 5250 60  0001 C CNN "Digi-Key PN"
 	1    4130 4850
 	-1   0    0    -1  
 $EndComp
@@ -605,7 +606,7 @@ F 3 "" H 7940 4470 50  0001 C CNN
 F 4 "0603" H 8040 4550 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8040 4470 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8050 4390 50  0000 L CNN "Wattage"
-F 7 "" H 7940 4470 50  0001 C CNN "Digi-Key PN"
+F 7 "311-562KHRCT-ND" H 7940 4470 50  0001 C CNN "Digi-Key PN"
 	1    7940 4470
 	1    0    0    -1  
 $EndComp
@@ -631,7 +632,7 @@ F 3 "" H 7940 4930 50  0001 C CNN
 F 4 "0603" H 8040 5010 50  0000 L CNN "display_footprint"
 F 5 "1%" H 8040 4930 50  0000 L CNN "Tolerance"
 F 6 "1/10W" H 8050 4850 50  0000 L CNN "Wattage"
-F 7 "" H 7940 4930 50  0001 C CNN "Digi-Key PN"
+F 7 "311-562KHRCT-ND" H 7940 4930 50  0001 C CNN "Digi-Key PN"
 	1    7940 4930
 	1    0    0    -1  
 $EndComp
