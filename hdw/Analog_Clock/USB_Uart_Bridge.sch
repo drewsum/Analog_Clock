@@ -670,36 +670,6 @@ F 3 "" H 2730 6290 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Custom_Library:R_Custom R1316
-U 1 1 5E9C0D8F
-P 8110 3860
-F 0 "R1316" H 8050 3860 50  0000 R CNN
-F 1 "10k" V 8110 3860 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 8110 3860 50  0001 C CNN
-F 3 "" H 8110 3860 50  0001 C CNN
-F 4 "0603" H 8210 3950 50  0000 L CNN "display_footprint"
-F 5 "1%" H 8210 3860 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 8220 3780 50  0000 L CNN "Wattage"
-F 7 "YAG2321CT-ND" H 8410 4260 60  0001 C CNN "Digi-Key PN"
-	1    8110 3860
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01343
-U 1 1 5E9C26CC
-P 8110 4010
-F 0 "#PWR01343" H 8110 3760 50  0001 C CNN
-F 1 "GND" H 8110 3860 50  0000 C CNN
-F 2 "" H 8110 4010 50  0001 C CNN
-F 3 "" H 8110 4010 50  0001 C CNN
-	1    8110 4010
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8110 3710 8110 3630
-Wire Wire Line
-	8110 3630 7430 3630
-$Comp
 L power:GND #PWR01325
 U 1 1 5E9AF283
 P 4410 3980
@@ -982,10 +952,6 @@ F 3 "" H 5350 1960 50  0001 C CNN
 	1    5350 1960
 	1    0    0    -1  
 $EndComp
-Text GLabel 7250 1360 2    50   Input ~ 0
-USB_UART_RX_BUF
-Text GLabel 7250 1560 2    50   Output ~ 0
-USB_UART_TX_BUF
 $Comp
 L Custom_Library:+3.3V_USB #PWR01336
 U 1 1 5F3B0FEC
@@ -1056,9 +1022,9 @@ Wire Wire Line
 Connection ~ 6730 1560
 Wire Wire Line
 	6730 1560 5750 1560
-Text GLabel 3450 1360 0    50   Output ~ 0
+Text GLabel 3450 1560 0    50   Output ~ 0
 USB_UART_RX
-Text GLabel 3450 1560 0    50   Input ~ 0
+Text GLabel 3450 1360 0    50   Input ~ 0
 USB_UART_TX
 $Comp
 L Custom_Library:R_Custom R?
@@ -1386,4 +1352,8 @@ Wire Wire Line
 	3970 2000 3970 1760
 Wire Wire Line
 	3970 1760 4300 1760
+Text GLabel 7250 1360 2    50   Output ~ 0
+USB_UART_TX_BUF
+Text GLabel 7250 1560 2    50   Input ~ 0
+USB_UART_RX_BUF
 $EndSCHEMATC

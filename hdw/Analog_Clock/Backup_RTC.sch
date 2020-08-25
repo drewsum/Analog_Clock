@@ -370,77 +370,6 @@ F 3 "" H 3950 3040 50  0001 C CNN
 	1    3950 3040
 	1    0    0    -1  
 $EndComp
-Text GLabel 7840 1800 0    50   Input ~ 0
-Backup_RTC_REFCLK
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5F3530B0
-P 7920 2030
-AR Path="/5BAAE1F3/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5BAAE1DC/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5BAAE16C/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5BB844FD/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5BF346B3/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5CAD2D97/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5CB7A8BC/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5E01BCC3/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5E697952/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5EAE2F15/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5E939EDE/5F3530B0" Ref="R?"  Part="1" 
-AR Path="/5E939EED/5F3530B0" Ref="R1204"  Part="1" 
-F 0 "R1204" H 7860 2030 50  0000 R CNN
-F 1 "10k" V 7920 2030 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 7920 2030 50  0001 C CNN
-F 3 "" H 7920 2030 50  0001 C CNN
-F 4 "0603" H 7990 2110 50  0000 L CNN "display_footprint"
-F 5 "1%" H 7990 2030 50  0000 L CNN "Tolerance"
-F 6 "1/10W" H 7990 1960 50  0000 L CNN "Wattage"
-F 7 "YAG2321CT-ND" H 7920 2030 50  0001 C CNN "Digi-Key PN"
-	1    7920 2030
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F3530B6
-P 7920 2180
-AR Path="/5E939EDE/5F3530B6" Ref="#PWR?"  Part="1" 
-AR Path="/5E939EED/5F3530B6" Ref="#PWR01222"  Part="1" 
-F 0 "#PWR01222" H 7920 1930 50  0001 C CNN
-F 1 "GND" H 7920 2030 50  0000 C CNN
-F 2 "" H 7920 2180 50  0001 C CNN
-F 3 "" H 7920 2180 50  0001 C CNN
-	1    7920 2180
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7920 1880 7920 1800
-Wire Wire Line
-	7920 1800 7840 1800
-$Comp
-L Custom_Library:TP TP?
-U 1 1 5F3530BE
-P 8000 1800
-AR Path="/5C1D5CD8/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5C1D5C9E/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5CB6F1ED/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5E939CFF/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5E9E0E87/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5EAE2D66/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5EAE2F15/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5E939EDE/5F3530BE" Ref="TP?"  Part="1" 
-AR Path="/5E939EED/5F3530BE" Ref="TP1202"  Part="1" 
-F 0 "TP1202" V 8000 1950 50  0000 L CNN
-F 1 "TP" H 8000 1950 50  0001 C CNN
-F 2 "Custom Footprints Library:Test_Point" H 8000 1800 60  0001 C CNN
-F 3 "" H 8000 1800 60  0000 C CNN
-	1    8000 1800
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8000 1800 7920 1800
-Connection ~ 7920 1800
-Text GLabel 5550 1800 2    50   Output ~ 0
-Backup_RTC_REFCLK
 $Comp
 L Custom_Library:C_Custom C1204
 U 1 1 5F3B2874
@@ -620,4 +549,5 @@ $EndComp
 Wire Wire Line
 	3300 4620 4130 4620
 Connection ~ 3300 4620
+NoConn ~ 5550 1800
 $EndSCHEMATC

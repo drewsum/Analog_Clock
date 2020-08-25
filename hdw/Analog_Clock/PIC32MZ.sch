@@ -288,8 +288,6 @@ Text GLabel 3320 2080 0    50   Input ~ 0
 VDAC_2_ADC
 Text Notes 1500 2370 0    50   ~ 0
 ICSP2
-Text GLabel 3320 4280 0    50   Output ~ 0
-PIC32MZ_RTCC_CLK
 Text GLabel 7520 2580 2    50   Output ~ 0
 Meter_LED_Enable
 Text GLabel 3320 2480 0    50   Input ~ 0
@@ -348,4 +346,5 @@ Text GLabel 7520 1780 2    50   Output ~ 0
 POS3P3_PGL_SHDN
 Text GLabel 7520 1880 2    50   Output ~ 0
 Buzzer_Enable
+NoConn ~ 3320 4280
 $EndSCHEMATC
