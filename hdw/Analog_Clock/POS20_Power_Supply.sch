@@ -557,48 +557,6 @@ F 4 "296-51696-1-ND" H 2850 6600 50  0001 C CNN "Digi-Key PN"
 	1    2850 6600
 	1    0    0    -1  
 $EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E2D7420
-P 7750 1810
-AR Path="/5CB0BC26/5E2D7420" Ref="R?"  Part="1" 
-AR Path="/5E1352F5/5E2D7420" Ref="R?"  Part="1" 
-AR Path="/5CB6F1ED/5E2D7420" Ref="R?"  Part="1" 
-AR Path="/5E0F9110/5E2D7420" Ref="R?"  Part="1" 
-AR Path="/5A0BC776/5E2D7420" Ref="R?"  Part="1" 
-AR Path="/5E939D51/5E2D7420" Ref="R610"  Part="1" 
-F 0 "R610" V 7650 1810 50  0000 C CNN
-F 1 "100" V 7750 1810 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 7750 1810 50  0001 C CNN
-F 3 "" H 7750 1810 50  0001 C CNN
-F 4 "0603" V 7850 1810 50  0001 C CNN "display_footprint"
-F 5 "1%" V 7950 1810 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 8050 1810 50  0001 C CNN "Wattage"
-F 7 "RMCF0603FT100RCT-ND" H 8050 2210 60  0001 C CNN "Digi-Key PN"
-	1    7750 1810
-	-1   0    0    1   
-$EndComp
-$Comp
-L Custom_Library:R_Custom R?
-U 1 1 5E2D742A
-P 8210 1810
-AR Path="/5CB0BC26/5E2D742A" Ref="R?"  Part="1" 
-AR Path="/5E1352F5/5E2D742A" Ref="R?"  Part="1" 
-AR Path="/5CB6F1ED/5E2D742A" Ref="R?"  Part="1" 
-AR Path="/5E0F9110/5E2D742A" Ref="R?"  Part="1" 
-AR Path="/5A0BC776/5E2D742A" Ref="R?"  Part="1" 
-AR Path="/5E939D51/5E2D742A" Ref="R612"  Part="1" 
-F 0 "R612" V 8110 1810 50  0000 C CNN
-F 1 "100" V 8210 1810 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" H 8210 1810 50  0001 C CNN
-F 3 "" H 8210 1810 50  0001 C CNN
-F 4 "0603" V 8310 1810 50  0001 C CNN "display_footprint"
-F 5 "1%" V 8410 1810 50  0001 C CNN "Tolerance"
-F 6 "1/10W" V 8510 1810 50  0001 C CNN "Wattage"
-F 7 "RMCF0603FT100RCT-ND" H 8510 2210 60  0001 C CNN "Digi-Key PN"
-	1    8210 1810
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	9310 1430 9310 1500
 Connection ~ 9310 1500
@@ -853,5 +811,51 @@ F 2 "" H 3910 7500 50  0001 C CNN
 F 3 "" H 3910 7500 50  0001 C CNN
 	1    3910 7500
 	1    0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F689312
+P 7750 1810
+AR Path="/5CB0BC26/5F689312" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5F689312" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5F689312" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5F689312" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/5F689312" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5F689312" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5F689312" Ref="R?"  Part="1" 
+AR Path="/5E939D51/5F689312" Ref="R610"  Part="1" 
+F 0 "R610" V 7650 1810 50  0000 C CNN
+F 1 "10" V 7750 1810 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 7750 1810 50  0001 C CNN
+F 3 "" H 7750 1810 50  0001 C CNN
+F 4 "0603" V 7850 1810 50  0001 C CNN "display_footprint"
+F 5 "1%" V 7950 1810 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8050 1810 50  0001 C CNN "Wattage"
+F 7 "YAG2321CT-ND" H 7750 1810 50  0001 C CNN "Digi-Key PN"
+	1    7750 1810
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Custom_Library:R_Custom R?
+U 1 1 5F68931C
+P 8210 1810
+AR Path="/5CB0BC26/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5E1352F5/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5CB6F1ED/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5CB7718D/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5EAE2D8A/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5E939D31/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5E939CFF/5F68931C" Ref="R?"  Part="1" 
+AR Path="/5E939D51/5F68931C" Ref="R612"  Part="1" 
+F 0 "R612" V 8110 1810 50  0000 C CNN
+F 1 "10" V 8210 1810 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" H 8210 1810 50  0001 C CNN
+F 3 "" H 8210 1810 50  0001 C CNN
+F 4 "0603" V 8310 1810 50  0001 C CNN "display_footprint"
+F 5 "1%" V 8410 1810 50  0001 C CNN "Tolerance"
+F 6 "1/10W" V 8510 1810 50  0001 C CNN "Wattage"
+F 7 "YAG2321CT-ND" H 8210 1810 50  0001 C CNN "Digi-Key PN"
+	1    8210 1810
+	-1   0    0    -1  
 $EndComp
 $EndSCHEMATC
