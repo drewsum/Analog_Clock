@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 25
+Sheet 1 24
 Title "Analog Clock"
 Date "2020-08-15"
 Rev "A"
@@ -87,30 +87,6 @@ F0 "USB UART Bridge" 50
 F1 "USB_Uart_Bridge.sch" 50
 $EndSheet
 $Sheet
-S 3110 5560 500  150 
-U 5E939F86
-F0 "USB Telemetry" 50
-F1 "USB_Telemetry.sch" 50
-$EndSheet
-$Sheet
-S 3110 5910 500  150 
-U 5E93A1E8
-F0 "Time of Flight" 50
-F1 "Time_of_Flight.sch" 50
-$EndSheet
-$Sheet
-S 3110 6260 500  150 
-U 5E93CC4E
-F0 "PGOOD LEDs" 50
-F1 "PGOOD_LEDs.sch" 50
-$EndSheet
-$Sheet
-S 3110 6610 500  150 
-U 5E93E000
-F0 "Status LEDs" 50
-F1 "Status_LEDs.sch" 50
-$EndSheet
-$Sheet
 S 7100 1360 500  150 
 U 5E98CF45
 F0 "Meter0" 50
@@ -184,14 +160,6 @@ Text Notes 840  5010 0    100  ~ 20
 12. Backup RTC
 Text Notes 840  5360 0    100  ~ 20
 13. USB UART Bridge
-Text Notes 840  5710 0    100  ~ 20
-14. USB Telemetry
-Text Notes 840  6060 0    100  ~ 20
-15. Time of Flight
-Text Notes 840  6410 0    100  ~ 20
-16. PGOOD LEDs
-Text Notes 840  6760 0    100  ~ 20
-17. Status LEDs
 Text Notes 840  1160 0    100  ~ 20
 01. Table of Contents
 Text Notes 5290 1510 0    100  ~ 20
@@ -210,4 +178,30 @@ Text Notes 5290 3610 0    100  ~ 20
 24. Misc Circuits
 Text Notes 5290 3960 0    100  ~ 20
 25. Mechanical
+Text Notes 840  6760 0    100  ~ 20
+17. Status LEDs
+Text Notes 840  6410 0    100  ~ 20
+16. PGOOD LEDs
+Text Notes 840  6060 0    100  ~ 20
+15. Time of Flight
+$Sheet
+S 3110 6610 500  150 
+U 5E93E000
+F0 "Status LEDs" 50
+F1 "Status_LEDs.sch" 50
+$EndSheet
+$Sheet
+S 3110 6260 500  150 
+U 5E93CC4E
+F0 "PGOOD LEDs" 50
+F1 "PGOOD_LEDs.sch" 50
+$EndSheet
+$Sheet
+S 3110 5910 500  150 
+U 5E93A1E8
+F0 "Time of Flight" 50
+F1 "Time_of_Flight.sch" 50
+$EndSheet
+Text Notes 840  5710 0    100  ~ 20
+14. (Reserved)
 $EndSCHEMATC

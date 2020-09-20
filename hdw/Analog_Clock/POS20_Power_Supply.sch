@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 6 25
+Sheet 6 24
 Title "Analog Clock"
 Date "2020-08-15"
 Rev "A"
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L power:GND #PWR0618
-U 1 1 5A4AC392
-P 4230 7580
-F 0 "#PWR0618" H 4230 7330 50  0001 C CNN
-F 1 "GND" H 4230 7430 50  0000 C CNN
-F 2 "" H 4230 7580 50  0000 C CNN
-F 3 "" H 4230 7580 50  0000 C CNN
-	1    4230 7580
-	1    0    0    -1  
-$EndComp
 $Comp
 L Custom_Library:C_Custom C606
 U 1 1 5A4AC3A5
@@ -38,47 +27,6 @@ F 5 "50V" H 3760 7350 50  0000 R CNN "Voltage"
 F 6 "X7R" H 3760 7250 50  0000 R CNN "Dielectric"
 F 7 "399-7845-1-ND" H 0   470 50  0001 C CNN "Digi-Key PN"
 	1    3910 7350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C609
-U 1 1 5A4AC3AF
-P 4550 7350
-F 0 "C609" H 4575 7450 50  0000 L CNN
-F 1 "1nF" H 4575 7250 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4588 7200 50  0001 C CNN
-F 3 "" H 4575 7450 50  0001 C CNN
-F 4 "0603" H 4400 7450 50  0001 R CNN "display_footprint"
-F 5 "50V" H 4400 7350 50  0001 R CNN "Voltage"
-F 6 "X7R" H 4400 7250 50  0001 R CNN "Dielectric"
-F 7 "399-1083-1-ND" H 0   470 50  0001 C CNN "Digi-Key PN"
-	1    4550 7350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom_Library:C_Custom C608
-U 1 1 5A4AC3B9
-P 4230 7350
-F 0 "C608" H 4255 7450 50  0000 L CNN
-F 1 "10nF" H 4255 7250 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4268 7200 50  0001 C CNN
-F 3 "" H 4255 7450 50  0001 C CNN
-F 4 "0603" H 4080 7450 50  0001 R CNN "display_footprint"
-F 5 "50V" H 4080 7350 50  0001 R CNN "Voltage"
-F 6 "X7R" H 4080 7250 50  0001 R CNN "Dielectric"
-F 7 "399-7842-1-ND" H 0   470 50  0001 C CNN "Digi-Key PN"
-	1    4230 7350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR0617
-U 1 1 5A4AC3C0
-P 4230 7120
-F 0 "#PWR0617" H 4230 6970 50  0001 C CNN
-F 1 "+3.3V" H 4230 7260 50  0000 C CNN
-F 2 "" H 4230 7120 50  0000 C CNN
-F 3 "" H 4230 7120 50  0000 C CNN
-	1    4230 7120
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -145,24 +93,6 @@ $EndComp
 Wire Wire Line
 	8750 1420 8750 1500
 Wire Wire Line
-	3910 7160 3910 7200
-Connection ~ 4230 7160
-Wire Wire Line
-	4550 7160 4550 7200
-Wire Wire Line
-	3910 7160 4230 7160
-Wire Wire Line
-	4230 7120 4230 7160
-Wire Wire Line
-	3910 7540 3910 7500
-Connection ~ 4230 7540
-Wire Wire Line
-	4550 7540 4550 7500
-Wire Wire Line
-	3910 7540 4230 7540
-Wire Wire Line
-	4230 7500 4230 7540
-Wire Wire Line
 	3490 6350 3490 6850
 Wire Wire Line
 	2050 6750 2050 6850
@@ -185,14 +115,6 @@ F 3 "" H 9310 1430 50  0001 C CNN
 	1    9310 1430
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4230 7160 4550 7160
-Wire Wire Line
-	4230 7160 4230 7200
-Wire Wire Line
-	4230 7540 4550 7540
-Wire Wire Line
-	4230 7540 4230 7580
 Wire Wire Line
 	2050 6850 2050 6950
 Wire Wire Line
@@ -908,6 +830,28 @@ F 5 "50V" H 4060 4480 50  0000 R CNN "Voltage"
 F 6 "X5R" H 4060 4380 50  0000 R CNN "Dielectric"
 F 7 "490-18664-1-ND" H 4635 4980 60  0001 C CNN "Digi-Key PN"
 	1    4210 4480
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0617
+U 1 1 5F53B335
+P 3910 7200
+F 0 "#PWR0617" H 3910 7050 50  0001 C CNN
+F 1 "+3.3V" H 3910 7340 50  0000 C CNN
+F 2 "" H 3910 7200 50  0001 C CNN
+F 3 "" H 3910 7200 50  0001 C CNN
+	1    3910 7200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0618
+U 1 1 5F53B7AC
+P 3910 7500
+F 0 "#PWR0618" H 3910 7250 50  0001 C CNN
+F 1 "GND" H 3910 7350 50  0000 C CNN
+F 2 "" H 3910 7500 50  0001 C CNN
+F 3 "" H 3910 7500 50  0001 C CNN
+	1    3910 7500
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
