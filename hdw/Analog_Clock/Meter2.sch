@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 20 24
+Sheet 16 25
 Title "Analog Clock"
 Date "2020-08-15"
 Rev "A"
@@ -609,7 +609,7 @@ Wire Wire Line
 	6100 3060 6100 2920
 Connection ~ 6100 2630
 $Comp
-L Amplifier_Operational:OPA2197xDGK U2004
+L Custom_Library:OPA2197xDGK U2004
 U 1 1 5EA45E04
 P 6480 1950
 F 0 "U2004" H 6480 2310 50  0000 L CNN
@@ -621,7 +621,7 @@ F 4 "296-44774-1-ND" H 6480 1950 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:OPA2197xDGK U2004
+L Custom_Library:OPA2197xDGK U2004
 U 3 1 5EA4657D
 P 6480 1950
 F 0 "U2004" H 6480 2230 50  0000 L CNN
@@ -633,7 +633,7 @@ F 4 "296-44774-1-ND" H 6480 1950 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:OPA2197xDGK U2004
+L Custom_Library:OPA2197xDGK U2004
 U 2 1 5EA49816
 P 6480 4510
 F 0 "U2004" H 6480 4710 50  0000 L CNN

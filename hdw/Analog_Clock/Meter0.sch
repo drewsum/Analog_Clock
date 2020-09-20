@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 18 24
+Sheet 15 25
 Title "Analog Clock"
 Date "2020-08-15"
 Rev "A"
@@ -595,19 +595,7 @@ Wire Wire Line
 	6100 3060 6100 2920
 Connection ~ 6100 2630
 $Comp
-L Amplifier_Operational:OPA2197xDGK U1804
-U 1 1 5F4617C6
-P 6480 1950
-F 0 "U1804" H 6480 2310 50  0000 L CNN
-F 1 "OPA2197xDGK" H 6480 2150 50  0000 L CNN
-F 2 "Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm" H 6480 1950 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa2197.pdf" H 6480 1950 50  0001 C CNN
-F 4 "296-44774-1-ND" H 6480 1950 50  0001 C CNN "Digi-Key PN"
-	1    6480 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Amplifier_Operational:OPA2197xDGK U1804
+L Custom_Library:OPA2197xDGK U1804
 U 3 1 5F4617C7
 P 6480 1950
 F 0 "U1804" H 6480 2230 50  0000 L CNN
@@ -619,7 +607,7 @@ F 4 "296-44774-1-ND" H 6480 1950 50  0001 C CNN "Digi-Key PN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:OPA2197xDGK U1804
+L Custom_Library:OPA2197xDGK U1804
 U 2 1 5F4617C9
 P 6480 4510
 F 0 "U1804" H 6480 4710 50  0000 L CNN
@@ -1349,4 +1337,16 @@ $EndComp
 Wire Wire Line
 	4600 2600 4600 2680
 Connection ~ 4600 2680
+$Comp
+L Custom_Library:OPA2197xDGK U1804
+U 1 1 5F4617C6
+P 6480 1950
+F 0 "U1804" H 6480 2310 50  0000 L CNN
+F 1 "OPA2197xDGK" H 6480 2150 50  0000 L CNN
+F 2 "Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm" H 6480 1950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa2197.pdf" H 6480 1950 50  0001 C CNN
+F 4 "296-44774-1-ND" H 6480 1950 50  0001 C CNN "Digi-Key PN"
+	1    6480 1950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

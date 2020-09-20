@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 1 24
+Sheet 1 25
 Title "Analog Clock"
 Date "2020-08-15"
 Rev "A"
@@ -85,6 +85,12 @@ S 3110 5210 500  150
 U 5E939F76
 F0 "USB UART Bridge" 50
 F1 "USB_Uart_Bridge.sch" 50
+$EndSheet
+$Sheet
+S 3110 5560 500  150 
+U 5F6EEAE8
+F0 "USB Telemetry" 50
+F1 "USB_Telemetry.sch" 50
 $EndSheet
 $Sheet
 S 7100 1360 500  150 
@@ -203,5 +209,5 @@ F0 "Time of Flight" 50
 F1 "Time_of_Flight.sch" 50
 $EndSheet
 Text Notes 840  5710 0    100  ~ 20
-14. (Reserved)
+14. USB Telemtry
 $EndSCHEMATC
