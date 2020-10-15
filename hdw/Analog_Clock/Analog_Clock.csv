@@ -1,0 +1,111 @@
+Item,Qty,Reference(s),Value,LibPart,Footprint,Datasheet,Ampacity,Baud_Rate,Configuration,Data_Length,Dielectric,Digi-Key PN,Flow_Control,Parity,Stop_Bits,Tolerance,Voltage,Wattage,display_footprint
+1,1,BT1201,CR1616,Device:Battery_Cell,,~,,,,,,P034-ND,,,,,,,
+2,1,BT1202,CR1616_Holder,Device:Battery_Cell,Custom Footprints Library:BAT_BU1632SM-JJ-GTR,~,,,,,,BU1632SM-JJ-GCT-ND,,,,,,,
+3,1,BZ2401,CST-931RP-A,Device:Buzzer,Buzzer_Beeper:MagneticBuzzer_CUI_CST-931RP-A,~,,,,,,102-1461-ND,,,,,,,
+4,16,"C201, C203, C403, C904, C905, C910, C914, C918, C919, C1103, C1104, C1809, C1909, C2009, C2203, C2204",10nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7842-1-ND,,,,,50V,,603
+5,82,"C202, C301, C302, C303, C404, C406, C501, C502, C503, C603, C604, C606, C701, C702, C703, C801, C802, C901, C902, C908, C912, C916, C917, C1101, C1102, C1202, C1203, C1204, C1205, C1301, C1302, C1304, C1306, C1307, C1310, C1312, C1401, C1402, C1403, C1504, C1602, C1603, C1605, C1606, C1607, C1701, C1702, C1703, C1704, C1801, C1802, C1806, C1807, C1808, C1811, C1812, C1901, C1902, C1906, C1907, C1908, C1911, C1912, C2001, C2002, C2006, C2007, C2008, C2011, C2012, C2103, C2201, C2202, C2207, C2208, C2301, C2302, C2303, C2304, C2401, C2402, C2403",0.1uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-7845-1-ND,,,,,50V,,603
+6,12,"C204, C906, C907, C911, C915, C920, C921, C1105, C1106, C1810, C1910, C2010",1nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-1083-1-ND,,,,,50V,,603
+7,1,C205,100uF,Custom_Library:CP_Tant_Custom,Capacitors_Tantalum_SMD:CP_Tantalum_Case-X_EIA-7343-43_Reflow,,,,,,,718-1102-1-ND,,,,10%,16V,,7343
+8,1,C401,10uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X7R,1276-7031-1-ND,,,,,25V,,1206
+9,13,"C402, C903, C909, C913, C1201, C1303, C1501, C1502, C1503, C2101, C2102, C2205, C2206",10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X5R,490-10474-1-ND,,,,,10V,,603
+10,1,C405,100uF,Custom_Library:C_Custom,Capacitors_SMD:C_1206,,,,,,X5R,587-1963-1-ND,,,,,6.3V,,1206
+11,4,"C601, C602, C607, C610",10uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X5R,490-18664-1-ND,,,,,50V,,805
+12,1,C605,6.8nF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,X7R,399-1089-1-ND,,,,,50V,,603
+13,5,"C1309, C1311, C1805, C1905, C2005",47pF,Custom_Library:C_Custom,Capacitors_SMD:C_0603,,,,,,NP0,399-7918-1-ND,,,,,50V,,603
+14,8,"C1601, C1604, C1803, C1804, C1903, C1904, C2003, C2004",4.7uF,Custom_Library:C_Custom,Capacitors_SMD:C_0805,,,,,,X7R,1276-2970-1-ND,,,,,16V,,805
+15,1,D201,24V,Device:D_TVS_ALT,Diodes_SMD:D_SMA,~,,,,,,SMAJ24CALFCT-ND,,,,,,,
+16,2,"D401, D1501",BAT48JFILM,Diode:BAT48JFILM,Diode_SMD:D_SOD-323,www.st.com/resource/en/datasheet/bat48.pdf,,,,,,497-5711-1-ND,,,,,,,
+17,2,"D601, D2401",MBR0580,Diode:MBR0580,Diode_SMD:D_SOD-123,http://www.mccsemi.com/up_pdf/MBR0520~MBR0580(SOD123).pdf,,,,,,MBR0580S1-7DICT-ND,,,,,,,
+18,1,D801,PESD3V3L5UY,Power_Protection:PESD3V3L5UY,Package_TO_SOT_SMD:SOT-363_SC-70-6,https://assets.nexperia.com/documents/data-sheet/PESDXL5UF_V_Y.pdf,,,,,,1727-3828-1-ND,,,,,,,
+19,2,"D1301, D2304",Yellow,Device:LED,LEDs:LED_0603,~,,,,,,754-1124-1-ND,,,,,,,
+20,11,"D1601, D1602, D1603, D1605, D1701, D1801, D1901, D2001, D2301, D2302, D2303",Green,Device:LED,LEDs:LED_0603,~,,,,,,754-1121-1-ND,,,,,,,
+21,4,"D1604, D1702, D1703, D1704",Red,Device:LED,LEDs:LED_0603,~,,,,,,754-1117-1-ND,,,,,,,
+22,3,"D1802, D1902, D2002",ASMB-MTB0-0A3A2,LED:ASMB-MTB0-0A3A2,LED_SMD:LED_Avago_PLCC4_3.2x2.8mm_CW,https://docs.broadcom.com/docs/AV02-4186EN,,,,,,516-3279-1-ND,,,,,,,
+23,3,"D1803, D1903, D2003","BZX384-B3V3,115",Diode:DZ2S033X0L,Diode_SMD:D_SOD-323,https://industrial.panasonic.com/content/data/SC/ds/ds4/DZ2S03300L_E.pdf,,,,,,1727-3654-1-ND,,,,,,,
+24,1,DOC301,0x40,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+25,1,DOC302,0x18,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+26,1,DOC501,0x41,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+27,1,DOC502,0x19,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+28,1,DOC701,0x42,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+29,1,DOC702,0x1A,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+30,1,DOC1201,0x68,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+31,1,DOC1301,COM_Port_Settings,Custom_Library:COM_Port_Settings,,,,115200 bps,,8 bit,,,None,None,1,,,,
+32,1,DOC1401,0x43,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+33,1,DOC1402,0x1B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+34,1,DOC1501,0x6B,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+35,1,DOC2101,0x14,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+36,1,DOC2401,0x1C,Custom_Library:I2C_Address,,,,,,,,,,,,,,,
+37,4,"H2501, H2502, H2503, H2504",3mm Mounting Hole,Mechanical:MountingHole,Mounting_Holes:MountingHole_3mm_Pad_Via,~,,,,,,,,,,,,,
+38,1,J201,+12V IN,Connector:Barrel_Jack_Switch,Connectors:BARREL_JACK,~,,,,,,,,,,,,,
+39,1,J801,PICKIT4,Connector_Generic:Conn_01x08,Custom Footprints Library:PICKIT4_Header,~,,,,,,,,,,,,,
+40,1,J1301,USB_B_Mini,Connector:USB_B_Mini,Connectors:USB_Mini-B,~,,,,,,732-2109-1-ND,,,,,,,
+41,1,J2401,I2C,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+42,1,J2402,USB UART,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+43,1,J2403,DAC SPI,Connector_Generic:Conn_01x03,Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm,~,,,,,,,,,,,,,
+44,1,L401,3.3uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-1212,,2.7A,,,,,541-2567-1-ND,,,,20%,,,IHLP1212
+45,1,L601,10uH,Custom_Library:L_Custom,Inductors_SMD:L_Vishay_IHLP-2525,,3A,,,,,541-1013-1-ND,,,,20%,,,IHLP2525
+46,11,"L801, L802, L901, L902, L1101, L1102, L1301, L1302, L1801, L1901, L2001",600R 0.5A,Device:Ferrite_Bead,Inductors_SMD:L_0603,~,,,,,,732-1593-1-ND,,,,,,,
+47,3,"MES1801, MES1901, MES2001",Voltmeter_DC,Device:Voltmeter_DC,Custom Footprints Library:SO-45_Panel_Meter,~,,,,,,,,,,,,,
+48,28,"MK1801, MK1802, MK1805, MK1806, MK1807, MK1808, MK1811, MK1812, MK1901, MK1902, MK1905, MK1906, MK1907, MK1908, MK1911, MK1912, MK2001, MK2002, MK2005, MK2006, MK2007, MK2008, MK2011, MK2012, MK2501, MK2502, MK2507, MK2508",#4-40 Screw,Custom_Library:Screw,,,,,,,,36-9900-ND,,,,,,,
+49,16,"MK1803, MK1804, MK1809, MK1810, MK1903, MK1904, MK1909, MK1910, MK2003, MK2004, MK2009, MK2010, MK2503, MK2504, MK2505, MK2506",#4-40 Standoff,Custom_Library:Standoff,,,,,,,,1772-1052-ND,,,,,,,
+50,1,N201,+12V 1A Power Supply,Mechanical:Housing,,~,,,,,,993-1335-ND,,,,,,,
+51,3,"Q401, Q801, Q1601",BSS214NW,Transistor_FET:BSS214NW,Package_TO_SOT_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+52,1,Q402,ZXMS6004FFTA,Custom_Library:ZXMS6004FFTA,Package_TO_SOT_SMD:SOT-23,https://www.diodes.com/assets/Datasheets/ZXMS6004FF.pdf,,,,,,ZXMS6004FFCT-ND,,,,,,,
+53,1,Q601,FDC5612,Custom_Library:FDC5612,TO_SOT_Packages_SMD:SOT-23-6,https://www.onsemi.com/pub/Collateral/FDC5612-D.PDF,,,,,,FDC5612CT-ND,,,,,,,
+54,1,Q2401,BSS214NW,Transistor_FET:BSS214NW,TO_SOT_Packages_SMD:SOT-323_SC-70,https://www.infineon.com/dgdl/Infineon-BSS214NW-DS-v02_02-en.pdf?fileId=db3a30431b3e89eb011b695aebc01bde,,,,,,BSS214NWH6327XTSA1CT-ND,,,,,,,
+55,1,R201,51.1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT51K1TR-ND,,,,1%,,1/10W,603
+56,1,R202,1.15k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1K15CT-ND,,,,1%,,1/10W,603
+57,2,"R203, R209",5.11k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,CR0603-FX-5111ELFCT-ND,,,,1%,,1/10W,603
+58,47,"R204, R207, R211, R402, R403, R605, R607, R802, R804, R1001, R1002, R1102, R1103, R1106, R1107, R1203, R1305, R1602, R1603, R1701, R1702, R1705, R1706, R1804, R1805, R1807, R1904, R1905, R1907, R2004, R2005, R2007, R2101, R2203, R2204, R2205, R2206, R2207, R2208, R2301, R2302, R2305, R2306, R2402, R2403, R2405, R2407",10k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG2321CT-ND,,,,1%,,1/10W,603
+59,24,"R205, R210, R401, R404, R406, R608, R610, R612, R801, R803, R1309, R1313, R1601, R1801, R1802, R1803, R1901, R1902, R1903, R2001, R2002, R2003, R2404, R2406",10,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,Telemetry,,,YAG2321CT-ND,,,,1%,,1/10W,603
+60,3,"R206, R405, R1310",0.02,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,P16010CT-ND,,,,1%,,1W,612
+61,1,R208,13k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-13.0KHRCT-ND,,,,1%,,1/10W,603
+62,1,R407,562k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-562KHRCT-ND,,,,1%,,1/10W,603
+63,1,R408,180k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-180KHRCT-ND,,,,1%,,1/10W,603
+64,5,"R601, R1306, R1308, R1314, R1315",100k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT100KCT-ND,,,,1%,,1/10W,603
+65,1,R602,383,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-383HRCT-ND,,,,1%,,1/10W,603
+66,1,R603,1.87k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-1.87KHRCT-ND,,,,1%,,1/10W,603
+67,2,"R604, R613",11.5k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-11.5KHRCT-ND,,,,1%,,1/10W,603
+68,1,R606,22k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-22KLDCT-ND,,,,1%,,1/10W,603
+69,1,R609,130m,Custom_Library:R_Custom,Resistors_SMD:R_0805,,,,,,,RL12S.13FCT-ND,,,,1%,,1/4W,805
+70,1,R611,1,Custom_Library:R_Custom,Resistors_SMD:R_0612,,,,,,,RHM1220CT-ND,,,,1%,,1W,612
+71,22,"R614, R805, R1301, R1604, R1605, R1606, R1607, R1608, R1703, R1704, R1707, R1708, R1806, R1812, R1906, R1912, R2006, R2012, R2303, R2304, R2307, R2308",1k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-1.00KHRCT-ND,,,,1%,,1/10W,603
+72,2,"R1104, R1105",100,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT100RCT-ND,,,,1%,,1/10W,603
+73,2,"R1201, R2401",1.07M,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT1M07CT-ND,,,,1%,,1/10W,603
+74,1,R1202,220k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT220KCT-ND,,,,1%,,1/10W,603
+75,1,R1302,487k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-487KHRCT-ND,,,,1%,,1/10W,603
+76,1,R1303,6.04k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT6K04CT-ND,,,,1%,,1/10W,603
+77,1,R1304,40.2k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT40K2CT-ND,,,,1%,,1/10W,603
+78,2,"R1311, R1312",27,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,311-27.0HRCT-ND,,,,1%,,1/10W,603
+79,6,"R1808, R1809, R1908, R1909, R2008, R2009",1.01k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG4489CT-ND,,,,0.10%,,1/10W,603
+80,6,"R1810, R1811, R1910, R1911, R2010, R2011",9.09k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG1755CT-ND,,,,0.10%,,1/10W,603
+81,1,R2102,3.65k,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,YAG4547CT-ND,,,,0.10%,,1/10W,603
+82,2,"R2201, R2202",499,Custom_Library:R_Custom,Resistors_SMD:R_0603,,,,,,,RMCF0603FT499RCT-ND,,,,1%,,1/10W,603
+83,1,SW801,MRST,Switch:SW_Push,Buttons_Switches_THT:SW_PUSH_6mm,,,,,,,,,,,,,,
+84,2,"SW2201, SW2202",Cap_Touch,Custom_Library:Cap_Touch,Custom Footprints Library:Capacitive_Touch_Pad,,,,,,,,,,,,,,
+85,1,U201,TPS26600RHFT,Custom_Library:TPS26600RHFT,Housings_DFN_QFN:QFN-24-1EP_4x5mm_Pitch0.5mm,http://www.ti.com/lit/ds/symlink/tps2660.pdf,,,,,,296-45478-1-ND,,,,,,,
+86,4,"U301, U501, U701, U1401",INA219BxDCN,Analog_ADC:INA219BxDCN,Package_TO_SOT_SMD:SOT-23-8,http://www.ti.com/lit/ds/symlink/ina219.pdf,,,Telemetry,,,296-46420-1-ND,,,,,,,
+87,5,"U302, U502, U702, U1402, U2403",MCP9804,Sensor_Temperature:MCP9804_DFN,Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.3x1.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/22203b.pdf,,,Telemetry,,,MCP9804T-E/MCCT-ND,,,,,,,
+88,1,U401,TPS62150,Custom_Library:TPS62150,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm,https://www.ti.com/lit/ds/symlink/tps62150.pdf?&ts=1589125931316,,,,,,296-41757-1-ND,,,,,,,
+89,2,"U601, U1301",TLV6700,Custom_Library:TLV6700,Package_TO_SOT_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+90,1,U602,LT3757,Custom_Library:LT3757,Housings_DFN_QFN:DFN-10-1EP_3x3mm_Pitch0.5mm,http://www.analog.com/media/en/technical-documentation/data-sheets/3757Afe.pdf,,,,,,LT3757EDD#PBF-ND,,,,,,,
+91,1,U1001,PIC32MZ0512EFE064T-I_PT,Custom_Library:PIC32MZ0512EFE064T-I_PT,Package_QFP:TQFP-64_10x10mm_P0.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/60001320E.pdf,,,,,,PIC32MZ0512EFE064T-I/PTCT-ND,,,,,,,
+92,1,U1201,DS3231MZ,Timer_RTC:DS3231MZ,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,http://datasheets.maximintegrated.com/en/ds/DS3231M.pdf,,,,,,DS3231MZ+-ND,,,,,,,
+93,1,U1202,TLV6700,Custom_Library:TLV6700,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tlv6700.pdf,,,,,,296-51696-1-ND,,,,,,,
+94,1,U1302,FT234XD,Custom_Library:FT234XD,Housings_DFN_QFN:DFN-12-1EP_3x3mm_Pitch0.45mm,http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT234XD.pdf,,,,,,768-1178-1-ND,,,,,,,
+95,1,U1304,TXB0102DCU,Logic_LevelTranslator:TXB0102DCU,Package_SO:VSSOP-8_2.4x2.1mm_P0.5mm,http://www.ti.com/lit/ds/symlink/txb0102.pdf,,,,,,296-22862-1-ND,,,,,,,
+96,1,U1305,TPD3S014DBVR,Custom_Library:TPD3S014DBVR,TO_SOT_Packages_SMD:SOT-23-6,http://www.ti.com/lit/ds/symlink/tpd3s014.pdf,,,,,,296-38835-1-ND,,,,,,,
+97,1,U1501,DS1683,Custom_Library:DS1683,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,https://datasheets.maximintegrated.com/en/ds/DS1683.pdf,,,,,,DS1683S+-ND,,,,,,,
+98,12,"U1601, U1602, U1604, U1606, U1701, U1702, U1703, U1704, U2301, U2302, U2303, U2304",74LVC1G06,Custom_Library:74LVC1G06_Power,TO_SOT_Packages_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/ds/symlink/sn74lvc1g06.pdf,,,,,,296-8484-1-ND,,,,,,,
+99,1,U1603,LP2985-3.3,Regulator_Linear:LP2985-3.3,Package_TO_SOT_SMD:SOT-23-5,http://www.ti.com/lit/ds/symlink/lp2985.pdf,,,,,,LP2985IM5X-3.3/NOPBCT-ND,,,,,,,
+100,4,"U1605, U1801, U1901, U2001",74LVC1G07,Custom_Library:74LVC1G07_Power,TO_SOT_Packages_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf,,,,,,296-8486-1-ND,,,,,,,
+101,3,"U1802, U1902, U2002",LT1790-2.048,Reference_Voltage:LT1790-2.048,Package_TO_SOT_SMD:TSOT-23-6,https://www.analog.com/media/en/technical-documentation/data-sheets/1790fc.pdf,,,,,,LT1790BIS6-2.048#TRMPBFCT-ND,,,,,,,
+102,3,"U1803, U1903, U2003",DAC8551,Custom_Library:DAC8551,Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm,http://www.ti.com/lit/ds/symlink/dac8551.pdf,,,,,,296-38925-1-ND,,,,,,,
+103,3,"U1804, U1904, U2004",OPA2197xDGK,Custom_Library:OPA2197xDGK,Package_SO:VSSOP-8_3.0x3.0mm_P0.65mm,http://www.ti.com/lit/ds/symlink/opa2197.pdf,,,,,,296-44774-1-ND,,,,,,,
+104,1,U2101,LP5009,Custom_Library:LP5009,Housings_DFN_QFN:UQFN-20-1EP_3x3mm_Pitch0.4mm,https://www.ti.com/lit/ds/symlink/lp5009.pdf?ts=1596330853683,,,,,,296-LP5009RUKRCT-ND,,,,,,,
+105,2,"U2201, U2202",AT42QT1010-TSHR,Sensor_Touch:AT42QT1010-TSHR,TO_SOT_Packages_SMD:SOT-23-6,http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-9541-AT42-QTouch-BSW-AT42QT1010_Datasheet.pdf,,,,,,AT42QT1010-TSHRCT-ND,,,,,,,
+106,2,"U2203, U2204",74LVC1G17,Custom_Library:74LVC1G17_Power,TO_SOT_Packages_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf,,,,,,296-11934-1-ND,,,,,,,
+107,1,U2401,LTC6900,Custom_Library:LTC6900,Package_TO_SOT_SMD:SOT-23-5,https://www.analog.com/media/en/technical-documentation/data-sheets/6900fa.pdf,,,,,,LTC6900CS5#TRMPBFCT-ND,,,,,,,
+108,1,U2402,74LVC1G08,Custom_Library:74LVC1G08_Power,Package_TO_SOT_SMD:SOT-353_SC-70-5,http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf,,,,,,296-11602-1-ND,,,,,,,
+109,1,X1101,ASE-8.000MHz,Oscillator:ASE-xxxMHz,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm,http://www.abracon.com/Oscillators/ASV.pdf,,,,,,"	535-9558-1-ND",,,,,,,
+110,1,X1102,ECS-327KE,Custom_Library:ECS-327KE,Custom Footprints Library:ECS-327KE,,,,,,,XC1751CT-ND,,,,,,,
