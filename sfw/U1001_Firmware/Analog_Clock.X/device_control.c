@@ -22,6 +22,7 @@
 #include "device_control.h"
 #include "terminal_control.h"
 #include "pin_macros.h"
+#include "gpio_setup.h"
 
 // private function prototype
 
@@ -157,7 +158,8 @@ void clockInitialize(void) {
     // This sets FRCDIV frequency to 8 MHz
     OSCCONbits.FRCDIV = 0b000;
     
-    // Enable external clock into primary oscillator
+    // Enable external clock into primary oscillator (POSC EC)
+    TRISCbits.TRISC15 = TRIS_OUTPUT;
     POSC_EC_ENABLE_PIN = HIGH;
     
     // wait for POSC EC to be ready
@@ -165,6 +167,9 @@ void clockInitialize(void) {
     
     // Initialize the PLL
     PLLInitialize();
+    
+    // wait for PLL to stabilize
+    while (CLKSTATbits.SPDIVRDY == 0);
     
     // Set new clock source as SPLL
     OSCCONbits.NOSC = 0b001;
@@ -188,9 +193,6 @@ void PLLInitialize(void) {
  
     // Set PLL input range as 5-10 MHz
     SPLLCONbits.PLLRANGE = 0b001;
-    
-    // wait for POSC to be ready
-    while (CLKSTATbits.POSCRDY == 0);
     
     // Set the input to the PLL as FRC
     SPLLCONbits.PLLICLK = 0;

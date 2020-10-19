@@ -258,6 +258,8 @@ void portCGPIOInitialize (void) {
     RPC13Rbits.RPC13R = REFCLKO1_PPS_OUTPUT;         // Assign REFCLKO1 to RC13
     gpioPinSetup(PORTC, 14, TRIS_INPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
     gpioPinSetup(PORTC, 15, TRIS_OUTPUT, LAT_LOW, ODC_DISABLE, ANALOG_DISABLE);
+    // LATCbits.LATC15 = LAT_LOW;
+    // TRISCbits.TRISC15 = TRIS_OUTPUT;
     
 }
 

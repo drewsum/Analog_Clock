@@ -46,10 +46,6 @@
 
 void main(void) {
     
-    // wait for +3.3V and +12V to be stable
-    while (POS12_PGOOD_PIN == LOW);
-    while (POS3P3_PGOOD_PIN == LOW);
-    
     // Save the cause of the most recent device reset
     // This also checks for configuration errors
 //    reset_cause = getResetCause();
@@ -101,23 +97,23 @@ void main(void) {
 //    printf("Beginning Host Initialization:\r\n");
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     
-    // setup GPIO pins
-    gpioInitialize();
-    printf("    GPIO Pins Initialized\n\r");
-    
     // Disable global interrupts so clocks can be initialized properly
     disableGlobalInterrupts();
     
     // Initialize system clocks
     clockInitialize();
-    printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
+    // printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
+    
+    // setup GPIO pins
+    gpioInitialize();
+    // printf("    GPIO Pins Initialized\n\r");
     
     // Configure interrupt controller
     interruptControllerInitialize();
     
     // Enable Global Interrupts
     enableGlobalInterrupts();
-    printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
+    // printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
     
     // Setup error handling
 //    errorHandlerInitialize();
