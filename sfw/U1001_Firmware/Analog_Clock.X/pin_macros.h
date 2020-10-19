@@ -45,6 +45,7 @@
 #define METER_LED_ENABLE_PIN        LATFbits.LATF1
 
 // Port G
+#define HEARTBEAT_LED_PIN           LATGbits.LATG6
 #define RESET_LED_PIN               LATGbits.LATG7
 #define CPU_TRAP_LED_PIN            LATGbits.LATG8
 #define ERROR_LED_PIN               LATGbits.LATG9

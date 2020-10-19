@@ -15,7 +15,7 @@
 #include "configuration.h"
 #include "device_control.h"
 #include "32mz_interrupt_control.h"
-//#include "heartbeat_timer.h"
+#include "heartbeat_timer.h"
 //#include "watchdog_timer.h"
 //#include "error_handler.h"
 //#include "prefetch.h"
@@ -132,7 +132,7 @@ void main(void) {
 //    printf("    Unused Peripheral Modules Disabled\n\r");
 //
 //    // Setup heartbeat timer
-//    heartbeatTimerInitialize();
+    heartbeatTimerInitialize();
 //    printf("    Heartbeat Timer Initialized\n\r");
 //    
 //    // setup watchdog timer
