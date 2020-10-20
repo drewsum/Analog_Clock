@@ -304,7 +304,7 @@ void usbUartHashTableInitialize(void) {
             "Prints help message for all supported serial commands", 
             helpCommandFunction);
     usbUartAddCommand("Reset", 
-            "Executes an MCU software reset", 
+            "Executes a host software reset", 
             resetCommand);
     usbUartAddCommand("Clear Screen", 
             "Clears the serial port terminal", 
