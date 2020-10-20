@@ -156,17 +156,17 @@ void clockInitialize(void) {
 
     // set the FRC divider to 1
     // This sets FRCDIV frequency to 8 MHz
-    OSCCONbits.FRCDIV = 0b000;
+    // OSCCONbits.FRCDIV = 0b000;
     
     // Enable external clock into primary oscillator (POSC EC)
     TRISCbits.TRISC15 = TRIS_OUTPUT;
     POSC_EC_ENABLE_PIN = HIGH;
     
     // wait for POSC EC to be ready
-    while (CLKSTATbits.POSCRDY == 0);
+    //while (CLKSTATbits.POSCRDY == 0);
     
     // wait for PLL to stabilize
-    while (CLKSTATbits.SPDIVRDY == 0);
+    //while (CLKSTATbits.SPDIVRDY == 0);
     
     // Set new clock source as POSC EC
     OSCCONbits.NOSC = 0b010;
@@ -181,7 +181,7 @@ void clockInitialize(void) {
     PLLInitialize();
     
     // wait for PLL to stabilize
-    while (CLKSTATbits.SPDIVRDY == 0);
+    //while (CLKSTATbits.SPDIVRDY == 0);
     
     // Set new clock source as SPLL
     OSCCONbits.NOSC = 0b001;

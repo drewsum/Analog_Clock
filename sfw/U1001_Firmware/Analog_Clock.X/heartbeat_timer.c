@@ -4,10 +4,10 @@
 #include <stdio.h>
 
 #include "heartbeat_timer.h"
-// #include "heartbeat_services.h"
+#include "heartbeat_services.h"
 #include "pin_macros.h"
 
-// This function initializes the heartbeat timer
+// This function initializes the heartbeat timer (100Hz)
 void heartbeatTimerInitialize(void) {
     
     // Stop timer 1
@@ -127,11 +127,9 @@ void __ISR(_TIMER_1_VECTOR, IPL6SRS) hearbeatTimerISR(void) {
     
     // increment heartbeat_systick
     heartbeat_systick++;
-    if(heartbeat_systick == 100) heartbeat_systick = 0;
     
-    // Set flags to execute 100 Hz code
-    #warning "add heartbeat services"
-    // heartbeatServices();
+    // Set flags to execute recurring function calls
+    heartbeatServices();
     
     // Clear interrupt flag
     clearInterruptFlag(Timer1);

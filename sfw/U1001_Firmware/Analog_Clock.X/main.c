@@ -100,13 +100,13 @@ void main(void) {
     // Disable global interrupts so clocks can be initialized properly
     disableGlobalInterrupts();
     
-    // Initialize system clocks
-    clockInitialize();
-    // printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
-    
     // setup GPIO pins
     gpioInitialize();
     // printf("    GPIO Pins Initialized\n\r");
+    
+    // Initialize system clocks
+    clockInitialize();
+    // printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
     
     // Configure interrupt controller
     interruptControllerInitialize();
@@ -116,7 +116,7 @@ void main(void) {
     // printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
     
     // Setup error handling
-//    errorHandlerInitialize();
+    errorHandlerInitialize();
 //    printf("    Error Handler Initialized\n\r");
 //    
 //    // Setup USB UART debugging
