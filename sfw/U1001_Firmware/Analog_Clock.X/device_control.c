@@ -165,6 +165,18 @@ void clockInitialize(void) {
     // wait for POSC EC to be ready
     while (CLKSTATbits.POSCRDY == 0);
     
+    // wait for PLL to stabilize
+    while (CLKSTATbits.SPDIVRDY == 0);
+    
+    // Set new clock source as POSC EC
+    OSCCONbits.NOSC = 0b010;
+    
+    // Initiate clock switch
+    OSCCONbits.OSWEN = 1;
+    
+    // wait for switch to complete
+    while (OSCCONbits.OSWEN == 1);
+    
     // Initialize the PLL
     PLLInitialize();
     
@@ -372,7 +384,7 @@ void PBCLK5Initialize(void) {
     while (PB5DIVbits.PBDIVRDY == 0);
     
     // Enable PBCLK5
-    PB5DIVbits.ON = 0;
+    PB5DIVbits.ON = 1;
     
 }
 
