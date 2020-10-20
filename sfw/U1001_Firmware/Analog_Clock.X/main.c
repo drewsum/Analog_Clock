@@ -26,7 +26,7 @@
 #include "gpio_setup.h"
 
 // Application
-//#include "heartbeat_services.h"
+#include "heartbeat_services.h"
 //#include "power_saving.h"
 //#include "telemetry.h"
 //#include "user_interface.h"
@@ -40,9 +40,9 @@
 
 // USB
 #include "terminal_control.h"
-//#include "uthash.h"
-//#include "usb_uart.h"
-//#include "usb_uart_rx_lookup_table.h"
+#include "uthash.h"
+#include "usb_uart.h"
+#include "usb_uart_rx_lookup_table.h"
 
 void main(void) {
     
@@ -51,16 +51,16 @@ void main(void) {
 //    reset_cause = getResetCause();
     
     // Clear the terminal
-//    terminalClearScreen();
-//    terminalSetCursorHome();
-//    terminalSetTitle("Pulse Oximeter Serial Terminal");
+    terminalClearScreen();
+    terminalSetCursorHome();
+    terminalSetTitle("Analog Clock Serial Terminal");
     
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Pulse Oximeter\r\n");
-//    printf("Firmware Version %s\r\n", FIRMWARE_VERSION_STR);
-//    printf("Created by Drew Maatman, 2020\r\n");
-//    terminalTextAttributesReset();
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Analog Clock\r\n");
+    printf("Firmware Version %s\r\n", FIRMWARE_VERSION_STR);
+    printf("Created by Drew Maatman, 2020\r\n");
+    terminalTextAttributesReset();
     
      // Print cause of reset
 //    if (    reset_cause == Undefined ||
@@ -93,35 +93,35 @@ void main(void) {
 //    printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
 //    terminalTextAttributesReset();
 //    
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//    printf("Beginning Host Initialization:\r\n");
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Beginning Host Initialization:\r\n");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     
     // Disable global interrupts so clocks can be initialized properly
     disableGlobalInterrupts();
     
     // setup GPIO pins
     gpioInitialize();
-    // printf("    GPIO Pins Initialized\n\r");
+    printf("    GPIO Pins Initialized\n\r");
     
     // Initialize system clocks
     clockInitialize();
-    // printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
+    printf("    Oscillators, Phase-Locked Loop, and System Clocks Initialized\n\r");
     
     // Configure interrupt controller
     interruptControllerInitialize();
     
     // Enable Global Interrupts
     enableGlobalInterrupts();
-    // printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
+    printf("    Interrupt Controller Initialized, Global Interrupts Enabled\n\r");
     
     // Setup error handling
     errorHandlerInitialize();
-//    printf("    Error Handler Initialized\n\r");
-//    
-//    // Setup USB UART debugging
-//    usbUartInitialize();
-//    printf("    USB UART Initialized, DMA buffer method used\n\r");
+    printf("    Error Handler Initialized\n\r");
+    
+    // Setup USB UART debugging
+    usbUartInitialize();
+    printf("    USB UART Initialized, DMA buffer method used\n\r");
 //    
 //    // Setup prefetch module
 //    prefetchInitialize();
@@ -133,12 +133,12 @@ void main(void) {
 //
 //    // Setup heartbeat timer
     heartbeatTimerInitialize();
-//    printf("    Heartbeat Timer Initialized\n\r");
-//    
-//    // setup watchdog timer
+    printf("    Heartbeat Timer Initialized\n\r");
+    
+    // setup watchdog timer
     watchdogTimerInitialize();
-//    printf("    Watchdog Timer Initialized\n\r");
-//    
+    printf("    Watchdog Timer Initialized\n\r");
+    
 //    // setup I2C
 //    I2CMaster_Initialize();
 //    printf("    I2C Bus Master Initialized\r\n");
@@ -171,14 +171,14 @@ void main(void) {
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("    Reset LED Disabled, boot complete\r\n");
-//    
-//    // Print end of boot message, reset terminal for user input
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
-//    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Reset LED Disabled, boot complete\r\n");
+    
+    // Print end of boot message, reset terminal for user input
+    terminalTextAttributesReset();
+    terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
+    
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("Entering IDLE mode\r\n");
 //    terminalTextAttributesReset();

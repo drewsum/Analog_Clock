@@ -15,22 +15,16 @@
  */
 /* ************************************************************************** */
 
-#ifndef _HEARTBEAT_SERVICES_H    /* Guard against multiple inclusion */
-#define _HEARTBEAT_SERVICES_H
+#ifndef _USB_UART_RX_LOOKUP_TABLE_H    /* Guard against multiple inclusion */
+#define _USB_UART_RX_LOOKUP_TABLE_H
 
-#include "xc.h"
+#include <xc.h>
+#include <stdio.h>
 
-#include "heartbeat_timer.h"
+// This function must be called at boot to set up the usb_uart_commands hash table
+void usbUartHashTableInitialize(void);
 
-#define FIRMWARE_VERSION_STR            "0.1"
-
-// API Variables
-volatile uint32_t device_on_time_counter;
-
-// This function executes actions every call of the heartbeat timer, and is used as an easy interface to do some action every second
-void heartbeatServices(void);
-
-#endif /* _HEARTBEAT_SERVICES_H */
+#endif /* _USB_UART_RX_LOOKUP_TABLE_H */
 
 /* *****************************************************************************
  End of File

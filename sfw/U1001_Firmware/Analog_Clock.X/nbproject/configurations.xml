@@ -21,6 +21,9 @@
       </logicalFolder>
       <logicalFolder name="f3" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
+        <itemPath>usb_uart.h</itemPath>
+        <itemPath>usb_uart_rx_lookup_table.h</itemPath>
+        <itemPath>uthash.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
@@ -45,6 +48,8 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>
+        <itemPath>usb_uart.c</itemPath>
+        <itemPath>usb_uart_rx_lookup_table.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>

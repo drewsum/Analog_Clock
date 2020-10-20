@@ -8,4 +8,8 @@ pin_macros.h  \
 watchdog_timer.h  \
  error_handler.h  \
 gpio_setup.h  \
-terminal_control.h 
+heartbeat_services.h  \
+terminal_control.h  \
+ uthash.h  \
+usb_uart.h  \
+usb_uart_rx_lookup_table.h 
