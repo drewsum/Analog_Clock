@@ -77,7 +77,7 @@ usb_uart_command_function_t idnCommand(char * input_str) {
 usb_uart_command_function_t repositoryCommand(char * input_str) {
     terminalTextAttributesReset();
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("Project Git repository is hosted at: https://github.com/drewsum/analog clock\r\n");
+    printf("Project Git repository is hosted at: https://github.com/drewsum/Analog_Clock\r\n");
     terminalTextAttributesReset();    
 }
 

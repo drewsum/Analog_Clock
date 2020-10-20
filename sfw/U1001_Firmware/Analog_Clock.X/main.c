@@ -178,10 +178,11 @@ void main(void) {
     terminalTextAttributesReset();
     terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\n\rType 'Help' for list of supported commands\n\r\n\r");
+    terminalTextAttributesReset();
     
 //    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
 //    printf("Entering IDLE mode\r\n");
-//    terminalTextAttributesReset();
+
 //    
 //    // check to see if a clock fail has occurred and latch it
 //    clockFailCheck();
@@ -238,20 +239,20 @@ void main(void) {
             kickTheDog();
             wdt_clear_request = 0;
         }
-//        
-//        // parse received USB strings if we have a new one received
-//        if (usb_uart_rx_ready) {
-//            usbUartRxLUTInterface(usb_uart_rx_buffer);
-//            // Determine length of received string
-//            uint32_t length = strlen(usb_uart_rx_buffer);
-//        
-//            // clear rx buffer
-//            uint32_t index;
-//            for (index = 0; index < length; index++) {
-//                usb_uart_rx_buffer[index] = '\0';
-//            }
-//        }
-//        
+        
+        // parse received USB strings if we have a new one received
+        if (usb_uart_rx_ready) {
+            usbUartRxLUTInterface(usb_uart_rx_buffer);
+            // Determine length of received string
+            uint32_t length = strlen(usb_uart_rx_buffer);
+        
+            // clear rx buffer
+            uint32_t index;
+            for (index = 0; index < length; index++) {
+                usb_uart_rx_buffer[index] = '\0';
+            }
+        }
+        
 //        if (live_telemetry_request && live_telemetry_enable) {
 //
 //            // Clear the terminal
