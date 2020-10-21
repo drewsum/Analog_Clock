@@ -6,8 +6,9 @@ usb_uart.h  \
 terminal_control.h  \
 device_control.h  \
 32mz_interrupt_control.h  \
- error_handler.h  \
+ cause_of_reset.h  \
+error_handler.h  \
 heartbeat_services.h  \
 heartbeat_timer.h  \
-pin_macros.h  \
- pgood_monitor.h 
+ pin_macros.h  \
+pgood_monitor.h 
