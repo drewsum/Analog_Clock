@@ -106,10 +106,9 @@ usb_uart_command_function_t hostStatusCommand(char * input_str) {
     
     printWatchdogStatus();
     printDeadmanStatus();
+    printPrefetchStatus();
     
-#warning "uncomment me"
-    // printPrefetchStatus();
-    
+    #warning "uncomment me"
 //    // Print cause of reset
 //    if (    reset_cause == Undefined ||
 //            reset_cause == Primary_Config_Registers_Error ||
@@ -164,10 +163,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "DMT") == 0) {
         printDeadmanStatus();
     }
-#warning "fixme"
-//    else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
-//       printPrefetchStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "Prefetch") == 0) {
+       printPrefetchStatus();
+    }
     else if (strcmp(rx_peripheral_name, "DMA") == 0) {
         printDMAStatus();
     }
@@ -216,7 +214,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   DMT\r\n"
                 //"   ADC\r\n"
                 //"   ADC Channels\r\n"
-                //"   Prefetch\r\n"
+                "   Prefetch\r\n"
                 "   DMA\r\n"
                 //"   I2C Master\r\n"
                 //"   I2C Slaves\r\n"
@@ -325,7 +323,7 @@ void usbUartHashTableInitialize(void) {
             //"       PMD\r\n"
             "       WDT\r\n"
             "       DMT\r\n"
-            //"       Prefetch\r\n"
+            "       Prefetch\r\n"
             "       DMA\r\n"
             //"       ADC\r\n"
             //"       ADC Channels\r\n"

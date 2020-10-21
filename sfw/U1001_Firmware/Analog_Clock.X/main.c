@@ -18,7 +18,7 @@
 #include "heartbeat_timer.h"
 #include "watchdog_timer.h"
 #include "error_handler.h"
-//#include "prefetch.h"
+#include "prefetch.h"
 //#include "cause_of_reset.h"
 
 // GPIO
@@ -122,10 +122,10 @@ void main(void) {
     // Setup USB UART debugging
     usbUartInitialize();
     printf("    USB UART Initialized, DMA buffer method used\n\r");
-//    
-//    // Setup prefetch module
-//    prefetchInitialize();
-//    printf("    CPU Instruction Prefetch Module Enabled\r\n");
+    
+    // Setup prefetch module
+    prefetchInitialize();
+    printf("    CPU Instruction Prefetch Module Enabled\r\n");
 //    
 //    // Disable unused peripherals for power savings
 //    PMDInitialize();
