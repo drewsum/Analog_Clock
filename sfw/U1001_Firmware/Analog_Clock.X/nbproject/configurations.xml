@@ -6,6 +6,8 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="Application" projectFiles="true">
         <itemPath>heartbeat_services.h</itemPath>
+        <itemPath>power_saving.h</itemPath>
+        <itemPath>pgood_monitor.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.h</itemPath>
@@ -36,6 +38,8 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="Application" projectFiles="true">
         <itemPath>heartbeat_services.c</itemPath>
+        <itemPath>power_saving.c</itemPath>
+        <itemPath>pgood_monitor.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

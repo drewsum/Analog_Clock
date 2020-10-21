@@ -9,4 +9,5 @@ device_control.h  \
  error_handler.h  \
 heartbeat_services.h  \
 heartbeat_timer.h  \
-pin_macros.h 
+pin_macros.h  \
+ pgood_monitor.h 

@@ -27,7 +27,7 @@
 
 // Application
 #include "heartbeat_services.h"
-//#include "power_saving.h"
+#include "power_saving.h"
 //#include "telemetry.h"
 //#include "user_interface.h"
 
@@ -126,12 +126,12 @@ void main(void) {
     // Setup prefetch module
     prefetchInitialize();
     printf("    CPU Instruction Prefetch Module Enabled\r\n");
-//    
-//    // Disable unused peripherals for power savings
-//    PMDInitialize();
-//    printf("    Unused Peripheral Modules Disabled\n\r");
-//
-//    // Setup heartbeat timer
+    
+    // Disable unused peripherals for power savings
+    PMDInitialize();
+    printf("    Unused Peripheral Modules Disabled\n\r");
+
+    // Setup heartbeat timer
     heartbeatTimerInitialize();
     printf("    Heartbeat Timer Initialized\n\r");
     

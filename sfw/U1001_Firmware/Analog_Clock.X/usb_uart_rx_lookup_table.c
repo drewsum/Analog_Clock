@@ -14,13 +14,11 @@
 #include "error_handler.h"
 #include "heartbeat_services.h"
 #include "pin_macros.h"
+#include "pgood_monitor.h"
 //#include "telemetry.h"
 //#include "adc.h"
 //#include "adc_channels.h"
-//#include "algorithm_by_RF.h"
 //#include "misc_i2c_devices.h"
-//#include "lcd_dimming.h"
-//#include "max30102.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -153,10 +151,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
     else if (strcmp(rx_peripheral_name, "Clocks") == 0) {
         printClockStatus(SYSCLK_INT);
     }
-#warning "fic me"
-//    else if (strcmp(rx_peripheral_name, "PMD") == 0) {
-//        printPMDStatus();
-//    }
+    else if (strcmp(rx_peripheral_name, "PMD") == 0) {
+        printPMDStatus();
+    }
     else if (strcmp(rx_peripheral_name, "WDT") == 0) {
         printWatchdogStatus();
     }
@@ -209,7 +206,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         printf("Peripherals that can be monitored include:\r\n"
                 "   Interrupts\r\n"
                 "   Clocks\r\n"
-                //"   PMD\r\n"
+                "   PMD\r\n"
                 "   WDT\r\n"
                 "   DMT\r\n"
                 //"   ADC\r\n"
@@ -269,6 +266,12 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t pgoodStatusCommand(char * input_str) {
+ 
+    printPGOODStatus();
+    
+}
+
 #warning "fixme"
 //usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
 // 
@@ -320,7 +323,7 @@ void usbUartHashTableInitialize(void) {
             "\b\b<peripheral_name>: Prints status about passed peripheral. Available peripherals:\r\n"
             "       Interrupts\r\n"
             "       Clocks\r\n"
-            //"       PMD\r\n"
+            "       PMD\r\n"
             "       WDT\r\n"
             "       DMT\r\n"
             "       Prefetch\r\n"
@@ -345,5 +348,8 @@ void usbUartHashTableInitialize(void) {
 //                "Toggles live updates of system level telemetry",
 //                liveTelemetryCommand);
 //    }
+    usbUartAddCommand("PGOOD Status?",
+            "Prints current state of run and power good signals for all voltage rails",
+            pgoodStatusCommand);
 
 }
