@@ -178,15 +178,6 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
 //        printf("I2C Bus Master Controller Status:\r\n");
 //        printI2CMasterStatus();
 //    }
-//    else if (strcmp(rx_peripheral_name, "I2C Slaves") == 0) {    
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
-//        printf("I2C Bus Slave Device Status:\r\n");
-//        terminalTextAttributesReset();
-//        if (TELEMETRY_CONFIG_PIN == LOW) {
-//            printTemperatureSensorStatus();
-//            printPowerMonitorStatus();
-//        }
-//        miscI2CDevicesPrintStatus();
 //    }
     else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
         uint32_t read_timer_number;
@@ -214,30 +205,12 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   Prefetch\r\n"
                 "   DMA\r\n"
                 //"   I2C Master\r\n"
-                //"   I2C Slaves\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
         return;
     }
 
 }
-
-#warning "fixme"
-//usb_uart_command_function_t timeOfFlightCommand(char * input_str) {
-// 
-//    volatile double tof_temp = systemGetTOF();
-//    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
-//    uint32_t power_cycle_temp = systemGetPowerCycles();
-//    
-//    // first print stuff for logic board
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("System Time of Flight is %s\r\n", getStringSecondsAsTime(tof_temp_int));
-//    printf("System has power cycled %u times\r\n", power_cycle_temp);
-//    
-//    terminalTextAttributesReset();
-//    
-//}
 
 usb_uart_command_function_t errorStatusCommand(char * input_str) {
  
@@ -266,10 +239,42 @@ usb_uart_command_function_t clearErrorsCommand(char * input_str) {
     
 }
 
-usb_uart_command_function_t pgoodStatusCommand(char * input_str) {
+usb_uart_command_function_t platformStatusCommand(char * input_str) {
  
     printPGOODStatus();
     
+//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+//        printf("I2C Bus Slave Device Status:\r\n");
+//        terminalTextAttributesReset();
+//        if (TELEMETRY_CONFIG_PIN == LOW) {
+//            printTemperatureSensorStatus();
+//            printPowerMonitorStatus();
+//        }
+//        miscI2CDevicesPrintStatus();
+    
+    //    volatile double tof_temp = systemGetTOF();
+//    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
+//    uint32_t power_cycle_temp = systemGetPowerCycles();
+//    
+//    // first print stuff for logic board
+//    terminalTextAttributesReset();
+//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+//    printf("System Time of Flight is %s\r\n", getStringSecondsAsTime(tof_temp_int));
+//    printf("System has power cycled %u times\r\n", power_cycle_temp);
+//    
+//    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t pingCommand(char * input_str) {
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Pinging Buzzer\r\n");
+    terminalTextAttributesReset();
+    
+    BUZZER_ENABLE_PIN = HIGH;
+    softwareDelay(0x1FFFFF);
+    BUZZER_ENABLE_PIN = LOW;
 }
 
 #warning "fixme"
@@ -320,7 +325,7 @@ void usbUartHashTableInitialize(void) {
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);
     usbUartAddCommand("Peripheral Status? ",
-            "\b\b<peripheral_name>: Prints status about passed peripheral. Available peripherals:\r\n"
+            "\b\b<peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
             "       Interrupts\r\n"
             "       Clocks\r\n"
             "       PMD\r\n"
@@ -331,7 +336,6 @@ void usbUartHashTableInitialize(void) {
             //"       ADC\r\n"
             //"       ADC Channels\r\n"
             //"       I2C Master\r\n"
-            //"       I2C Slaves\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Error Status?",
@@ -340,16 +344,15 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Clear Errors",
             "Clears all error handler flags",
             clearErrorsCommand);
-//    usbUartAddCommand("Time of Flight?",
-//            "Returns time of flight for logic board and display board (if installed)",
-//           timeOfFlightCommand);
 //    if (TELEMETRY_CONFIG_PIN == LOW) {
 //        usbUartAddCommand("Live Telemetry",
 //                "Toggles live updates of system level telemetry",
 //                liveTelemetryCommand);
 //    }
-    usbUartAddCommand("PGOOD Status?",
-            "Prints current state of run and power good signals for all voltage rails",
-            pgoodStatusCommand);
-
+    usbUartAddCommand("Platform Status?",
+            "Prints current state of surrounding circuitry, including PGOOD, time of flight, I2C slaves",
+            platformStatusCommand);
+    usbUartAddCommand("Ping",
+            "Pings the alarm buzzer for a short duration",
+            pingCommand);
 }

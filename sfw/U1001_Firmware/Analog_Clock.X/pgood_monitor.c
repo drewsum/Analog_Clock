@@ -29,7 +29,7 @@ void printPGOODStatus(void) {
     
     if (POS5_USB_PGOOD_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    USB Bus Voltage voltage is %s\r\n", POS5_USB_PGOOD_PIN ? "within regulation" : "out of regulation");
+    printf("    USB Bus Voltage voltage is %s\r\n", POS5_USB_PGOOD_PIN ? "within range" : "out of range");
     
     if (VBAT_PGOOD_PIN) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
