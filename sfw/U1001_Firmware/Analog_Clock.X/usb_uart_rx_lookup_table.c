@@ -318,6 +318,23 @@ usb_uart_command_function_t timeAndDateCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setRTCCCommand(char * input_str) {
+
+    // Snipe out received arguments
+    char rtcc_args[64];
+    sscanf(input_str, "Set RTCC: %[^\t\n\r]", rtcc_args);
+    printf(rtcc_args);
+    
+    #warning "add parser for determining if rtcc_args contains Date, Time, Weekday, Unix time here"
+    
+    #warning "copy code for each of those respective sub-commands here. This will replace the four serial commands below"
+    
+    #warning "add generic help message for this command here, with no arguments here"
+
+    #warning "point is to replace the four set rtcc commands with one, streamlined command, with two levels of arguments"
+    
+}
+
 usb_uart_command_function_t setDateCommand(char * input_str) {
  
     // Snipe out received string
@@ -494,4 +511,7 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Unix Time: ",
             "\b\b<decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setUnixTimeCommand);
+    usbUartAddCommand("Set RTCC: ",
+            "\b\b<parameter>: <parameter args>",
+            setRTCCCommand);
 }
