@@ -259,11 +259,10 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
     printf("\r\nI2C Bus Slave Device Status:\r\n");
     terminalTextAttributesReset();
-#warning "fix me"
-        if (TELEMETRY_HARDSTRAP_PIN == LOW) {
-            printTemperatureSensorStatus();
-//            printPowerMonitorStatus();
-        }
+    if (TELEMETRY_HARDSTRAP_PIN == LOW) {
+        printTemperatureSensorStatus();
+        printPowerMonitorStatus();
+    }
     miscI2CDevicesPrintStatus();
     
 }

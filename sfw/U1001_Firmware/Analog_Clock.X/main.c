@@ -152,8 +152,8 @@ void main(void) {
         // setup I2C slaves
         tempSensorsInitialize();
         printf("    Temperature Sensors Initialized\r\n");
-        //powerMonitorsInitialize();
-        //printf("    Power Monitors Initialized\r\n");
+        powerMonitorsInitialize();
+        printf("    Power Monitors Initialized\r\n");
         // Enable ADC
         //ADCInitialize();
         //printf("    Analog to Digital Converter Initialized\n\r");
