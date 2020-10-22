@@ -15,7 +15,7 @@
 #include "heartbeat_services.h"
 #include "pin_macros.h"
 #include "pgood_monitor.h"
-//#include "telemetry.h"
+#include "telemetry.h"
 //#include "adc.h"
 //#include "adc_channels.h"
 #include "misc_i2c_devices.h"
@@ -278,30 +278,29 @@ usb_uart_command_function_t pingCommand(char * input_str) {
     BUZZER_ENABLE_PIN = LOW;
 }
 
-#warning "fixme"
-//usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
-// 
-//    terminalTextAttributesReset();
-//    
-//    if (live_telemetry_enable == 0) {
-//        terminalClearScreen();
-//        terminalSetCursorHome();
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("Enabling Live Telemetry\n\r");
-//        live_telemetry_enable = 1;
-//        // Disable pushbuttons
-//    }
-//    else {
-//        terminalClearScreen();
-//        terminalSetCursorHome();
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
-//        printf("Disabling Live Telemetry\n\r");
-//        live_telemetry_enable = 0;
-//    }
-//    
-//    terminalTextAttributesReset();
-//    
-//}
+usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+    
+    if (live_telemetry_enable == 0) {
+        terminalClearScreen();
+        terminalSetCursorHome();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Enabling Live Telemetry\n\r");
+        live_telemetry_enable = 1;
+        // Disable pushbuttons
+    }
+    else {
+        terminalClearScreen();
+        terminalSetCursorHome();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Disabling Live Telemetry\n\r");
+        live_telemetry_enable = 0;
+    }
+    
+    terminalTextAttributesReset();
+    
+}
 
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
@@ -339,20 +338,20 @@ void usbUartHashTableInitialize(void) {
             "       I2C Master\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
+    usbUartAddCommand("Platform Status?",
+        "Prints current state of surrounding circuitry, including PGOOD, time of flight, I2C slaves",
+        platformStatusCommand);
     usbUartAddCommand("Error Status?",
             "Prints the status of various error handler flags",
             errorStatusCommand);
     usbUartAddCommand("Clear Errors",
             "Clears all error handler flags",
             clearErrorsCommand);
-//    if (TELEMETRY_CONFIG_PIN == LOW) {
-//        usbUartAddCommand("Live Telemetry",
-//                "Toggles live updates of system level telemetry",
-//                liveTelemetryCommand);
-//    }
-    usbUartAddCommand("Platform Status?",
-            "Prints current state of surrounding circuitry, including PGOOD, time of flight, I2C slaves",
-            platformStatusCommand);
+    if (TELEMETRY_HARDSTRAP_PIN == LOW) {
+        usbUartAddCommand("Live Telemetry",
+                "Toggles live updates of system level telemetry",
+                liveTelemetryCommand);
+    }
     usbUartAddCommand("Ping",
             "Pings the alarm buzzer for a short duration",
             pingCommand);

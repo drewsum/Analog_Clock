@@ -36,7 +36,7 @@ void printCurrentTelemetry(void) {
             telemetry.pos3p3.temperature);
     
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-    printf("\t+1.8V Power Supply:\033[K\r\n");
+    printf("\t+20V Power Supply:\033[K\r\n");
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\t\tVout: %.3fV"
            "\tIout: %.3fA"

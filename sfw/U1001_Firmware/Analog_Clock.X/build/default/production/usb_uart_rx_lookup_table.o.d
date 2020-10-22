@@ -12,6 +12,7 @@ heartbeat_services.h  \
 heartbeat_timer.h  \
  pin_macros.h  \
 pgood_monitor.h  \
+telemetry.h  \
 misc_i2c_devices.h  \
 plib_i2c.h  \
  plib_i2c_master.h  \

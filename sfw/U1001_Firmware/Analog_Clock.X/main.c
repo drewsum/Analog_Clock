@@ -28,14 +28,14 @@
 // Application
 #include "heartbeat_services.h"
 #include "power_saving.h"
-//#include "telemetry.h"
+#include "telemetry.h"
 //#include "user_interface.h"
 
 // I2C
 #include "plib_i2c.h"
 #include "plib_i2c_master.h"
-//#include "temperature_sensors.h"
-//#include "power_monitors.h"
+#include "temperature_sensors.h"
+#include "power_monitors.h"
 #include "misc_i2c_devices.h"
 
 // USB
@@ -88,9 +88,8 @@ void main(void) {
         clearErrorHandler();
     }
     
-    #warning "fix me"
-//    live_telemetry_enable = 0;
-//    live_telemetry_request = 0;
+    live_telemetry_enable = 0;
+    live_telemetry_print_request = 0;
     
     printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
@@ -230,12 +229,12 @@ void main(void) {
     // endless loop
     while(1) {
         
-//         // get temperature sensor data
-//        if (temp_sense_data_request) tempSensorsRetrieveData();
-//
-//        // get power monitor data
-//        if (power_monitor_data_request) powerMonitorsGetData();
-//        
+         // get temperature sensor data
+        if (temp_sense_data_request) tempSensorsRetrieveData();
+
+        // get power monitor data
+        if (power_monitor_data_request) powerMonitorsGetData();
+        
         // clear the watchdog if we need to
         if (wdt_clear_request) {
             kickTheDog();
@@ -255,27 +254,27 @@ void main(void) {
             }
         }
         
-//        if (live_telemetry_request && live_telemetry_enable) {
-//
-//            // Clear the terminal
-//            //terminalClearScreen();
-//            terminalSetCursorHome();
-//            
-//            terminalTextAttributesReset();
-//            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
-//            printf("Live system telemetry:\033[K\n\r\033[K");
-//            
-//            printCurrentTelemetry();
-//            
-//            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
-//            printf("Call 'Live Telemetry' command to disable\033[K\n\r");
-//            terminalTextAttributesReset();
-//            
-//            live_telemetry_request = 0;
-//            
-//        }
-//        
-//        // check to see if a clock fail has occurred and latch it
+        if (live_telemetry_print_request && live_telemetry_enable) {
+
+            // Clear the terminal
+            //terminalClearScreen();
+            terminalSetCursorHome();
+            
+            terminalTextAttributesReset();
+            terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+            printf("Live system telemetry:\033[K\n\r\033[K");
+            
+            printCurrentTelemetry();
+            
+            terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("Call 'Live Telemetry' command to disable\033[K\n\r");
+            terminalTextAttributesReset();
+            
+            live_telemetry_print_request = 0;
+            
+        }
+        
+        // check to see if a clock fail has occurred and latch it
         clockFailCheck();
         
         // update error LEDs if needed
