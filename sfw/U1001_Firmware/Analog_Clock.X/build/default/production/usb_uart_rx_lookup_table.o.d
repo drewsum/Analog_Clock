@@ -11,4 +11,10 @@ error_handler.h  \
 heartbeat_services.h  \
 heartbeat_timer.h  \
  pin_macros.h  \
-pgood_monitor.h 
+pgood_monitor.h  \
+misc_i2c_devices.h  \
+plib_i2c.h  \
+ plib_i2c_master.h  \
+ds1683_time_of_flight.h  \
+temperature_sensors.h  \
+ mcp9804_temp_sensor.h 

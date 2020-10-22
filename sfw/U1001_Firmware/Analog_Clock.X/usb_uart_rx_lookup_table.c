@@ -18,7 +18,8 @@
 //#include "telemetry.h"
 //#include "adc.h"
 //#include "adc_channels.h"
-//#include "misc_i2c_devices.h"
+#include "misc_i2c_devices.h"
+#include "temperature_sensors.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -241,26 +242,29 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
  
     printPGOODStatus();
     
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
-//        printf("I2C Bus Slave Device Status:\r\n");
-//        terminalTextAttributesReset();
-//        if (TELEMETRY_CONFIG_PIN == LOW) {
-//            printTemperatureSensorStatus();
-//            printPowerMonitorStatus();
-//        }
-//        miscI2CDevicesPrintStatus();
+    volatile double tof_temp = platformGetTOF();
+    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
+    uint32_t power_cycle_temp = platformGetPowerCycles();
     
-    //    volatile double tof_temp = systemGetTOF();
-//    uint32_t tof_temp_int = (uint32_t) floor(tof_temp);
-//    uint32_t power_cycle_temp = systemGetPowerCycles();
-//    
-//    // first print stuff for logic board
-//    terminalTextAttributesReset();
-//    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    printf("System Time of Flight is %s\r\n", getStringSecondsAsTime(tof_temp_int));
-//    printf("System has power cycled %u times\r\n", power_cycle_temp);
-//    
-//    terminalTextAttributesReset();
+    // first print stuff for logic board
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("\r\nPlatform Time of Flight Data:\r\n");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Total runtime since manufacture: %s\r\n", getStringSecondsAsTime(tof_temp_int));
+    printf("    Platform has power cycled %u times since manufacture\r\n", power_cycle_temp);
+    
+    terminalTextAttributesReset();
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, REVERSE_FONT);
+    printf("\r\nI2C Bus Slave Device Status:\r\n");
+    terminalTextAttributesReset();
+#warning "fix me"
+        if (TELEMETRY_HARDSTRAP_PIN == LOW) {
+            printTemperatureSensorStatus();
+//            printPowerMonitorStatus();
+        }
+    miscI2CDevicesPrintStatus();
     
 }
 

@@ -36,7 +36,7 @@
 #include "plib_i2c_master.h"
 //#include "temperature_sensors.h"
 //#include "power_monitors.h"
-//#include "misc_i2c_devices.h"
+#include "misc_i2c_devices.h"
 
 // USB
 #include "terminal_control.h"
@@ -145,29 +145,29 @@ void main(void) {
     I2CMaster_Initialize();
     printf("    I2C Bus Master Initialized\r\n");
     
-//    if (TELEMETRY_CONFIG_PIN == LOW) {
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        printf("    Telemetry Configuration Detected\r\n");
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        // setup I2C slaves
-//        tempSensorsInitialize();
-//        printf("    Temperature Sensors Initialized\r\n");
-//        powerMonitorsInitialize();
-//        printf("    Power Monitors Initialized\r\n");
-//        // Enable ADC
-//        ADCInitialize();
-//        printf("    Analog to Digital Converter Initialized\n\r");
-//    }
-//    
-//    else {
-//        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-//        printf("    Telemetry Configuration Not Detected\r\n");
-//        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-//    }
-//    
-//    systemTOFInitialize();
-//    printf("    Time of Flight Counter Initialized\r\n");
-//    
+    if (TELEMETRY_HARDSTRAP_PIN == LOW) {
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    Telemetry Configuration Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        // setup I2C slaves
+        tempSensorsInitialize();
+        printf("    Temperature Sensors Initialized\r\n");
+        //powerMonitorsInitialize();
+        //printf("    Power Monitors Initialized\r\n");
+        // Enable ADC
+        //ADCInitialize();
+        //printf("    Analog to Digital Converter Initialized\n\r");
+    }
+    
+    else {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    Telemetry Configuration Not Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    }
+    
+    platformTOFInitialize();
+    printf("    Platform Time of Flight Counter Initialized\r\n");
+    
 //    // setup power pushbutton
 //    powerCapTouchPushbuttonInitialize();
     

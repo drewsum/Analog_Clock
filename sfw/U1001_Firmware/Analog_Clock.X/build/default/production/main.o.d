@@ -14,7 +14,9 @@ gpio_setup.h  \
 power_saving.h  \
 plib_i2c.h  \
 plib_i2c_master.h  \
- terminal_control.h  \
+ misc_i2c_devices.h  \
+ds1683_time_of_flight.h  \
+terminal_control.h  \
 uthash.h  \
-usb_uart.h  \
+ usb_uart.h  \
 usb_uart_rx_lookup_table.h 

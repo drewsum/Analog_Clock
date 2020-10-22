@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=device_control.c 32mz_interrupt_control.c heartbeat_timer.c gpio_setup.c terminal_control.c main.c watchdog_timer.c error_handler.c heartbeat_services.c usb_uart.c usb_uart_rx_lookup_table.c prefetch.c power_saving.c pgood_monitor.c cause_of_reset.c plib_i2c.c
+SOURCEFILES_QUOTED_IF_SPACED=device_control.c 32mz_interrupt_control.c heartbeat_timer.c gpio_setup.c terminal_control.c main.c watchdog_timer.c error_handler.c heartbeat_services.c usb_uart.c usb_uart_rx_lookup_table.c prefetch.c power_saving.c pgood_monitor.c cause_of_reset.c plib_i2c.c ds1683_time_of_flight.c misc_i2c_devices.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/main.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/plib_i2c.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/plib_i2c.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/main.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/main.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/plib_i2c.o
+OBJECTFILES=${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/main.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/mcp9804_temp_sensor.o
 
 # Source Files
-SOURCEFILES=device_control.c 32mz_interrupt_control.c heartbeat_timer.c gpio_setup.c terminal_control.c main.c watchdog_timer.c error_handler.c heartbeat_services.c usb_uart.c usb_uart_rx_lookup_table.c prefetch.c power_saving.c pgood_monitor.c cause_of_reset.c plib_i2c.c
+SOURCEFILES=device_control.c 32mz_interrupt_control.c heartbeat_timer.c gpio_setup.c terminal_control.c main.c watchdog_timer.c error_handler.c heartbeat_services.c usb_uart.c usb_uart_rx_lookup_table.c prefetch.c power_saving.c pgood_monitor.c cause_of_reset.c plib_i2c.c ds1683_time_of_flight.c misc_i2c_devices.c telemetry.c temperature_sensors.c mcp9804_temp_sensor.c
 
 
 CFLAGS=
@@ -202,6 +202,36 @@ ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
+	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/telemetry.o.d 
+	@${RM} ${OBJECTDIR}/telemetry.o 
+	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/device_control.o: device_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -298,6 +328,36 @@ ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/plib_i2c.o.d 
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/ds1683_time_of_flight.o: ds1683_time_of_flight.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o.d 
+	@${RM} ${OBJECTDIR}/ds1683_time_of_flight.o 
+	@${FIXDEPS} "${OBJECTDIR}/ds1683_time_of_flight.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds1683_time_of_flight.o.d" -o ${OBJECTDIR}/ds1683_time_of_flight.o ds1683_time_of_flight.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/misc_i2c_devices.o: misc_i2c_devices.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o.d 
+	@${RM} ${OBJECTDIR}/misc_i2c_devices.o 
+	@${FIXDEPS} "${OBJECTDIR}/misc_i2c_devices.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/misc_i2c_devices.o.d" -o ${OBJECTDIR}/misc_i2c_devices.o misc_i2c_devices.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/telemetry.o.d 
+	@${RM} ${OBJECTDIR}/telemetry.o 
+	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/temperature_sensors.o: temperature_sensors.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o.d 
+	@${RM} ${OBJECTDIR}/temperature_sensors.o 
+	@${FIXDEPS} "${OBJECTDIR}/temperature_sensors.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/temperature_sensors.o.d" -o ${OBJECTDIR}/temperature_sensors.o temperature_sensors.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/mcp9804_temp_sensor.o: mcp9804_temp_sensor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/mcp9804_temp_sensor.o 
+	@${FIXDEPS} "${OBJECTDIR}/mcp9804_temp_sensor.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/mcp9804_temp_sensor.o.d" -o ${OBJECTDIR}/mcp9804_temp_sensor.o mcp9804_temp_sensor.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
