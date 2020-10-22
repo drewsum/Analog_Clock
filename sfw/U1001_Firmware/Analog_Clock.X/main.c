@@ -20,6 +20,7 @@
 #include "error_handler.h"
 #include "prefetch.h"
 #include "cause_of_reset.h"
+#include "rtcc.h"
 
 // GPIO
 #include "pin_macros.h"
@@ -85,11 +86,10 @@ void main(void) {
     
     // only clear persistent error flags if we've seen a POR... keep old values after other resets
     if (reset_cause == POR_Reset) {
+        live_telemetry_enable = 0;
+        live_telemetry_print_request = 0;
         clearErrorHandler();
     }
-    
-    live_telemetry_enable = 0;
-    live_telemetry_print_request = 0;
     
     printf("\r\nCause of most recent device reset: %s\r\n\r\n", getResetCauseString(reset_cause));
     terminalTextAttributesReset();
@@ -132,6 +132,11 @@ void main(void) {
     PMDInitialize();
     printf("    Unused Peripheral Modules Disabled\n\r");
 
+    // Setup the real time clock-calendar
+    rtccInitialize();
+    if (reset_cause == POR_Reset) rtccClear();
+    printf("    Real Time Clock-Calendar Initialized\r\n");
+    
     // Setup heartbeat timer
     heartbeatTimerInitialize();
     printf("    Heartbeat Timer Initialized\n\r");

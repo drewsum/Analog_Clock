@@ -18,4 +18,5 @@ plib_i2c.h  \
  plib_i2c_master.h  \
 ds1683_time_of_flight.h  \
 temperature_sensors.h  \
- mcp9804_temp_sensor.h 
+ mcp9804_temp_sensor.h  \
+rtcc.h 

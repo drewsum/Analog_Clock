@@ -38,6 +38,9 @@
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f6" displayName="RTC" projectFiles="true">
+        <itemPath>rtcc.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
         <itemPath>usb_uart.h</itemPath>
@@ -82,6 +85,9 @@
           <itemPath>ina219_power_monitor.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="RTC" projectFiles="true">
+        <itemPath>rtcc.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>

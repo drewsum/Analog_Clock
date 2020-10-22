@@ -9,6 +9,7 @@ watchdog_timer.h  \
  error_handler.h  \
 prefetch.h  \
 cause_of_reset.h  \
+rtcc.h  \
 gpio_setup.h  \
  heartbeat_services.h  \
 power_saving.h  \

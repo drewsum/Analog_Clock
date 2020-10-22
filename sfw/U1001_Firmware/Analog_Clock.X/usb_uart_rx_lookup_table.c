@@ -20,6 +20,7 @@
 //#include "adc_channels.h"
 #include "misc_i2c_devices.h"
 #include "temperature_sensors.h"
+#include "rtcc.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -178,6 +179,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         printf("I2C Bus Master Controller Status:\r\n");
         printI2CMasterStatus();
     }
+    else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
+        printRTCCStatus();
+    }
     else if (strcomp(rx_peripheral_name, "Timer ") == 0) {
         uint32_t read_timer_number;
         sscanf(rx_peripheral_name, "Timer %u", &read_timer_number);
@@ -204,6 +208,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   Prefetch\r\n"
                 "   DMA\r\n"
                 "   I2C Master\r\n"
+                "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
         return;
@@ -302,6 +307,124 @@ usb_uart_command_function_t liveTelemetryCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t timeAndDateCommand(char * input_str) {
+ 
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("Current system time and date:\r\n   ");
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printTimeAndDate();
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t setDateCommand(char * input_str) {
+ 
+    // Snipe out received string
+    uint32_t read_month, read_day, read_year;
+    sscanf(input_str, "Set Date: %02u/%02u/%04u", &read_month, &read_day, &read_year);
+
+    // Write received data into RTCC
+    if (read_year >= 2000) {
+
+        rtccWriteDate((uint8_t) read_month, (uint8_t) read_day, (uint16_t) read_year);
+
+        // print out what we just did
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
+        terminalTextAttributesReset();
+
+    }
+
+    // return error if year < 2000
+    else {
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Enter a valid date after 01/01/2000. User entered %02u/%02u/%04u\r\n", read_month, read_day, read_year);
+        terminalTextAttributesReset();
+
+    }
+    
+}
+
+usb_uart_command_function_t setTimeCommand(char * input_str) {
+ 
+    // Snipe out received string
+    uint32_t read_hour, read_minute, read_second;
+    sscanf(input_str, "Set Time: %02u:%02u:%02u", &read_hour, &read_minute, &read_second);
+
+    rtccWriteTime((uint8_t) read_hour, (uint8_t) read_minute, (uint8_t) read_second);
+
+    // print out what we just did
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Set RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t setWeekdayCommand(char * input_str) {
+ 
+    char read_weekday[16];
+    uint8_t read_weekday_enum;
+    sscanf(input_str, "Set Weekday: %s", &read_weekday);
+
+    if (strcmp(read_weekday, "Sunday") == 0) read_weekday_enum = 0;
+    else if (strcmp(read_weekday, "Monday") == 0) read_weekday_enum = 1;
+    else if (strcmp(read_weekday, "Tuesday") == 0) read_weekday_enum = 2;
+    else if (strcmp(read_weekday, "Wednesday") == 0) read_weekday_enum = 3;
+    else if (strcmp(read_weekday, "Thursday") == 0) read_weekday_enum = 4;
+    else if (strcmp(read_weekday, "Friday") == 0) read_weekday_enum = 5;
+    else if (strcmp(read_weekday, "Saturday") == 0) read_weekday_enum = 6;
+    else read_weekday_enum = 255;
+
+    if (read_weekday_enum != 255) {
+
+        // print out what we just did
+        terminalTextAttributesReset();
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        rtccWriteWeekday(read_weekday_enum);
+        printf("Set RTCC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
+        terminalTextAttributesReset();
+
+    }
+
+    else {
+
+        terminalTextAttributesReset();
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid day of the weekday. Input is case sensitive\r\n");
+        terminalTextAttributesReset();
+
+    }
+    
+}
+
+usb_uart_command_function_t setUnixTimeCommand(char * input_str) {
+ 
+    // Snipe out received string
+    uint32_t read_unix_time, read_offset;
+    sscanf(input_str, "Set Unix Time: %lu, %d", &read_unix_time, &read_offset);
+
+    // remove timezone from unix time (this converts from UTC to local time)
+    read_offset *= 3600;                // convert from hours to seconds
+    read_unix_time += read_offset;      // add or remove these seconds to read unix time
+    
+    // write unix time into RTCC
+    rtccWriteUnixTime(read_unix_time);
+
+    // print out what we just did
+    terminalTextAttributesReset();
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Set RTCC time as %02u:%02u:%02u\r\n", rtcc_shadow.hours, rtcc_shadow.minutes, rtcc_shadow.seconds);
+    printf("Set RTCC date as %02u/%02u/%04u\r\n", rtcc_shadow.month, rtcc_shadow.day, rtcc_shadow.year);
+    printf("Set RTCC weekday as %s\r\n", getDayOfWeek(rtcc_shadow.weekday));
+    terminalTextAttributesReset();
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -336,6 +459,7 @@ void usbUartHashTableInitialize(void) {
             //"       ADC\r\n"
             //"       ADC Channels\r\n"
             "       I2C Master\r\n"
+            "       RTCC\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
     usbUartAddCommand("Platform Status?",
@@ -355,4 +479,19 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Ping",
             "Pings the alarm buzzer for a short duration",
             pingCommand);
+    usbUartAddCommand("Time and Date?",
+            "Prints the current system time and date",
+            timeAndDateCommand);
+    usbUartAddCommand("Set Date: ",
+            "\b\b<mm>/<dd>/<yyyy>: Sets the system date",
+            setDateCommand);
+    usbUartAddCommand("Set Time: ",
+            "\b\b<hh>:<mm>:<ss>: Sets the system time. (Must be 24 hr time)",
+            setTimeCommand);
+    usbUartAddCommand("Set Weekday: ",
+            "\b\b<weekday>: Sets the system weekday",
+            setWeekdayCommand);
+    usbUartAddCommand("Set Unix Time: ",
+            "\b\b<decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
+            setUnixTimeCommand);
 }
