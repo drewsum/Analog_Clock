@@ -35,6 +35,7 @@
           <itemPath>ds1683_time_of_flight.h</itemPath>
           <itemPath>mcp9804_temp_sensor.h</itemPath>
           <itemPath>ina219_power_monitor.h</itemPath>
+          <itemPath>ds3231_rtc.h</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
@@ -82,6 +83,7 @@
           <itemPath>ds1683_time_of_flight.c</itemPath>
           <itemPath>mcp9804_temp_sensor.c</itemPath>
           <itemPath>ina219_power_monitor.c</itemPath>
+          <itemPath>ds3231_rtc.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
       </logicalFolder>

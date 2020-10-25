@@ -148,6 +148,10 @@ void main(void) {
     // setup I2C
     I2CMaster_Initialize();
     printf("    I2C Bus Master Initialized\r\n");
+    backupRTCInitialize();
+    printf("    Backup Real-Time Clock Initialized\r\n");
+    backupRTCRestoreTime();
+    printf("    Restored time backup from previous sessions\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);

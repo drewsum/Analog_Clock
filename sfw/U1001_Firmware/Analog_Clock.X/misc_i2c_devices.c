@@ -7,6 +7,7 @@
 #include "pin_macros.h"
 #include "error_handler.h"
 #include "ds1683_time_of_flight.h"
+#include "rtcc.h"
 
 // this function initializes the logic board TOF counter
 void platformTOFInitialize(void) {
@@ -34,5 +35,30 @@ uint32_t platformGetPowerCycles(void) {
 void miscI2CDevicesPrintStatus(void) {
  
     DS1683PrintStatus(PLATFORM_TOF_ADDR, &error_handler.flags.platform_tof);
+    DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+}
+
+// This function sets up the backup RTC to act as a fail safe to count while input power is removed
+void backupRTCInitialize(void) {
+ 
+    DS3231MRTCInitialize(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    
+}
+
+// This function stashes the current date and time saved in the internal RTCC into the backup RTC
+void backupRTCStashTime(void) {
+ 
+    DS3231MRTCStoreTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc, getRTCTimeStruct());
+    
+}
+
+// This function recovers the time from the backup RTC and stores it into the internal RTCC
+void backupRTCRestoreTime(void) {
+ 
+    struct tm read_time = DS3231MRTCReadTime(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    rtccWriteTime(read_time.tm_hour, read_time.tm_min, read_time.tm_sec);
+    rtccWriteWeekday(read_time.tm_wday);
+    rtccWriteDate(read_time.tm_mon + 1, read_time.tm_mday, read_time.tm_year + 1900);
     
 }

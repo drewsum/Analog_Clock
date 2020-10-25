@@ -25,8 +25,10 @@
 #include "plib_i2c.h"
 
 #include "ds1683_time_of_flight.h"
+#include "ds3231_rtc.h"
 
 #define PLATFORM_TOF_ADDR      0x6B
+#define BACKUP_RTC_ADDR        0x68
 
 // this function initializes the logic board TOF counter
 void platformTOFInitialize(void);
@@ -39,6 +41,15 @@ uint32_t platformGetPowerCycles(void);
 
 // this function prints config status for misc I2C devices
 void miscI2CDevicesPrintStatus(void);
+
+// This function sets up the backup RTC to act as a fail safe to count while input power is removed
+void backupRTCInitialize(void);
+
+// This function stashes the current date and time saved in the internal RTCC into the backup RTC
+void backupRTCStashTime(void);
+
+// This function recovers the time from the backup RTC and stores it into the internal RTCC
+void backupRTCRestoreTime(void);
 
 #endif /* _MISC_I2C_DEVICES_H */
 

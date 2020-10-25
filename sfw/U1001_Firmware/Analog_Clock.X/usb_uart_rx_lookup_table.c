@@ -449,6 +449,9 @@ usb_uart_command_function_t setRTCCCommand(char * input_str) {
 
         }
         
+        // Save time from internal RTCC into external backup RTC
+        backupRTCStashTime();
+        
     }
         
     else {
