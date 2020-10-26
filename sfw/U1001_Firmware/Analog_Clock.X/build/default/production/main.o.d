@@ -18,12 +18,12 @@ plib_i2c.h  \
  plib_i2c_master.h  \
 temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
- power_monitors.h  \
+ ds3231_rtc.h  \
+power_monitors.h  \
 ina219_power_monitor.h  \
 misc_i2c_devices.h  \
  ds1683_time_of_flight.h  \
-ds3231_rtc.h  \
 terminal_control.h  \
 uthash.h  \
- usb_uart.h  \
-usb_uart_rx_lookup_table.h 
+usb_uart.h  \
+ usb_uart_rx_lookup_table.h 

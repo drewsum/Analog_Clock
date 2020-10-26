@@ -39,6 +39,7 @@ volatile __attribute__((coherent)) struct telemetry_s {
     telemetry_parameters_ps_t pos20;
     telemetry_parameters_ps_t usb;
     double ambient_temperature;
+    double backup_rtc_temperature;
     double mcu_die_temp;
     double adc_vref_voltage;
     

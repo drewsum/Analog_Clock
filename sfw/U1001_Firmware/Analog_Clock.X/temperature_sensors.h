@@ -19,6 +19,7 @@
 #define _TEMPERATURE_SENSORS_H
 
 #include "mcp9804_temp_sensor.h"
+#include "ds3231_rtc.h"
 
 #include "error_handler.h"
 
