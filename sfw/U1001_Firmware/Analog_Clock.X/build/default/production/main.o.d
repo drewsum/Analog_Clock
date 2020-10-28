@@ -14,8 +14,10 @@ gpio_setup.h  \
  heartbeat_services.h  \
 power_saving.h  \
 telemetry.h  \
-plib_i2c.h  \
- plib_i2c_master.h  \
+adc.h  \
+adc_channels.h  \
+ plib_i2c.h  \
+plib_i2c_master.h  \
 temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
  ds3231_rtc.h  \

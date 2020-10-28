@@ -13,11 +13,13 @@ heartbeat_timer.h  \
  pin_macros.h  \
 pgood_monitor.h  \
 telemetry.h  \
-misc_i2c_devices.h  \
+adc.h  \
+adc_channels.h  \
+ misc_i2c_devices.h  \
 plib_i2c.h  \
- plib_i2c_master.h  \
+plib_i2c_master.h  \
 ds1683_time_of_flight.h  \
-ds3231_rtc.h  \
- temperature_sensors.h  \
+ ds3231_rtc.h  \
+temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
 rtcc.h 

@@ -30,7 +30,10 @@
 #include "heartbeat_services.h"
 #include "power_saving.h"
 #include "telemetry.h"
-//#include "user_interface.h"
+
+// ADC
+#include "adc.h"
+#include "adc_channels.h"
 
 // I2C
 #include "plib_i2c.h"
@@ -154,8 +157,8 @@ void main(void) {
     printf("    Restored time backup from previous sessions\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {
-        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    Telemetry Configuration Detected\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
+        printf("Telemetry Configuration Detected\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         // setup I2C slaves
         tempSensorsInitialize();
@@ -163,12 +166,12 @@ void main(void) {
         powerMonitorsInitialize();
         printf("    Power Monitors Initialized\r\n");
         // Enable ADC
-        //ADCInitialize();
-        //printf("    Analog to Digital Converter Initialized\n\r");
+        ADCInitialize();
+        printf("    Analog to Digital Converter Initialized\n\r");
     }
     
     else {
-        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("    Telemetry Configuration Not Detected\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     }
