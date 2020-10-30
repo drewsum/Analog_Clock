@@ -27,8 +27,10 @@
 #include "ds1683_time_of_flight.h"
 #include "ds3231_rtc.h"
 
-#define PLATFORM_TOF_ADDR      0x6B
-#define BACKUP_RTC_ADDR        0x68
+// misc device I2C addresses
+#define PLATFORM_TOF_ADDR           0x6B
+#define BACKUP_RTC_ADDR             0x68
+#define METER_LED_DRIVER_ADDR       0x14
 
 // this function initializes the logic board TOF counter
 void platformTOFInitialize(void);
@@ -50,6 +52,9 @@ void backupRTCStashTime(void);
 
 // This function recovers the time from the backup RTC and stores it into the internal RTCC
 void backupRTCRestoreTime(void);
+
+// sets up meter backlight LED driver
+void meterBacklightInitialize(void);
 
 #endif /* _MISC_I2C_DEVICES_H */
 

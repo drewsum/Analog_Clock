@@ -155,6 +155,8 @@ void main(void) {
     printf("    Backup Real-Time Clock Initialized\r\n");
     backupRTCRestoreTime();
     printf("    Restored time backup from previous sessions\r\n");
+    meterBacklightInitialize();
+    printf("    Meter Backlight LED Driver Initialized\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);

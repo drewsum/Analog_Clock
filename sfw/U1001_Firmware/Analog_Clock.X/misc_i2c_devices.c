@@ -62,3 +62,12 @@ void backupRTCRestoreTime(void) {
     rtccWriteDate(read_time.tm_mon + 1, read_time.tm_mday, read_time.tm_year + 1900);
     
 }
+
+// sets up meter backlight LED driver
+void meterBacklightInitialize(void) {
+ 
+    METER_LED_ENABLE_PIN = HIGH;
+    
+    LP5009LEDDriverInitialize(METER_LED_DRIVER_ADDR, error_handler.flags.meter_backlight_led_driver);
+    
+}
