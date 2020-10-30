@@ -42,6 +42,13 @@ volatile __attribute__((coherent)) struct telemetry_s {
     double backup_rtc_temperature;
     double mcu_die_temp;
     double adc_vref_voltage;
+    double backup_battery_voltage;
+    double dac0_output_voltage;
+    double dac0_ref_voltage;
+    double dac1_output_voltage;
+    double dac1_ref_voltage;
+    double dac2_output_voltage;
+    double dac2_ref_voltage;
     
 } telemetry;
 

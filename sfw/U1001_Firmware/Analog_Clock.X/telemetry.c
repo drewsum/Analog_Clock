@@ -61,10 +61,22 @@ void printCurrentTelemetry(void) {
     
     // print stuff off other random data points
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
+    printf("\tDAC Telemetry:\033[K\r\n");
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("\t\tDAC 0 Output Voltage: %.3fV\033[K\r\n", telemetry.dac0_output_voltage);
+    printf("\t\tDAC 0 Reference Voltage: %.3fV\033[K\r\n", telemetry.dac0_ref_voltage);
+    printf("\t\tDAC 1 Output Voltage: %.3fV\033[K\r\n", telemetry.dac1_output_voltage);
+    printf("\t\tDAC 1 Reference Voltage: %.3fV\033[K\r\n", telemetry.dac1_ref_voltage);
+    printf("\t\tDAC 2 Output Voltage: %.3fV\033[K\r\n", telemetry.dac2_output_voltage);
+    printf("\t\tDAC 2 Reference Voltage: %.3fV\033[K\r\n\r\n", telemetry.dac2_ref_voltage);
+    
+    // print stuff off other random data points
+    terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("\tMiscellaneous Telemetry:\033[K\r\n");
     terminalTextAttributes(CYAN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("\t\tHost Die Temperature: %.3fC\033[K\r\n", telemetry.mcu_die_temp);
     printf("\t\tBackup RTC Die Temperature: %.3fC\033[K\r\n", telemetry.backup_rtc_temperature);
+    printf("\t\tBackup Battery Voltage: %.3fV\033[K\r\n", telemetry.backup_battery_voltage);
     printf("\t\tHost ADC Reference Voltage: %.3fV\033[K\r\n", telemetry.adc_vref_voltage);
     printf("\t\tAmbient Temperature: %.3fC\033[K\r\n", telemetry.ambient_temperature);
     

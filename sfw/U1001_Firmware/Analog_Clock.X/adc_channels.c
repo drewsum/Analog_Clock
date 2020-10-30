@@ -10,8 +10,7 @@
 /*
  * 
  * Used ADC channels: 
- * AN7 (Pin RB12) - VBAT ADC
- * AN10 (PIN RB15) - POS3P3_BACKUP_ADC
+ * 
  * AN43 - Internal VREF
  * AN44 - Die Temp
  * 
@@ -21,36 +20,183 @@
 void adcChannelsInitialize(void) {
  
     /* Select ADC input mode for each channel*/
+    ADCIMCON1bits.DIFF0  = 0; // Single ended mode
+    ADCIMCON1bits.SIGN0  = 0; // unsigned data format
+    ADCIMCON1bits.DIFF1  = 0; // Single ended mode
+    ADCIMCON1bits.SIGN1  = 0; // unsigned data format
+    ADCIMCON1bits.DIFF2  = 0; // Single ended mode
+    ADCIMCON1bits.SIGN2  = 0; // unsigned data format
+    ADCIMCON1bits.DIFF3  = 0; // Single ended mode
+    ADCIMCON1bits.SIGN3  = 0; // unsigned data format
+    ADCIMCON1bits.DIFF4  = 0; // Single ended mode
+    ADCIMCON1bits.SIGN4  = 0; // unsigned data format
+    ADCIMCON1bits.DIFF10 = 0; // Single ended mode
+    ADCIMCON1bits.SIGN10 = 0; // unsigned data format
     ADCIMCON3bits.DIFF43 = 0; // Single ended mode
     ADCIMCON3bits.SIGN43 = 0; // unsigned data format
     ADCIMCON3bits.DIFF44 = 0; // Single ended mode
     ADCIMCON3bits.SIGN44 = 0; // unsigned data format
     
+     // Configure high speed ADC input channels
+    ADCTRGMODEbits.SH0ALT = 0b00; // ADC0 converts channel AN0
+    ADCTRGMODEbits.SH1ALT = 0b00; // ADC1 converts channel AN1
+    ADCTRGMODEbits.SH2ALT = 0b00; // ADC2 converts channel AN2
+    ADCTRGMODEbits.SH3ALT = 0b00; // ADC3 converts channel AN2
+    ADCTRGMODEbits.SH4ALT = 0b00; // ADC4 converts channel AN4
+    
+    // configure trigger sources
+    ADCTRG1bits.TRGSRC0 = 0b00011;      // ADC0 triggers on scan trigger
+    ADCTRG1bits.TRGSRC1 = 0b00011;      // ADC1 triggers on scan trigger
+    ADCTRG1bits.TRGSRC2 = 0b00011;      // ADC2 triggers on scan trigger
+    ADCTRG1bits.TRGSRC3 = 0b00011;      // ADC3 triggers on scan trigger
+    ADCTRG2bits.TRGSRC4 = 0b00011;      // ADC4 triggers on scan trigger
+    ADCTRG3bits.TRGSRC10 = 0b00011;     // channel 10 on common scan
+    
     /* Configure interrupt enables */
+    ADCGIRQEN1bits.AGIEN0  = 1;     // enable data ready 0 IRQ
+    ADCGIRQEN1bits.AGIEN1  = 1;     // enable data ready 1 IRQ
+    ADCGIRQEN1bits.AGIEN2  = 1;     // enable data ready 2 IRQ
+    ADCGIRQEN1bits.AGIEN3  = 1;     // enable data ready 3 IRQ
+    ADCGIRQEN1bits.AGIEN4  = 1;     // enable data ready 4 IRQ
+    ADCGIRQEN1bits.AGIEN10 = 1;     // enable data ready 10 IRQ
     ADCGIRQEN2bits.AGIEN43 = 1;     // enable data ready 43 IRQ
     ADCGIRQEN2bits.AGIEN44 = 1;     // enable data ready 44 IRQ
     
     // set IRQ priorities
+    setInterruptPriority(ADC_Data_0, 1);
+    setInterruptPriority(ADC_Data_1, 1);
+    setInterruptPriority(ADC_Data_2, 1);
+    setInterruptPriority(ADC_Data_3, 1);
+    setInterruptPriority(ADC_Data_4, 1);
+    setInterruptPriority(ADC_Data_10, 1);
     setInterruptPriority(ADC_Data_43, 1);
     setInterruptPriority(ADC_Data_44, 1);
     
     // set IRQ subpriorities
+    setInterruptSubpriority(ADC_Data_0, 0);
+    setInterruptSubpriority(ADC_Data_1, 1);
+    setInterruptSubpriority(ADC_Data_2, 2);
+    setInterruptSubpriority(ADC_Data_3, 3);
+    setInterruptSubpriority(ADC_Data_4, 0);
+    setInterruptSubpriority(ADC_Data_10, 1);
     setInterruptSubpriority(ADC_Data_43, 2);
     setInterruptSubpriority(ADC_Data_44, 3);
     
     /* Configure common scan */
     ADCCSS1 = 0;
     ADCCSS2 = 0;
+    ADCCSS1bits.CSS0  = 1;          // Enable Channel 0 for common scan
+    ADCCSS1bits.CSS1  = 1;          // Enable Channel 1 for common scan
+    ADCCSS1bits.CSS2  = 1;          // Enable Channel 2 for common scan
+    ADCCSS1bits.CSS3  = 1;          // Enable Channel 3 for common scan
+    ADCCSS1bits.CSS4  = 1;          // Enable Channel 4 for common scan
+    ADCCSS1bits.CSS10 = 1;          // Enable Channel 10 for common scan
     ADCCSS2bits.CSS43 = 1;          // Enable Channel 43 for common scan
     ADCCSS2bits.CSS44 = 1;          // Enable Channel 44 for common scan
     
     // clear interrupt flags
+    clearInterruptFlag(ADC_Data_0);
+    clearInterruptFlag(ADC_Data_1);
+    clearInterruptFlag(ADC_Data_2);
+    clearInterruptFlag(ADC_Data_3);
+    clearInterruptFlag(ADC_Data_4);
+    clearInterruptFlag(ADC_Data_10);
     clearInterruptFlag(ADC_Data_43);
     clearInterruptFlag(ADC_Data_44);
     
     // enable data ready interrupts
+    enableInterrupt(ADC_Data_0);
+    enableInterrupt(ADC_Data_1);
+    enableInterrupt(ADC_Data_2);
+    enableInterrupt(ADC_Data_3);
+    enableInterrupt(ADC_Data_4);
+    enableInterrupt(ADC_Data_10);
     enableInterrupt(ADC_Data_43);
     enableInterrupt(ADC_Data_44);
+    
+}
+
+void __ISR(_ADC_DATA0_VECTOR, IPL1SRS) ADCData0ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY0) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac0_output_voltage = (double) ADCDATA0 * ADC_VOLTS_PER_LSB * adc_cal_gain * 10.0;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_0);
+    
+}
+
+void __ISR(_ADC_DATA1_VECTOR, IPL1SRS) ADCData1ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY1) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac0_ref_voltage = (double) ADCDATA1 * ADC_VOLTS_PER_LSB * adc_cal_gain;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_1);
+    
+}
+
+void __ISR(_ADC_DATA2_VECTOR, IPL1SRS) ADCData2ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY2) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac1_output_voltage = (double) ADCDATA2 * ADC_VOLTS_PER_LSB * adc_cal_gain * 10.0;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_2);
+    
+}
+
+void __ISR(_ADC_DATA3_VECTOR, IPL1SRS) ADCData3ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY3) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac1_ref_voltage = (double) ADCDATA3 * ADC_VOLTS_PER_LSB * adc_cal_gain;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_3);
+    
+}
+
+void __ISR(_ADC_DATA4_VECTOR, IPL1SRS) ADCData4ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY4) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac2_output_voltage = (double) ADCDATA4 * ADC_VOLTS_PER_LSB * adc_cal_gain * 10.0;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_4);
+    
+}
+
+void __ISR(_ADC_DATA10_VECTOR, IPL1SRS) ADCData10ISR(void) {
+
+    // check to see if data is actually ready
+    if (ADCDSTAT1bits.ARDY10) {
+        // copy ADC conversion result into telemetry
+        telemetry.backup_battery_voltage = (double) ADCDATA10 * ADC_VOLTS_PER_LSB * adc_cal_gain * 5.8636;
+        
+    }
+    
+    // clear IRQ
+    clearInterruptFlag(ADC_Data_10);
     
 }
 
