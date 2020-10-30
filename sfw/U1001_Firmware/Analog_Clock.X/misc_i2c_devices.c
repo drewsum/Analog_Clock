@@ -69,6 +69,8 @@ void meterBacklightInitialize(void) {
  
     METER_LED_ENABLE_PIN = HIGH;
     
+    softwareDelay(0xFFF);
+    
     LP5009LEDDriverInitialize(METER_LED_DRIVER_ADDR, error_handler.flags.meter_backlight_led_driver);
     
 }

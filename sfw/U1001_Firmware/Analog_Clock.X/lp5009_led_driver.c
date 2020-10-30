@@ -33,20 +33,6 @@ void LP5009LEDDriverInitialize(uint8_t device_address, volatile uint8_t *device_
         *device_error_handler_flag = 1;
     }
     while(i2c5Obj.state != I2C_STATE_IDLE);
-
-    output_data_array[0] = LP5009_OUT0_COLOR_REG;
-    output_data_array[1] = 0xFF;
-    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
-        *device_error_handler_flag = 1;
-    }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
-    
-    output_data_array[0] = LP5009_LED_0_BRIGHTNES_REG;
-    output_data_array[1] = 0xFF;
-    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
-        *device_error_handler_flag = 1;
-    }
-    while(i2c5Obj.state != I2C_STATE_IDLE);
     
 }
 
