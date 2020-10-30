@@ -36,6 +36,7 @@ void miscI2CDevicesPrintStatus(void) {
  
     DS1683PrintStatus(PLATFORM_TOF_ADDR, &error_handler.flags.platform_tof);
     DS3231PrintStatus(BACKUP_RTC_ADDR, &error_handler.flags.backup_rtc);
+    LP5009PrintStatus(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
     
 }
 

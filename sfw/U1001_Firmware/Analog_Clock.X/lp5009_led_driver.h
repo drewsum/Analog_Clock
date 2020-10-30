@@ -52,6 +52,9 @@
 // This function initializes an LED driver at passed address. Also pass pointer to error handler flag for device
 void LP5009LEDDriverInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 
+// this function prints status and config data for an LED driver at passed address
+void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
 #endif /* _LP5009_LED_DRIVER_H */
 
 /* *****************************************************************************
