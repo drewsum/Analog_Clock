@@ -119,11 +119,22 @@ void adcChannelsInitialize(void) {
 void __ISR(_ADC_DATA0_VECTOR, IPL1SRS) ADCData0ISR(void) {
 
     // check to see if data is actually ready
-    if (ADCDSTAT1bits.ARDY0) {
+    if (ADCDSTAT1bits.ARDY0 && ADCTRGMODEbits.SH0ALT == 0) {
         // copy ADC conversion result into telemetry
         telemetry.dac0_output_voltage = (double) ADCDATA0 * ADC_VOLTS_PER_LSB * adc_cal_gain * 10.0;
         
     }
+    
+    // check to see if data is actually ready
+    else if (ADCDSTAT1bits.ARDY0 && ADCTRGMODEbits.SH0ALT == 1) {
+        // copy ADC conversion result into telemetry
+        telemetry.dac2_ref_voltage = (double) ADCDATA0 * ADC_VOLTS_PER_LSB * adc_cal_gain;
+        
+    }
+    
+    // toggle SH0ALT (toggle ADC0 sampling AN0 and AN45
+    if(ADCTRGMODEbits.SH0ALT == 0) ADCTRGMODEbits.SH0ALT = 1;
+    else ADCTRGMODEbits.SH0ALT = 0;
     
     // clear IRQ
     clearInterruptFlag(ADC_Data_0);

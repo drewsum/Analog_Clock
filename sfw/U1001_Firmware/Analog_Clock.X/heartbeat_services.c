@@ -17,7 +17,7 @@ void heartbeatServices(void) {
     if (live_telemetry_enable) {
 
         // get new telemetry data every 200ms
-        if ((heartbeat_systick + 1) % 20 == 0) {        
+        if ((heartbeat_systick + 5) % 20 == 0) {        
             // Get new temperature sensor data
             temp_sense_data_request = 1;
 
