@@ -47,10 +47,23 @@
 
 // default register values
 #define LP5009_DEVICE_CONFIG0_DATA      0b01000000
-#define LP5009_DEVICE_CONFIG1_DATA      0b00010110
+#define LP5009_DEVICE_CONFIG1_DATA      0b00110110
 
 // This function initializes an LED driver at passed address. Also pass pointer to error handler flag for device
 void LP5009LEDDriverInitialize(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
+// this function sets the LED driver into "bank" mode
+void LP5009EnableBankMode(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
+// this function sets the LED driver into "individual" mode
+void LP5009DisableBankMode(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
+
+// this function sets the bank brightness for the passed LED driver
+// bank_brightness_value range is 0 to 255
+void LP5009SetBankBrightness(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t bank_brightness_value);
+
+// this function sets the bank colors (range is 0 to 255) for the three LED banks
+void LP5009SetBankColor(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t red_bank_color, uint8_t green_bank_color, uint8_t blue_bank_color);
 
 // this function prints status and config data for an LED driver at passed address
 void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag);

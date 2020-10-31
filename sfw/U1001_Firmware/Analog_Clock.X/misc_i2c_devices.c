@@ -8,6 +8,7 @@
 #include "error_handler.h"
 #include "ds1683_time_of_flight.h"
 #include "rtcc.h"
+#include "lp5009_led_driver.h"
 
 // this function initializes the logic board TOF counter
 void platformTOFInitialize(void) {
@@ -71,6 +72,21 @@ void meterBacklightInitialize(void) {
     
     softwareDelay(0xFFF);
     
-    LP5009LEDDriverInitialize(METER_LED_DRIVER_ADDR, error_handler.flags.meter_backlight_led_driver);
+    LP5009LEDDriverInitialize(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
+    // this function allows all three LEDs to be set to the same color and brightness using the 
+    // LP5009SetBankBrightness() and LP5009SetBankColor() functions
+    LP5009EnableBankMode(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
     
+}
+
+// this function sets the brightness of the meter backlight
+// backlight_brightness range is 0 to 255
+void meterBacklightSetBrightness(uint8_t backlight_brightness) {
+    LP5009SetBankBrightness(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, backlight_brightness);
+}
+
+// this function sets the color of the meter backlight LEDs
+// all arguments have range 0 to 255
+void meterBacklightSetColor(uint8_t red_component, uint8_t green_component, uint8_t blue_component) {
+    LP5009SetBankColor(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, red_component, green_component, blue_component);
 }

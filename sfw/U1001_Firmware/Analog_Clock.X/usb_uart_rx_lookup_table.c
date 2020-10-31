@@ -468,6 +468,87 @@ usb_uart_command_function_t setRTCCCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t setBacklightColorCommand(char * input_str) {
+ 
+    // Snipe out received arguments
+    char backlight_args[64];
+    sscanf(input_str, "Set Backlight Color: %[^\t\n\r]", backlight_args);
+    
+    // only do these things if we actually have arguments for this command
+    if (backlight_args[0]) {
+
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        if(strcmp(backlight_args, "White") == 0) {
+            meterBacklightSetColor(WHITE_BACKLIGHT_COLOR);
+            printf("Set backlight color to white\r\n");
+        }
+        else if(strcmp(backlight_args, "Red") == 0) {
+            meterBacklightSetColor(RED_BACKLIGHT_COLOR);
+            printf("Set backlight color to red\r\n");
+        }
+        else if(strcmp(backlight_args, "Green") == 0) {
+            meterBacklightSetColor(GREEN_BACKLIGHT_COLOR);
+            printf("Set backlight color to green\r\n");
+        }
+        else if(strcmp(backlight_args, "Blue") == 0) {
+            meterBacklightSetColor(BLUE_BACKLIGHT_COLOR);
+            printf("Set backlight color to blue\r\n");
+        }
+        else if(strcmp(backlight_args, "Magenta") == 0) {
+            meterBacklightSetColor(MAGENTA_BACKLIGHT_COLOR);
+            printf("Set backlight color to magenta\r\n");
+        }
+        else if(strcmp(backlight_args, "Yellow") == 0) {
+            meterBacklightSetColor(YELLOW_BACKLIGHT_COLOR);
+            printf("Set backlight color to yellow\r\n");
+        }
+        else if(strcmp(backlight_args, "Cyan") == 0) {
+            meterBacklightSetColor(CYAN_BACKLIGHT_COLOR);
+            printf("Set backlight color to cyan\r\n");
+        }
+        else {
+         
+            uint32_t parse_red;
+            uint32_t parse_green;
+            uint32_t parse_blue;
+            sscanf(input_str, "Set Backlight Color: %02X%02X%02X", &parse_red, &parse_green, &parse_blue);
+            printf("Setting backlight color to red = 0x%02X, green = 0x%02X, blue = 0x%02X\r\n", (uint8_t) parse_red, (uint8_t) parse_green, (uint8_t) parse_blue);
+            meterBacklightSetColor((uint8_t) parse_red, (uint8_t) parse_green, (uint8_t) parse_blue);
+            
+        }
+        terminalTextAttributesReset();
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter desired color: Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
+usb_uart_command_function_t setBacklightBrightneesCommand(char * input_str) {
+    
+    uint32_t read_brightness;
+    sscanf(input_str, "Set Backlight Brightness: %u", &read_brightness);
+    
+    if (read_brightness < 101) {
+        meterBacklightSetBrightness((uint8_t) read_brightness * 255 / 100);
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set meter backlight brightness as %u%%\r\n", read_brightness);
+        terminalTextAttributesReset();
+    }
+    else {
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid brightness, user entered%u%%\r\n", read_brightness);
+        terminalTextAttributesReset();
+    }
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -530,6 +611,12 @@ void usbUartHashTableInitialize(void) {
             "       Date: <mm>/<dd>/<yyyy>: Sets the RTCC date \r\n"
             "       Time: <hh>:<mm>:<ss>: Sets the RTCC time. (Must be 24 hr time)\r\n"
             "       Weekday: <weekday>: Sets the RTCC weekday\r\n"
-            "       Unix Time: <decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC\r\n",
+            "       Unix Time: <decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setRTCCCommand);
+    usbUartAddCommand("Set Backlight Color: ",
+            "\b\b<color>: Sets the meter backlight color. Colors include Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)",
+            setBacklightColorCommand);
+    usbUartAddCommand("Set Backlight Brightness: ",
+            "\b\b<brightness>: Sets the brightness of the meter backlight",
+            setBacklightBrightneesCommand);
 }

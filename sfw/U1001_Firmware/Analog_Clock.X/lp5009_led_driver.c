@@ -36,6 +36,73 @@ void LP5009LEDDriverInitialize(uint8_t device_address, volatile uint8_t *device_
     
 }
 
+// this function sets the LED driver into "bank" mode
+void LP5009EnableBankMode(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
+ 
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_LED_CONFIG0_REG;
+    output_data_array[1] = 0x07;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
+// this function sets the LED driver into "individual" mode
+void LP5009DisableBankMode(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
+ 
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_LED_CONFIG0_REG;
+    output_data_array[1] = 0x00;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
+// this function sets the bank brightness for the passed LED driver
+// bank_brightness_value range is 0 to 255
+void LP5009SetBankBrightness(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t bank_brightness_value) {
+    
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_BANK_BRIGHTNES_REG;
+    output_data_array[1] = bank_brightness_value;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
+// this function sets the bank colors (range is 0 to 255) for the three LED banks
+void LP5009SetBankColor(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t red_bank_color, uint8_t green_bank_color, uint8_t blue_bank_color) {
+ 
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_BANK_A_COLOR_REG;
+    output_data_array[1] = red_bank_color;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+    output_data_array[0] = LP5009_BANK_B_COLOR_REG;
+    output_data_array[1] = green_bank_color;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+    output_data_array[0] = LP5009_BANK_C_COLOR_REG;
+    output_data_array[1] = blue_bank_color;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
 // this function prints status and config data for an LED driver at passed address
 void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
  
