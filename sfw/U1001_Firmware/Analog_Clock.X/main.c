@@ -156,7 +156,6 @@ void main(void) {
     backupRTCRestoreTime();
     printf("    Restored time backup from previous sessions\r\n");
     meterBacklightInitialize();
-    meterBacklightSetBrightness(255);
     printf("    Meter Backlight LED Driver Initialized\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {
@@ -182,8 +181,9 @@ void main(void) {
     platformTOFInitialize();
     printf("    Platform Time of Flight Counter Initialized\r\n");
     
-//    // setup power pushbutton
-//    powerCapTouchPushbuttonInitialize();
+    // setup power pushbutton
+    capTouchPushbuttonsInitialize();
+    printf("    Capacitive Pushbuttons Initialized\r\n");
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

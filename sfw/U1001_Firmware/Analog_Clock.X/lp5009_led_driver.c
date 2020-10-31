@@ -258,7 +258,7 @@ void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_ha
     
     if (read_log_scale_en) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Brightness scaling is is %s\r\n", read_log_scale_en ? "logarithmic" : "linear");
+    printf("    Brightness scaling is %s\r\n", read_log_scale_en ? "logarithmic" : "linear");
     if (read_power_save_en) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("    Power save is %s\r\n", read_power_save_en ? "enabled" : "disabled");
