@@ -571,8 +571,8 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Host Status?",
             "Prints status of MCU host device (IDs, WDT, DMT, Prefetch, Cause of Reset, up time)", 
             hostStatusCommand);
-    usbUartAddCommand("Peripheral Status? ",
-            "\b\b<peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
+    usbUartAddCommand("Peripheral Status?",
+            "\b\b <peripheral_name>: Prints status of passed host peripheral. Available peripherals:\r\n"
             "       Interrupts\r\n"
             "       Clocks\r\n"
             "       PMD\r\n"
@@ -613,10 +613,10 @@ void usbUartHashTableInitialize(void) {
             "       Weekday: <weekday>: Sets the RTCC weekday\r\n"
             "       Unix Time: <decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setRTCCCommand);
-    usbUartAddCommand("Set Backlight Color: ",
-            "\b\b<color>: Sets the meter backlight color. Colors include Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)",
+    usbUartAddCommand("Set Backlight Color:",
+            "\b\b <color>: Sets the meter backlight color. Colors include Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)",
             setBacklightColorCommand);
-    usbUartAddCommand("Set Backlight Brightness: ",
-            "\b\b<brightness>: Sets the brightness of the meter backlight",
+    usbUartAddCommand("Set Backlight Brightness:",
+            "\b\b <brightness>: Sets the brightness of the meter backlight",
             setBacklightBrightneesCommand);
 }
