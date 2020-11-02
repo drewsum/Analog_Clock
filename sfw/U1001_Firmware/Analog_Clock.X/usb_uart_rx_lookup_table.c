@@ -21,6 +21,7 @@
 #include "misc_i2c_devices.h"
 #include "temperature_sensors.h"
 #include "rtcc.h"
+#include "spi_master.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -178,6 +179,9 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
         printf("I2C Bus Master Controller Status:\r\n");
         printI2CMasterStatus();
     }
+    else if (strcmp(rx_peripheral_name, "SPI Master") == 0) {    
+        printSPIMasterStatus();
+    }
     else if (strcmp(rx_peripheral_name, "RTCC") == 0) {
         printRTCCStatus();
     }
@@ -207,6 +211,7 @@ usb_uart_command_function_t peripheralStatusCommand(char * input_str) {
                 "   Prefetch\r\n"
                 "   DMA\r\n"
                 "   I2C Master\r\n"
+                "   SPI Master\r\n"
                 "   RTCC\r\n"
                 "   Timer <x> (x = 1-9)\r\n");
         terminalTextAttributesReset();
@@ -583,6 +588,7 @@ void usbUartHashTableInitialize(void) {
             "       ADC\r\n"
             "       ADC Channels\r\n"
             "       I2C Master\r\n"
+            "       SPI Master\r\n"
             "       RTCC\r\n"
             "       Timer <x> (x = 1-9)",
             peripheralStatusCommand);
@@ -614,9 +620,9 @@ void usbUartHashTableInitialize(void) {
             "       Unix Time: <decimal unix time>, <hour offset from UTC to local time>: sets the RTCC to the supplied UNIX time with hour offset from UTC",
             setRTCCCommand);
     usbUartAddCommand("Set Backlight Color:",
-            "\b\b <color>: Sets the meter backlight color. Colors include Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)",
+            "\b\b <color/hex>: Sets the meter backlight color. Colors include Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)",
             setBacklightColorCommand);
     usbUartAddCommand("Set Backlight Brightness:",
-            "\b\b <brightness>: Sets the brightness of the meter backlight",
+            "\b\b <percentage>: Sets the brightness of the meter backlight",
             setBacklightBrightneesCommand);
 }

@@ -42,11 +42,16 @@
 #include "power_monitors.h"
 #include "misc_i2c_devices.h"
 
+// SPI
+#include "spi_master.h"
+#include "spi_dac.h"
+
 // USB
 #include "terminal_control.h"
 #include "uthash.h"
 #include "usb_uart.h"
 #include "usb_uart_rx_lookup_table.h"
+#include "spi_dac.h"
 
 void main(void) {
     
@@ -107,6 +112,11 @@ void main(void) {
     // setup GPIO pins
     gpioInitialize();
     printf("    GPIO Pins Initialized\n\r");
+    
+    // block on POS3P3 and POS12 power stability
+    while(POS3P3_PGOOD_PIN == LOW);
+    while(POS12_PGOOD_PIN == LOW);
+    printf("    Input power is stable\r\n");
     
     // Initialize system clocks
     clockInitialize();
@@ -184,6 +194,14 @@ void main(void) {
     // setup power pushbutton
     capTouchPushbuttonsInitialize();
     printf("    Capacitive Pushbuttons Initialized\r\n");
+    
+    // setup SPI Master port for meter DACs
+    spiMasterInit();
+    spiDACGPIOReset();
+    spi_dac_state = spi_dac_idle_state;
+    printf("    SPI Master Port Initialized\r\n");
+    
+    spiDACUpdate(0, 1.0);
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

@@ -68,10 +68,10 @@ void PMDInitialize(void) {
     PMD5bits.U5MD = 1;
     PMD5bits.U6MD = 1;
     
-    // Disable all SPI Modules
+    // Disable all SPI Modules except SPI3 (used for DACs)
     PMD5bits.SPI1MD = 1;
     PMD5bits.SPI2MD = 1;
-    PMD5bits.SPI3MD = 1;                
+    PMD5bits.SPI3MD = 0;                
     PMD5bits.SPI4MD = 1;
     #ifdef SPI5CON
     PMD5bits.SPI5MD = 1;

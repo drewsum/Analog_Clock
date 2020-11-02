@@ -22,4 +22,5 @@ ds1683_time_of_flight.h  \
  ds3231_rtc.h  \
 temperature_sensors.h  \
 mcp9804_temp_sensor.h  \
-rtcc.h 
+rtcc.h  \
+ spi_master.h 

@@ -25,7 +25,9 @@ power_monitors.h  \
 ina219_power_monitor.h  \
 misc_i2c_devices.h  \
  ds1683_time_of_flight.h  \
+spi_master.h  \
+spi_dac.h  \
 terminal_control.h  \
-uthash.h  \
+ uthash.h  \
 usb_uart.h  \
- usb_uart_rx_lookup_table.h 
+usb_uart_rx_lookup_table.h 

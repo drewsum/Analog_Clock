@@ -46,6 +46,10 @@
         <itemPath>plib_i2c.h</itemPath>
         <itemPath>plib_i2c_master.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f7" displayName="SPI" projectFiles="true">
+        <itemPath>spi_master.h</itemPath>
+        <itemPath>spi_dac.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.h</itemPath>
         <itemPath>usb_uart.h</itemPath>
@@ -98,6 +102,10 @@
           <itemPath>lp5009_led_driver.c</itemPath>
         </logicalFolder>
         <itemPath>plib_i2c.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="SPI" projectFiles="true">
+        <itemPath>spi_master.c</itemPath>
+        <itemPath>spi_dac.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="USB UART" projectFiles="true">
         <itemPath>terminal_control.c</itemPath>

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=adc.c adc_channels.c heartbeat_services.c power_saving.c pgood_monitor.c telemetry.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c prefetch.c cause_of_reset.c rtcc.c gpio_setup.c misc_i2c_devices.c temperature_sensors.c power_monitors.c ds1683_time_of_flight.c mcp9804_temp_sensor.c ina219_power_monitor.c ds3231_rtc.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c lp5009_led_driver.c capacitive_pushbuttons.c
+SOURCEFILES_QUOTED_IF_SPACED=adc.c adc_channels.c heartbeat_services.c power_saving.c pgood_monitor.c telemetry.c capacitive_pushbuttons.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c prefetch.c cause_of_reset.c rtcc.c gpio_setup.c misc_i2c_devices.c temperature_sensors.c power_monitors.c ds1683_time_of_flight.c mcp9804_temp_sensor.c ina219_power_monitor.c ds3231_rtc.c lp5009_led_driver.c plib_i2c.c spi_master.c spi_dac.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/lp5009_led_driver.o ${OBJECTDIR}/capacitive_pushbuttons.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/lp5009_led_driver.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/lp5009_led_driver.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/spi_master.o ${OBJECTDIR}/spi_dac.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/adc.o.d ${OBJECTDIR}/adc_channels.o.d ${OBJECTDIR}/heartbeat_services.o.d ${OBJECTDIR}/power_saving.o.d ${OBJECTDIR}/pgood_monitor.o.d ${OBJECTDIR}/telemetry.o.d ${OBJECTDIR}/capacitive_pushbuttons.o.d ${OBJECTDIR}/device_control.o.d ${OBJECTDIR}/32mz_interrupt_control.o.d ${OBJECTDIR}/heartbeat_timer.o.d ${OBJECTDIR}/watchdog_timer.o.d ${OBJECTDIR}/error_handler.o.d ${OBJECTDIR}/prefetch.o.d ${OBJECTDIR}/cause_of_reset.o.d ${OBJECTDIR}/rtcc.o.d ${OBJECTDIR}/gpio_setup.o.d ${OBJECTDIR}/misc_i2c_devices.o.d ${OBJECTDIR}/temperature_sensors.o.d ${OBJECTDIR}/power_monitors.o.d ${OBJECTDIR}/ds1683_time_of_flight.o.d ${OBJECTDIR}/mcp9804_temp_sensor.o.d ${OBJECTDIR}/ina219_power_monitor.o.d ${OBJECTDIR}/ds3231_rtc.o.d ${OBJECTDIR}/lp5009_led_driver.o.d ${OBJECTDIR}/plib_i2c.o.d ${OBJECTDIR}/spi_master.o.d ${OBJECTDIR}/spi_dac.o.d ${OBJECTDIR}/terminal_control.o.d ${OBJECTDIR}/usb_uart.o.d ${OBJECTDIR}/usb_uart_rx_lookup_table.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o ${OBJECTDIR}/lp5009_led_driver.o ${OBJECTDIR}/capacitive_pushbuttons.o
+OBJECTFILES=${OBJECTDIR}/adc.o ${OBJECTDIR}/adc_channels.o ${OBJECTDIR}/heartbeat_services.o ${OBJECTDIR}/power_saving.o ${OBJECTDIR}/pgood_monitor.o ${OBJECTDIR}/telemetry.o ${OBJECTDIR}/capacitive_pushbuttons.o ${OBJECTDIR}/device_control.o ${OBJECTDIR}/32mz_interrupt_control.o ${OBJECTDIR}/heartbeat_timer.o ${OBJECTDIR}/watchdog_timer.o ${OBJECTDIR}/error_handler.o ${OBJECTDIR}/prefetch.o ${OBJECTDIR}/cause_of_reset.o ${OBJECTDIR}/rtcc.o ${OBJECTDIR}/gpio_setup.o ${OBJECTDIR}/misc_i2c_devices.o ${OBJECTDIR}/temperature_sensors.o ${OBJECTDIR}/power_monitors.o ${OBJECTDIR}/ds1683_time_of_flight.o ${OBJECTDIR}/mcp9804_temp_sensor.o ${OBJECTDIR}/ina219_power_monitor.o ${OBJECTDIR}/ds3231_rtc.o ${OBJECTDIR}/lp5009_led_driver.o ${OBJECTDIR}/plib_i2c.o ${OBJECTDIR}/spi_master.o ${OBJECTDIR}/spi_dac.o ${OBJECTDIR}/terminal_control.o ${OBJECTDIR}/usb_uart.o ${OBJECTDIR}/usb_uart_rx_lookup_table.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=adc.c adc_channels.c heartbeat_services.c power_saving.c pgood_monitor.c telemetry.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c prefetch.c cause_of_reset.c rtcc.c gpio_setup.c misc_i2c_devices.c temperature_sensors.c power_monitors.c ds1683_time_of_flight.c mcp9804_temp_sensor.c ina219_power_monitor.c ds3231_rtc.c plib_i2c.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c lp5009_led_driver.c capacitive_pushbuttons.c
+SOURCEFILES=adc.c adc_channels.c heartbeat_services.c power_saving.c pgood_monitor.c telemetry.c capacitive_pushbuttons.c device_control.c 32mz_interrupt_control.c heartbeat_timer.c watchdog_timer.c error_handler.c prefetch.c cause_of_reset.c rtcc.c gpio_setup.c misc_i2c_devices.c temperature_sensors.c power_monitors.c ds1683_time_of_flight.c mcp9804_temp_sensor.c ina219_power_monitor.c ds3231_rtc.c lp5009_led_driver.c plib_i2c.c spi_master.c spi_dac.c terminal_control.c usb_uart.c usb_uart_rx_lookup_table.c main.c
 
 
 CFLAGS=
@@ -141,6 +141,12 @@ ${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/telemetry.o.d 
 	@${RM} ${OBJECTDIR}/telemetry.o 
 	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
+	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/device_control.o: device_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -238,11 +244,29 @@ ${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
 	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/lp5009_led_driver.o: lp5009_led_driver.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lp5009_led_driver.o.d 
+	@${RM} ${OBJECTDIR}/lp5009_led_driver.o 
+	@${FIXDEPS} "${OBJECTDIR}/lp5009_led_driver.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lp5009_led_driver.o.d" -o ${OBJECTDIR}/lp5009_led_driver.o lp5009_led_driver.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/plib_i2c.o.d 
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/spi_master.o: spi_master.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi_master.o.d 
+	@${RM} ${OBJECTDIR}/spi_master.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/spi_master.o.d" -o ${OBJECTDIR}/spi_master.o spi_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/spi_dac.o: spi_dac.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi_dac.o.d 
+	@${RM} ${OBJECTDIR}/spi_dac.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi_dac.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/spi_dac.o.d" -o ${OBJECTDIR}/spi_dac.o spi_dac.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/terminal_control.o: terminal_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -267,18 +291,6 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/lp5009_led_driver.o: lp5009_led_driver.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/lp5009_led_driver.o.d 
-	@${RM} ${OBJECTDIR}/lp5009_led_driver.o 
-	@${FIXDEPS} "${OBJECTDIR}/lp5009_led_driver.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lp5009_led_driver.o.d" -o ${OBJECTDIR}/lp5009_led_driver.o lp5009_led_driver.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
-	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 else
 ${OBJECTDIR}/adc.o: adc.c  nbproject/Makefile-${CND_CONF}.mk
@@ -316,6 +328,12 @@ ${OBJECTDIR}/telemetry.o: telemetry.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/telemetry.o.d 
 	@${RM} ${OBJECTDIR}/telemetry.o 
 	@${FIXDEPS} "${OBJECTDIR}/telemetry.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/telemetry.o.d" -o ${OBJECTDIR}/telemetry.o telemetry.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
+	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
+	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/device_control.o: device_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -413,11 +431,29 @@ ${OBJECTDIR}/ds3231_rtc.o: ds3231_rtc.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/ds3231_rtc.o 
 	@${FIXDEPS} "${OBJECTDIR}/ds3231_rtc.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/ds3231_rtc.o.d" -o ${OBJECTDIR}/ds3231_rtc.o ds3231_rtc.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/lp5009_led_driver.o: lp5009_led_driver.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lp5009_led_driver.o.d 
+	@${RM} ${OBJECTDIR}/lp5009_led_driver.o 
+	@${FIXDEPS} "${OBJECTDIR}/lp5009_led_driver.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lp5009_led_driver.o.d" -o ${OBJECTDIR}/lp5009_led_driver.o lp5009_led_driver.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 ${OBJECTDIR}/plib_i2c.o: plib_i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/plib_i2c.o.d 
 	@${RM} ${OBJECTDIR}/plib_i2c.o 
 	@${FIXDEPS} "${OBJECTDIR}/plib_i2c.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/plib_i2c.o.d" -o ${OBJECTDIR}/plib_i2c.o plib_i2c.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/spi_master.o: spi_master.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi_master.o.d 
+	@${RM} ${OBJECTDIR}/spi_master.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi_master.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/spi_master.o.d" -o ${OBJECTDIR}/spi_master.o spi_master.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/spi_dac.o: spi_dac.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/spi_dac.o.d 
+	@${RM} ${OBJECTDIR}/spi_dac.o 
+	@${FIXDEPS} "${OBJECTDIR}/spi_dac.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/spi_dac.o.d" -o ${OBJECTDIR}/spi_dac.o spi_dac.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/terminal_control.o: terminal_control.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -442,18 +478,6 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/lp5009_led_driver.o: lp5009_led_driver.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/lp5009_led_driver.o.d 
-	@${RM} ${OBJECTDIR}/lp5009_led_driver.o 
-	@${FIXDEPS} "${OBJECTDIR}/lp5009_led_driver.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/lp5009_led_driver.o.d" -o ${OBJECTDIR}/lp5009_led_driver.o lp5009_led_driver.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/capacitive_pushbuttons.o: capacitive_pushbuttons.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o.d 
-	@${RM} ${OBJECTDIR}/capacitive_pushbuttons.o 
-	@${FIXDEPS} "${OBJECTDIR}/capacitive_pushbuttons.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/capacitive_pushbuttons.o.d" -o ${OBJECTDIR}/capacitive_pushbuttons.o capacitive_pushbuttons.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 
