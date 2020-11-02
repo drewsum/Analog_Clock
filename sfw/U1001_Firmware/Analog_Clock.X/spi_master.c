@@ -37,7 +37,7 @@ void spiMasterInit(void)
     SPI3CONbits.ON = 0;         
     SPI3BUF = 0;                
     SPI3CONbits.ENHBUF = 0;     // Disable enhanced buffer
-    SPI3BRG = 5;                // Baud Rate configuration
+    SPI3BRG = 10;                // Baud Rate configuration
     SPI3STATbits.SPIROV = 0;    
     SPI3CONbits.MSTEN = 1;      // Master mode
     

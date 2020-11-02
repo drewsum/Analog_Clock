@@ -38,9 +38,11 @@ void spiDACUpdate(uint8_t destination_dac, double voltage) {
     spi_dac_state = destination_dac;
     spiDACGPIOSet();
     
+    uint16_t output_voltage_encoding = (uint16_t) (voltage / 15.0) * 0xFFFF;
+    
     spi_dac_data[0] = 0x00;
-    spi_dac_data[1] = 0x12;
-    spi_dac_data[2] = 0x34;
+    spi_dac_data[1] = (uint8_t) (output_voltage_encoding >> 8) & 0xFF;
+    spi_dac_data[2] = (uint8_t) output_voltage_encoding & 0xFF;
     
     spiMasterWriteByte(spi_dac_data[0]);
     while(spiMasterIsBusy());

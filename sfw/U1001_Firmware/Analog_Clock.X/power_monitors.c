@@ -16,6 +16,17 @@ void powerMonitorsInitialize(void) {
     INA219PowerMonitorInitialize(POS20_MON_ADDR, &error_handler.flags.pos20_mon);
     INA219PowerMonitorInitialize(USB_MON_ADDR, &error_handler.flags.usb_mon);
    
+    // re-scale 20V power monitor for up to 32V
+    // Write config data to config register on input temp sensor
+    uint8_t output_data_array[3];
+    output_data_array[0] = INA219_CONFIG_REG;
+    output_data_array[1] = 0b00100111;
+    output_data_array[2] = INA219_CONFIG_LSB;
+    if(!I2CMaster_Write(POS20_MON_ADDR, output_data_array, 3)) {
+        error_handler.flags.pos20_mon = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
     // Write calibration data to allow power monitors to calculate current
     INA219SetCalibration(POS12_MON_ADDR, &error_handler.flags.pos12_mon, POS12_MON_CLSB, POS12_MON_RSHUNT);
     INA219SetCalibration(POS3P3_MON_ADDR, &error_handler.flags.pos3p3_mon, POS3P3_MON_CLSB, POS3P3_MON_RSHUNT);

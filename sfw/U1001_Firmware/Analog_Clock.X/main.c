@@ -201,7 +201,22 @@ void main(void) {
     spi_dac_state = spi_dac_idle_state;
     printf("    SPI Master Port Initialized\r\n");
     
-    spiDACUpdate(0, 1.0);
+    // enable meter DAC drive voltage
+    POS20_RUN_PIN = HIGH;
+    uint32_t timeout = 0xFFFFFF;
+    while (POS20_PGOOD_PIN == LOW && timeout > 0) timeout--;
+    if (POS20_PGOOD_PIN == LOW) {
+        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("    Failed to enable +20V Power Supply\r\n");
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        error_handler.flags.pos20_pgood = 1;
+        return;
+    }
+    else {
+        printf("    +20V Power Supply Enabled\r\n");
+    }
+    
+    spiDACUpdate(0, 5.0);
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
