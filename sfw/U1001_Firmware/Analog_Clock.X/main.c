@@ -30,6 +30,7 @@
 #include "heartbeat_services.h"
 #include "power_saving.h"
 #include "telemetry.h"
+#include "user_interface.h"
 
 // ADC
 #include "adc.h"
@@ -329,6 +330,10 @@ void main(void) {
         
         // update error LEDs if needed
         if (update_error_leds_flag) updateErrorLEDs();
+        
+        // callback functions from cap touch pushbuttons
+        if (power_button_callback_rq) powerButtonCallback();
+        if (function_button_callback_rq) functionButtonCallback();
         
     }
 }

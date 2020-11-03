@@ -5,6 +5,8 @@
 
 #include "terminal_control.h"
 
+#include "user_interface.h"
+
 // this function initializes the "Power" capacitive pushbutton interrupt
 void capTouchPushbuttonsInitialize(void) {
     
@@ -35,6 +37,8 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void) {
     printf("User pressed power button\r\n");
     terminalTextAttributesReset();
     
+    power_button_callback_rq = 1;
+    
     clearInterruptFlag(External_Interrupt_2);
     
 }
@@ -45,6 +49,8 @@ void __ISR(_EXTERNAL_3_VECTOR, IPL7SRS) functionCapTouchPushbuttonISR(void) {
     terminalTextAttributes(MAGENTA_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("User pressed function button\r\n");
     terminalTextAttributesReset();
+    
+    function_button_callback_rq = 1;
     
     clearInterruptFlag(External_Interrupt_3);
     

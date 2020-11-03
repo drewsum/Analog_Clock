@@ -14,4 +14,5 @@ power_monitors.h  \
  ina219_power_monitor.h  \
 telemetry.h  \
 device_control.h  \
-terminal_control.h 
+terminal_control.h  \
+ user_interface.h 

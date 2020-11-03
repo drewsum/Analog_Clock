@@ -8,6 +8,7 @@
 #include "device_control.h"
 #include "terminal_control.h"
 #include "pin_macros.h"
+#include "user_interface.h"
 
 #include <stdio.h>
 
@@ -39,6 +40,5 @@ void heartbeatServices(void) {
     
     // Increment on time counter
     if (heartbeat_systick % 100 == 0) device_on_time_counter++;
-    
     
 }
