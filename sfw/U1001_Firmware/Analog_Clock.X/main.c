@@ -200,6 +200,10 @@ void main(void) {
     spiDACGPIOReset();
     spi_dac_state = spi_dac_idle_state;
     printf("    SPI Master Port Initialized\r\n");
+    spiDACUpdate(0, 0.0);
+    spiDACUpdate(1, 0.0);
+    spiDACUpdate(2, 0.0);
+    printf("    SPI Digital to Analog Converters Cleared\r\n");
     
     // enable meter DAC drive voltage
     POS20_RUN_PIN = HIGH;
@@ -215,8 +219,6 @@ void main(void) {
     else {
         printf("    +20V Power Supply Enabled\r\n");
     }
-    
-    spiDACUpdate(0, 5.0);
     
     // Disable reset LED
     RESET_LED_PIN = LOW;

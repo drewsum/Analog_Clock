@@ -37,7 +37,7 @@ void spiMasterInit(void)
     SPI3CONbits.ON = 0;         
     SPI3BUF = 0;                
     SPI3CONbits.ENHBUF = 0;     // Disable enhanced buffer
-    SPI3BRG = 10;                // Baud Rate configuration
+    SPI3BRG = 2;                // Baud Rate configuration
     SPI3STATbits.SPIROV = 0;    
     SPI3CONbits.MSTEN = 1;      // Master mode
     
@@ -51,7 +51,7 @@ void spiMasterInit(void)
     SPI3CONbits.MODE16 = 0;     // 16 bit mode disabled
     SPI3CONbits.MODE32 = 0;     // 32 bit mode disabled
     SPI3CONbits.SMP = 1;        // Input data sampled at the end of data output time
-    SPI3CONbits.CKE = 1;        // Output data changes on clock falling edge
+    SPI3CONbits.CKE = 0;        // Output data changes on clock rising edge
     SPI3CONbits.SSEN = 0;       // Slave Select pin is controlled by PORT 
     SPI3CONbits.CKP = 0;        // Idle state for clock is low, active state is high
     SPI3CONbits.DISSDI = 1;     // SDI3 pin is controlled by module
