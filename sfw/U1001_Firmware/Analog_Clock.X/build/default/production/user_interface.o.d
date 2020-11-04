@@ -8,4 +8,8 @@ misc_i2c_devices.h  \
 plib_i2c_master.h  \
 ds1683_time_of_flight.h  \
 ds3231_rtc.h  \
- 32mz_interrupt_control.h 
+ 32mz_interrupt_control.h  \
+error_handler.h  \
+spi_dac.h  \
+spi_master.h  \
+rtcc.h 

@@ -41,6 +41,10 @@ volatile bool ui_power_state = false;
 // these flags are set in the cap pushbutton ISRs and call their respective callback functions from main()
 volatile bool power_button_callback_rq = false, function_button_callback_rq = false;
 
+// this flag is set when we want to update SPI DACs to show time, date or weekday
+// it is set in heartbeat_services, and leads to calling UIUpdateMeters() from main()
+volatile bool ui_update_meters_rq = false;
+
 // this function updates the function LEDs based on the state of ui_meter_function
 void updateFunctionLEDs(void);
 
@@ -49,6 +53,10 @@ void powerButtonCallback(void);
 
 // this function is called when the function button is presed
 void functionButtonCallback(void);
+
+// this function is called periodically by heartbeat_services() from main() to update
+// the dacs based on the time and what we're displaying
+void UIUpdateMeters(void);
 
 
 

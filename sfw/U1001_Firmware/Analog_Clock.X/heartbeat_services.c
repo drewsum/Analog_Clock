@@ -32,7 +32,7 @@ void heartbeatServices(void) {
         
         // print new telemetry to terminal every second
         if (heartbeat_systick % 100 == 0) live_telemetry_print_request = 1;
-       
+        
     }
         
     // Update error LEDs based on error handler status
@@ -40,5 +40,8 @@ void heartbeatServices(void) {
     
     // Increment on time counter
     if (heartbeat_systick % 100 == 0) device_on_time_counter++;
+    
+    // update meters if we're currently turned on
+    if (ui_power_state && (heartbeat_systick + 10) % 20 == 0) ui_update_meters_rq = true;
     
 }

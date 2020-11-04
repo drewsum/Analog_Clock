@@ -167,6 +167,8 @@ void main(void) {
     backupRTCRestoreTime();
     printf("    Restored time backup from previous sessions\r\n");
     meterBacklightInitialize();
+    #warning "might want to change this"
+    meterBacklightSetBrightness(10);
     printf("    Meter Backlight LED Driver Initialized\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {
@@ -205,21 +207,6 @@ void main(void) {
     spiDACUpdate(1, 0.0);
     spiDACUpdate(2, 0.0);
     printf("    SPI Digital to Analog Converters Cleared\r\n");
-    
-    // enable meter DAC drive voltage
-    POS20_RUN_PIN = HIGH;
-    uint32_t timeout = 0xFFFFFF;
-    while (POS20_PGOOD_PIN == LOW && timeout > 0) timeout--;
-    if (POS20_PGOOD_PIN == LOW) {
-        terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
-        printf("    Failed to enable +20V Power Supply\r\n");
-        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-        error_handler.flags.pos20_pgood = 1;
-        return;
-    }
-    else {
-        printf("    +20V Power Supply Enabled\r\n");
-    }
     
     // Disable reset LED
     RESET_LED_PIN = LOW;
@@ -335,5 +322,7 @@ void main(void) {
         if (power_button_callback_rq) powerButtonCallback();
         if (function_button_callback_rq) functionButtonCallback();
         
+        // function to update meters
+        if (ui_update_meters_rq) UIUpdateMeters();
     }
 }

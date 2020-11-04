@@ -1,9 +1,13 @@
 
+#include <stdio.h>
 
 #include "user_interface.h"
 #include "terminal_control.h"
 #include "misc_i2c_devices.h"
 #include "32mz_interrupt_control.h"
+#include "error_handler.h"
+#include "spi_dac.h"
+#include "rtcc.h"
 
 // this function updates the function LEDs based on the state of ui_meter_function
 void updateFunctionLEDs(void) {
@@ -55,6 +59,21 @@ void powerButtonCallback(void) {
         updateFunctionLEDs();
         printf("    UI set to show time state\r\n");
         
+        // enable meter DAC drive voltage
+        POS20_RUN_PIN = HIGH;
+        uint32_t timeout = 0xFFFFFF;
+        while (POS20_PGOOD_PIN == LOW && timeout > 0) timeout--;
+        if (POS20_PGOOD_PIN == LOW) {
+            terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+            printf("    Failed to enable +20V Power Supply\r\n");
+            terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+            error_handler.flags.pos20_pgood = 1;
+            return;
+        }
+        else {
+            printf("    +20V Power Supply Enabled\r\n");
+        }
+        
         meterBacklightSetColor(YELLOW_BACKLIGHT_COLOR);
         printf("    Meter backlight color set to yellow\r\n");
         
@@ -77,6 +96,16 @@ void powerButtonCallback(void) {
         ui_meter_function = ui_idle_state;
         updateFunctionLEDs();
         printf("    UI set to idle state\r\n");
+        
+        // clear DACs
+        spiDACUpdate(0, 0.0);
+        spiDACUpdate(1, 0.0);
+        spiDACUpdate(2, 0.0);
+        printf("    SPI DACs cleared\r\n");
+        
+        // disable +20V boost converter
+        POS20_RUN_PIN = LOW;
+        printf("    Disabled +20V Power Supply\r\n");
         
         meterBacklightSetColor(0,0,0);
         printf("    Meter backlight color set to black\r\n");
@@ -125,5 +154,51 @@ void functionButtonCallback(void) {
     updateFunctionLEDs();
     
     function_button_callback_rq = false;
+    
+}
+
+// this function is called periodically by heartbeat_services() from main() to update
+// the dacs based on the time and what we're displaying
+void UIUpdateMeters(void) {
+ 
+    // update meter DACs based on what we're displaying
+    switch (ui_meter_function) {
+     
+        case ui_idle_state:
+            spiDACUpdate(0, 0.0);
+            spiDACUpdate(1, 0.0);
+            spiDACUpdate(2, 0.0);
+            break;
+            
+        case ui_show_time_state:
+            // update hours
+            #warning "determine if you want to do 24 hr time or am/pm option"
+            spiDACUpdate(0, (rtcc_shadow.hours / 23.0) * 15.0);
+            // update minutes
+            spiDACUpdate(1, (rtcc_shadow.minutes / 59.0) * 15.0);
+            // update minutes
+            spiDACUpdate(2, (rtcc_shadow.seconds / 59.0) * 15.0);
+            break;
+            
+        case ui_show_date_state:
+            // update month
+            spiDACUpdate(0, ((rtcc_shadow.month - 1)/ 12.0) * 15.0);
+            // update date
+            spiDACUpdate(1, ((rtcc_shadow.day - 1)/ 31.0) * 15.0);
+            // update year (up to 2030)
+            spiDACUpdate(2, ((rtcc_shadow.year - 2020) / 30.0) * 15.0);
+            break;
+            
+        case ui_show_weekday_state:
+            // clear meters 0 and 1
+            spiDACUpdate(0, 0.0);
+            spiDACUpdate(1, 0.0);
+            // update weekday
+            spiDACUpdate(2, (rtcc_shadow.weekday / 6.0) * 15.0);
+            break;
+    
+    }
+    
+    ui_update_meters_rq = false;
     
 }
