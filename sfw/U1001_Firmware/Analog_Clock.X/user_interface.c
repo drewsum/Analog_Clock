@@ -8,6 +8,7 @@
 #include "error_handler.h"
 #include "spi_dac.h"
 #include "rtcc.h"
+#include "pin_macros.h"
 
 // this function updates the function LEDs based on the state of ui_meter_function
 void updateFunctionLEDs(void) {
@@ -55,6 +56,10 @@ void powerButtonCallback(void) {
         printf("Clock turning on\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         
+        // enable PGOOD LEDs
+        POS3P3_PGL_SHDN_PIN = LOW;
+        printf("    PGOOD LEDs enabled\r\n");
+        
         ui_meter_function = ui_show_time_state;
         updateFunctionLEDs();
         printf("    UI set to show time state\r\n");
@@ -92,6 +97,10 @@ void powerButtonCallback(void) {
         terminalTextAttributes(RED_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Clock turning off\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        
+        // enable PGOOD LEDs
+        POS3P3_PGL_SHDN_PIN = HIGH;
+        printf("    PGOOD LEDs disabled\r\n");
         
         ui_meter_function = ui_idle_state;
         updateFunctionLEDs();
