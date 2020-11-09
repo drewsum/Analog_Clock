@@ -167,7 +167,6 @@ void main(void) {
     backupRTCRestoreTime();
     printf("    Restored time backup from previous sessions\r\n");
     meterBacklightInitialize();
-    #warning "might want to change this"
     meterBacklightSetBrightness(10);
     printf("    Meter Backlight LED Driver Initialized\r\n");
     

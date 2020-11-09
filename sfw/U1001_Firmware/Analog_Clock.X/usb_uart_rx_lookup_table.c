@@ -260,8 +260,8 @@ usb_uart_command_function_t platformStatusCommand(char * input_str) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
     printf("\r\nPlatform Time of Flight Data:\r\n");
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    Total runtime since manufacture: %s\r\n", getStringSecondsAsTime(tof_temp_int));
-    printf("    Platform has power cycled %u times since manufacture\r\n", power_cycle_temp);
+    printf("    Total platform runtime since assembly: %s\r\n", getStringSecondsAsTime(tof_temp_int));
+    printf("    Platform has power cycled %u times since assembly\r\n", power_cycle_temp);
     
     terminalTextAttributesReset();
     
@@ -368,10 +368,10 @@ usb_uart_command_function_t setRTCCCommand(char * input_str) {
             uint32_t read_hour, read_minute, read_second;
             sscanf(rtcc_args, "Time: %02u:%02u:%02u", &read_hour, &read_minute, &read_second);
 
-            #warning "add time error checking here, this is risky just shoving it in RTCC without checking first"
-
-            rtccWriteTime((uint8_t) read_hour, (uint8_t) read_minute, (uint8_t) read_second);
-
+            if (read_hour < 24 && read_minute < 60 && read_second < 60) {
+                rtccWriteTime((uint8_t) read_hour, (uint8_t) read_minute, (uint8_t) read_second);
+            }
+            
             // print out what we just did
             terminalTextAttributesReset();
             terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
