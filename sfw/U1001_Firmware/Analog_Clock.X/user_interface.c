@@ -9,6 +9,8 @@
 #include "spi_dac.h"
 #include "rtcc.h"
 #include "pin_macros.h"
+#include "watchdog_timer.h"
+#include "usb_uart.h"
 
 // this function updates the function LEDs based on the state of ui_meter_function
 void updateFunctionLEDs(void) {
@@ -55,6 +57,19 @@ void powerButtonCallback(void) {
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Clock turning on\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
+        // start WDT
+        kickTheDog();
+        watchdogTimerInitialize();
+
+        // start heartbeat timer
+        printf("    Heartbeat Timer, Watchdog Timer restarted\r\n");
+        TMR1 = 0;
+        TMR2 = 0;
+        OC4RS = 0;
+        T1CONbits.ON = 1;
+        T2CONbits.ON = 1;
+        OC5CONbits.ON = 1;
         
         // enable PGOOD LEDs
         POS3P3_PGL_SHDN_PIN = LOW;
@@ -123,8 +138,50 @@ void powerButtonCallback(void) {
         disableInterrupt(External_Interrupt_3);
         printf("    Function pushbutton disabled\r\n");
         
-        terminalTextAttributesReset();
+        printf("    Entering IDLE mode\r\n");
+
         
+        terminalTextAttributesReset();
+
+        // check to see if a clock fail has occurred and latch it
+        clockFailCheck();
+
+        // wait for USB UART TX DMA to complete (flush TX buffer)
+        while (USB_UART_TX_DMA_CON_BITFIELD.CHBUSY);
+
+        // get ready to wake up when user presses power button
+        ui_meter_function = ui_idle_state;
+        ui_power_state = false;
+
+        // stop WDT
+        kickTheDog();
+        WDTCONbits.ON = 0;
+
+        // stop heartbeat timer
+        T1CONbits.ON = 0;
+        T2CONbits.ON = 0;
+        OC5CONbits.ON = 0;
+        TMR1 = 0;
+
+        HEARTBEAT_LED_PIN = LOW;
+
+        // disable I2C in sleep
+        I2C5CONbits.SIDL = 1;
+        // disable ADC in sleep
+        ADCCON1bits.SIDL = 1;
+        // enable USB UART in sleep
+        U1MODEbits.SIDL = 0;
+
+        asm volatile ( "wait" ); // Put device into Idle mode
+
+        // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)
+        // start WDT
+        kickTheDog();
+        heartbeatTimerInitialize();
+
+        // setup watchdog timer
+        watchdogTimerInitialize();
+    
     }
     
     power_button_callback_rq = false;

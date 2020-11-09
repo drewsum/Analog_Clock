@@ -12,4 +12,8 @@ ds3231_rtc.h  \
 error_handler.h  \
 spi_dac.h  \
 spi_master.h  \
-rtcc.h 
+rtcc.h  \
+ watchdog_timer.h  \
+usb_uart.h  \
+usb_uart_rx_lookup_table.h  \
+uthash.h 
