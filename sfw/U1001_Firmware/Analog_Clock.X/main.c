@@ -167,7 +167,7 @@ void main(void) {
     backupRTCRestoreTime();
     printf("    Restored time backup from previous sessions\r\n");
     meterBacklightInitialize();
-    meterBacklightSetBrightness(10);
+    meterBacklightSetBrightness(200);
     printf("    Meter Backlight LED Driver Initialized\r\n");
     
     if (TELEMETRY_HARDSTRAP_PIN == LOW) {

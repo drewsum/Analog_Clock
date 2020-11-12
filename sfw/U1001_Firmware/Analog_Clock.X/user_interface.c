@@ -100,7 +100,7 @@ void powerButtonCallback(void) {
         // enable function button
         clearInterruptFlag(External_Interrupt_3);
         enableInterrupt(External_Interrupt_3);
-        printf("    Function pushbutton disabled\r\n");
+        printf("    Function pushbutton enabled\r\n");
         
         terminalTextAttributesReset();
         
@@ -210,6 +210,7 @@ void functionButtonCallback(void) {
             
         case ui_show_weekday_state:
             printf("Meter function set to weekday\r\n");
+            #warning "set to only backlight LED2"
             meterBacklightSetColor(GREEN_BACKLIGHT_COLOR);
             break;    
     }
@@ -238,21 +239,20 @@ void UIUpdateMeters(void) {
             
         case ui_show_time_state:
             // update hours
-            #warning "determine if you want to do 24 hr time or am/pm option"
-            spiDACUpdate(0, (rtcc_shadow.hours / 23.0) * 15.0);
+            spiDACUpdate(0, ((rtcc_shadow.hours / 23.0) * 15.8) + 3.5);
             // update minutes
-            spiDACUpdate(1, (rtcc_shadow.minutes / 59.0) * 15.0);
+            spiDACUpdate(1, (rtcc_shadow.minutes / 59.0) * 15.74);
             // update minutes
-            spiDACUpdate(2, (rtcc_shadow.seconds / 59.0) * 15.0);
+            spiDACUpdate(2, ((rtcc_shadow.seconds / 59.0) * 16.0) + 3.7);
             break;
             
         case ui_show_date_state:
             // update month
-            spiDACUpdate(0, ((rtcc_shadow.month - 1)/ 12.0) * 15.0);
+            spiDACUpdate(0, (((rtcc_shadow.month - 1)/ 11.0) * 15.8) + 3.5);
             // update date
-            spiDACUpdate(1, ((rtcc_shadow.day - 1)/ 31.0) * 15.0);
+            spiDACUpdate(1, ((rtcc_shadow.day - 1)/ 31.0) * 15.74);
             // update year (up to 2030)
-            spiDACUpdate(2, ((rtcc_shadow.year - 2020) / 30.0) * 15.0);
+            spiDACUpdate(2, (((rtcc_shadow.year - 2020) / 10.0) * 16.0) + 3.7);
             break;
             
         case ui_show_weekday_state:
@@ -260,7 +260,7 @@ void UIUpdateMeters(void) {
             spiDACUpdate(0, 0.0);
             spiDACUpdate(1, 0.0);
             // update weekday
-            spiDACUpdate(2, (rtcc_shadow.weekday / 6.0) * 15.0);
+            spiDACUpdate(2, ((rtcc_shadow.weekday / 6.0) * 16.0) + 3.7);
             break;
     
     }

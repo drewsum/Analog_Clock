@@ -68,9 +68,11 @@ void backupRTCRestoreTime(void) {
 // sets up meter backlight LED driver
 void meterBacklightInitialize(void) {
  
+    softwareDelay(0x1FFF);
+    
     METER_LED_ENABLE_PIN = HIGH;
     
-    softwareDelay(0xFFF);
+    softwareDelay(0x1FFF);
     
     LP5009LEDDriverInitialize(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
     // this function allows all three LEDs to be set to the same color and brightness using the 

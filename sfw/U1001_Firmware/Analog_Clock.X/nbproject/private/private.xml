@@ -6,6 +6,8 @@
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/usb_uart_rx_lookup_table.c</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/heartbeat_timer.c</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/user_interface.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/misc_i2c_devices.c</file>
+            <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/misc_i2c_devices.h</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/user_interface.h</file>
             <file>file:/C:/Users/Drew%20Maatman/Documents/KiCad%20Projects/Projects/Analog_Clock/sfw/U1001_Firmware/Analog_Clock.X/main.c</file>
         </group>
