@@ -242,6 +242,7 @@ void main(void) {
     T2CONbits.ON = 0;
     OC5CONbits.ON = 0;
     TMR1 = 0;
+    TMR2 = 0;
     
     HEARTBEAT_LED_PIN = LOW;
     
@@ -249,19 +250,21 @@ void main(void) {
     I2C5CONbits.SIDL = 1;
     // disable ADC in sleep
     ADCCON1bits.SIDL = 1;
+    // disable more stuff in sleep
+    T1CONbits.SIDL = 1;
+    T2CONbits.SIDL = 1;
+    OC5CONbits.SIDL = 1;
+    SPI3CONbits.SIDL = 1;
     // enable USB UART in sleep
     U1MODEbits.SIDL = 0;
     
-    #warning "sleep here"
+    METER_LED_ENABLE_PIN = 0;
+    
+    // disable function button
+    disableInterrupt(External_Interrupt_3);
+    disableInterrupt(Real_Time_Clock);
+    
     asm volatile ( "wait" ); // Put device into Idle mode
-    
-    // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)
-    // start WDT
-    kickTheDog();
-    heartbeatTimerInitialize();
-    
-    // setup watchdog timer
-    watchdogTimerInitialize();
     
     // endless loop
     while(1) {

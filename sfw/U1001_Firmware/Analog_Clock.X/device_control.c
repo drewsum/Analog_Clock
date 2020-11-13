@@ -206,7 +206,7 @@ void PLLInitialize(void) {
     // Set PLL input range as 5-10 MHz
     SPLLCONbits.PLLRANGE = 0b001;
     
-    // Set the input to the PLL as FRC
+    // Set the input to the PLL as POSC
     SPLLCONbits.PLLICLK = 0;
     
     // Set PLL input divider to 2

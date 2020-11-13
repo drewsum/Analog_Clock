@@ -53,7 +53,7 @@ void powerButtonCallback(void) {
     
     // we're turning on
     if (ui_power_state == true) {
-    
+        
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, BOLD_FONT);
         printf("Clock turning on\r\n");
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
@@ -74,6 +74,11 @@ void powerButtonCallback(void) {
         // enable PGOOD LEDs
         POS3P3_PGL_SHDN_PIN = LOW;
         printf("    PGOOD LEDs enabled\r\n");
+        
+        // setup meter backlight LED driver
+        meterBacklightInitialize();
+        meterBacklightSetBrightness(200);
+        printf("    Meter Backlight LED driver initialized\r\n");
         
         ui_meter_function = ui_show_time_state;
         updateFunctionLEDs();
@@ -172,9 +177,15 @@ void powerButtonCallback(void) {
         // enable USB UART in sleep
         U1MODEbits.SIDL = 0;
 
+        METER_LED_ENABLE_PIN = 0;
+        
+        disableInterrupt(Real_Time_Clock);
+        
         #warning "sleep here"
         asm volatile ( "wait" ); // Put device into Idle mode
 
+        enableInterrupt(Real_Time_Clock);
+        
         // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)
         // start WDT
         kickTheDog();
@@ -182,6 +193,8 @@ void powerButtonCallback(void) {
 
         // setup watchdog timer
         watchdogTimerInitialize();
+        
+        return;
     
     }
     
