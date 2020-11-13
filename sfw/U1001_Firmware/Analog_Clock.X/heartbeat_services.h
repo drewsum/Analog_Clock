@@ -22,7 +22,7 @@
 
 #include "heartbeat_timer.h"
 
-#define FIRMWARE_VERSION_STR            "0.8"
+#define FIRMWARE_VERSION_STR            "1.0"
 
 // API Variables
 volatile uint32_t device_on_time_counter;
