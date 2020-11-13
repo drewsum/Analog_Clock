@@ -65,6 +65,9 @@ void LP5009SetBankBrightness(uint8_t device_address, volatile uint8_t *device_er
 // this function sets the bank colors (range is 0 to 255) for the three LED banks
 void LP5009SetBankColor(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t red_bank_color, uint8_t green_bank_color, uint8_t blue_bank_color);
 
+// this function sets the led passed to the passed brightness
+void LP5009SetLEDBrightness(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t led_number, uint8_t led_brightness);
+
 // this function prints status and config data for an LED driver at passed address
 void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag);
 

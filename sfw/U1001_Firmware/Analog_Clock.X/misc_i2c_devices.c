@@ -92,3 +92,19 @@ void meterBacklightSetBrightness(uint8_t backlight_brightness) {
 void meterBacklightSetColor(uint8_t red_component, uint8_t green_component, uint8_t blue_component) {
     LP5009SetBankColor(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, red_component, green_component, blue_component);
 }
+
+// this function sets LED0 and LED1 brightness to 0
+void meterBacklightSetWeekdayMode(void) {
+    LP5009DisableBankMode(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
+    LP5009SetLEDBrightness(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, 0, 0);
+    LP5009SetLEDBrightness(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, 1, 0);
+    LP5009SetLEDBrightness(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, 2, 200);
+    LP5009SetOutputColor(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, 7, 0xFF);
+    
+}
+
+void meterBacklightExitWeekdayMode(void) {
+    LP5009EnableBankMode(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver);
+    LP5009SetBankBrightness(METER_LED_DRIVER_ADDR, &error_handler.flags.meter_backlight_led_driver, 200);
+    
+}

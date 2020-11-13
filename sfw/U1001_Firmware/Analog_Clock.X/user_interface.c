@@ -172,6 +172,7 @@ void powerButtonCallback(void) {
         // enable USB UART in sleep
         U1MODEbits.SIDL = 0;
 
+        #warning "sleep here"
         asm volatile ( "wait" ); // Put device into Idle mode
 
         // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)
@@ -199,18 +200,20 @@ void functionButtonCallback(void) {
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     switch (ui_meter_function) {
         case ui_show_time_state:
+            meterBacklightExitWeekdayMode();
             printf("Meter function set to time\r\n");
             meterBacklightSetColor(YELLOW_BACKLIGHT_COLOR);
             break;
             
         case ui_show_date_state:
+            meterBacklightExitWeekdayMode();
             printf("Meter function set to date\r\n");
             meterBacklightSetColor(RED_BACKLIGHT_COLOR);
             break;
             
         case ui_show_weekday_state:
             printf("Meter function set to weekday\r\n");
-            #warning "set to only backlight LED2"
+            meterBacklightSetWeekdayMode();
             meterBacklightSetColor(GREEN_BACKLIGHT_COLOR);
             break;    
     }

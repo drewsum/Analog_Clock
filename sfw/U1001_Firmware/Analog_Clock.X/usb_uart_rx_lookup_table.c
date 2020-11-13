@@ -22,6 +22,7 @@
 #include "temperature_sensors.h"
 #include "rtcc.h"
 #include "spi_master.h"
+#include "user_interface.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -480,7 +481,7 @@ usb_uart_command_function_t setBacklightColorCommand(char * input_str) {
     sscanf(input_str, "Set Backlight Color: %[^\t\n\r]", backlight_args);
     
     // only do these things if we actually have arguments for this command
-    if (backlight_args[0]) {
+    if (backlight_args[0] && ui_meter_function != ui_show_weekday_state) {
 
         terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
         if(strcmp(backlight_args, "White") == 0) {
@@ -529,6 +530,83 @@ usb_uart_command_function_t setBacklightColorCommand(char * input_str) {
      
         terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
         printf("Please enter desired color: Red, Green, Blue, Yellow, Magenta, Cyan, White, and any 24 bit hex color (eg FFFFFF)\r\n");
+        printf("Only supported when clock function not set to Weekday\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
+usb_uart_command_function_t setClockFunctionCommand(char * input_str) {
+ 
+    // Snipe out received arguments
+    char rx_function[32];
+    sscanf(input_str, "Set Function: %[^\t\n\r]", rx_function);
+
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    
+    // Determine which function to set to
+    if (strcmp(rx_function, "Time") == 0) {
+        
+        ui_meter_function = ui_show_time_state;
+        printf("Meter function set to time\r\n");
+        meterBacklightExitWeekdayMode();
+        meterBacklightSetColor(YELLOW_BACKLIGHT_COLOR);
+        
+    }
+    else if (strcmp(rx_function, "Weekday") == 0) {
+        
+        ui_meter_function = ui_show_weekday_state;
+        printf("Meter function set to weekday\r\n");
+        meterBacklightSetWeekdayMode();
+        meterBacklightSetColor(GREEN_BACKLIGHT_COLOR);
+        
+    }
+    else if (strcmp(rx_function, "Date") == 0) {
+        
+        ui_meter_function = ui_show_date_state;
+        printf("Meter function set to date\r\n");
+        meterBacklightExitWeekdayMode();
+        meterBacklightSetColor(RED_BACKLIGHT_COLOR);
+        
+    }
+    else {
+    
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please set function to any of the following:\r\n"
+                "       Time\r\n"
+                "       Weekday\r\n"
+                "       Date\r\n");
+        printf("User entered %s\r\n", rx_function);
+        
+    }
+    
+    UIUpdateMeters();
+    updateFunctionLEDs();
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t setClockPowerCommand(char * input_str) {
+    
+    // Snipe out received arguments
+    char rx_power[32];
+    sscanf(input_str, "Set Power: %[^\t\n\r]", rx_power);
+    
+    if (strcmp(rx_power, "On") == 0) {
+        // inversion is on purpose
+        ui_power_state = false;
+        power_button_callback_rq = true;
+    }
+    else if (strcmp(rx_power, "Off") == 0) {
+        // inversion is on purpose
+        ui_power_state = true;
+        power_button_callback_rq = true;
+    }
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid power state\r\n");
         terminalTextAttributesReset();
         
     }
@@ -625,4 +703,13 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Backlight Brightness:",
             "\b\b <percentage>: Sets the brightness of the meter backlight",
             setBacklightBrightneesCommand);
+    usbUartAddCommand("Set Function:",
+            "\b\b <clock function>: Sets what the clock displays. Options are:\r\n"
+                    "       Time\r\n"
+                    "       Weekday\r\n"
+                    "       Date",
+            setClockFunctionCommand);
+    usbUartAddCommand("Set Power:",
+            "\b\b <clock power state>: Turns the clock on and off. Enter 'On' or 'Off'",
+            setClockPowerCommand);
 }

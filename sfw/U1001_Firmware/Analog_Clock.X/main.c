@@ -220,6 +220,7 @@ void main(void) {
     
     terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
     printf("Entering IDLE mode\r\n");
+    terminalTextAttributesReset();
 
     // check to see if a clock fail has occurred and latch it
     clockFailCheck();
@@ -250,6 +251,7 @@ void main(void) {
     // enable USB UART in sleep
     U1MODEbits.SIDL = 0;
     
+    #warning "sleep here"
     asm volatile ( "wait" ); // Put device into Idle mode
     
     // this code executes on a wake from sleep (power pushbutton pressed, or serial commands received)

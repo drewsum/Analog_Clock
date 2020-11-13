@@ -103,6 +103,32 @@ void LP5009SetBankColor(uint8_t device_address, volatile uint8_t *device_error_h
     
 }
 
+// this function sets the led passed to the passed brightness
+void LP5009SetLEDBrightness(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t led_number, uint8_t led_brightness) {
+ 
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_LED_0_BRIGHTNES_REG + led_number;
+    output_data_array[1] = led_brightness;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
+// this function sets the led passed to the passed color
+void LP5009SetOutputColor(uint8_t device_address, volatile uint8_t *device_error_handler_flag, uint8_t output_number, uint8_t led_color) {
+ 
+    uint8_t output_data_array[2];
+    output_data_array[0] = LP5009_OUT0_COLOR_REG + output_number;
+    output_data_array[1] = led_color;
+    if(!I2CMaster_Write(device_address, output_data_array, 2)) {
+        *device_error_handler_flag = 1;
+    }
+    while(i2c5Obj.state != I2C_STATE_IDLE);
+    
+}
+
 // this function prints status and config data for an LED driver at passed address
 void LP5009PrintStatus(uint8_t device_address, volatile uint8_t *device_error_handler_flag) {
  
