@@ -233,6 +233,10 @@ void main(void) {
     ui_meter_function = ui_idle_state;
     ui_power_state = false;
     
+    spiDACPowerDown(0);
+    spiDACPowerDown(1);
+    spiDACPowerDown(2);
+    
     // stop WDT
     kickTheDog();
     WDTCONbits.ON = 0;
@@ -265,6 +269,8 @@ void main(void) {
     disableInterrupt(Real_Time_Clock);
     
     asm volatile ( "wait" ); // Put device into Idle mode
+    
+    enableInterrupt(Real_Time_Clock);
     
     // endless loop
     while(1) {

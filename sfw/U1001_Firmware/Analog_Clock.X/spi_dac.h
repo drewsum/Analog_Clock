@@ -46,6 +46,10 @@ void spiDACGPIOReset(void);
 // can pass 0, 1 or 2
 void spiDACUpdate(uint8_t destination_dac, double voltage);
 
+// this function writes three bytes (spi_dac_data) to the passed spi dac
+// can pass 0, 1 or 2, which correspond to the three DACs on the platform
+// it powers down the DAC
+void spiDACPowerDown(uint8_t destination_dac);
 
 #endif /* _SPI_DAC_H */
 

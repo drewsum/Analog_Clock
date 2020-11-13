@@ -56,3 +56,28 @@ void spiDACUpdate(uint8_t destination_dac, double voltage) {
     spi_dac_state = spi_dac_idle_state;
     
 }
+
+// this function writes three bytes (spi_dac_data) to the passed spi dac
+// can pass 0, 1 or 2, which correspond to the three DACs on the platform
+// it powers down the DAC
+void spiDACPowerDown(uint8_t destination_dac) {
+ 
+    spi_dac_state = destination_dac;
+    spiDACGPIOSet();
+    
+    spi_dac_data[0] = 0x02;
+    spi_dac_data[1] = 0x00;
+    spi_dac_data[2] = 0x00;
+    
+    spiMasterWriteByte(spi_dac_data[0]);
+    while(spiMasterIsBusy());
+    spiMasterWriteByte(spi_dac_data[1]);
+    while(spiMasterIsBusy());
+    spiMasterWriteByte(spi_dac_data[2]);
+    while(spiMasterIsBusy());
+    
+    spiDACGPIOReset();
+    
+    spi_dac_state = spi_dac_idle_state;
+    
+}

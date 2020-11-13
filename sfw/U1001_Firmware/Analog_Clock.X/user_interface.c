@@ -157,7 +157,11 @@ void powerButtonCallback(void) {
         // get ready to wake up when user presses power button
         ui_meter_function = ui_idle_state;
         ui_power_state = false;
-
+     
+        spiDACPowerDown(0);
+        spiDACPowerDown(1);
+        spiDACPowerDown(2);
+        
         // stop WDT
         kickTheDog();
         WDTCONbits.ON = 0;
