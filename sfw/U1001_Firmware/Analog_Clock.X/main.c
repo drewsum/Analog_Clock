@@ -31,6 +31,7 @@
 #include "power_saving.h"
 #include "telemetry.h"
 #include "user_interface.h"
+#include "clock_alarm.h"
 
 // ADC
 #include "adc.h"
@@ -322,5 +323,8 @@ void main(void) {
         
         // function to update meters
         if (ui_update_meters_rq) UIUpdateMeters();
+        
+        if (ui_meter_function != ui_idle_state) clockAlarmCheckMatch();
+        
     }
 }

@@ -3,4 +3,5 @@ build/default/production/capacitive_pushbuttons.o:  \
 32mz_interrupt_control.h  \
 terminal_control.h  \
  user_interface.h  \
-pin_macros.h 
+pin_macros.h  \
+clock_alarm.h 

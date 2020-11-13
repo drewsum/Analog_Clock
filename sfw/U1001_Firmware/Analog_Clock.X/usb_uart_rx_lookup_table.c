@@ -23,6 +23,7 @@
 #include "rtcc.h"
 #include "spi_master.h"
 #include "user_interface.h"
+#include "clock_alarm.h"
 
 usb_uart_command_function_t helpCommandFunction(char * input_str) {
 
@@ -632,6 +633,102 @@ usb_uart_command_function_t setBacklightBrightneesCommand(char * input_str) {
     
 }
 
+usb_uart_command_function_t alarmStatusCommand(char * input_str) {
+ 
+    if (BUZZER_ENABLE_PIN == HIGH) BUZZER_ENABLE_PIN = LOW;
+    
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("Current clock alarm settings:\r\n");
+    
+    // print if alarm is armed
+    if (clock_alarm.alarm_arm) terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    else terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm is currently %s\r\n", clock_alarm.alarm_arm ? "armed" : "disarmed");
+    
+    // Print alarm settings
+    terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+    printf("    Alarm Time Setting: %02u:%02u:%02u (24hr time format)\r\n",
+            clock_alarm.alarm_hour,
+            clock_alarm.alarm_minute,
+            clock_alarm.alarm_second);
+    
+    terminalTextAttributesReset();
+    
+}
+
+usb_uart_command_function_t setAlarmCommand(char * input_str) {
+ 
+    if (BUZZER_ENABLE_PIN == HIGH) BUZZER_ENABLE_PIN = LOW;
+    
+    // Snipe out received string
+    uint32_t read_hour, read_minute, read_second;
+    sscanf(input_str, "Set Alarm: %02u:%02u:%02u", &read_hour, &read_minute, &read_second);
+
+    if (read_hour < 24 && read_minute < 60 && read_second < 60) {
+
+        clock_alarm.alarm_hour = read_hour;
+        clock_alarm.alarm_minute = read_minute;
+        clock_alarm.alarm_second = read_second;
+        
+        // print out what we just did
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Set Alarm as %02u:%02u:%02u (24 hr time format)\r\n", clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+        terminalTextAttributesReset();
+    
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid alarm time. User entered %02u:%02u:%02u\r\n", read_hour, read_minute, read_second);
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
+usb_uart_command_function_t setAlarmEnableCommand(char * input_str) {
+ 
+    if (BUZZER_ENABLE_PIN == HIGH) BUZZER_ENABLE_PIN = LOW;
+    
+    // Snipe out received string
+    char read_setting[32];
+    sscanf(input_str, "Arm Alarm: %s", read_setting);
+
+    if (strcmp(read_setting, "Arm") == 0) {
+     
+        clock_alarm.alarm_arm = 1;
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Alarm has been armed. Current alarm time is %02u:%02u:%02u (24 hr time format)\r\n", 
+                clock_alarm.alarm_hour, clock_alarm.alarm_minute, clock_alarm.alarm_second);
+        terminalTextAttributesReset();
+    
+        ALARM_ARM_LED_PIN = HIGH;
+        
+        
+    }
+    
+    else if (strcmp(read_setting, "Disarm") == 0) {
+     
+        clock_alarm.alarm_arm = 0;
+        terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Alarm has been disarmed\r\n");
+        terminalTextAttributesReset();
+        
+        ALARM_ARM_LED_PIN = LOW;
+        
+    }
+    
+    else {
+     
+        terminalTextAttributes(YELLOW_COLOR, BLACK_COLOR, NORMAL_FONT);
+        printf("Please enter a valid alarm enable setting (Arm or Disarm)\r\n");
+        terminalTextAttributesReset();
+        
+    }
+    
+}
+
 // This function must be called to set up the usb_uart_commands hash table
 // Entries into this hash table are "usb_uart serial commands"
 void usbUartHashTableInitialize(void) {
@@ -712,4 +809,13 @@ void usbUartHashTableInitialize(void) {
     usbUartAddCommand("Set Power:",
             "\b\b <clock power state>: Turns the clock on and off. Enter 'On' or 'Off'",
             setClockPowerCommand);
+    usbUartAddCommand("Alarm Status?",
+            "Prints clock alarm settings including alarm time and if alarm is armed",
+            alarmStatusCommand);
+    usbUartAddCommand("Set Alarm:",
+            "\b\b <hh>:<mm>:<ss>: Sets the alarm time. (Must be 24 hr time)",
+            setAlarmCommand);
+    usbUartAddCommand("Arm Alarm:",
+            "\b\b <Arm/Disarm>: Arms or disarms the clock alarm",
+            setAlarmEnableCommand);
 }

@@ -15,6 +15,7 @@
         <itemPath>telemetry.h</itemPath>
         <itemPath>capacitive_pushbuttons.h</itemPath>
         <itemPath>user_interface.h</itemPath>
+        <itemPath>clock_alarm.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.h</itemPath>
@@ -76,6 +77,7 @@
         <itemPath>telemetry.c</itemPath>
         <itemPath>capacitive_pushbuttons.c</itemPath>
         <itemPath>user_interface.c</itemPath>
+        <itemPath>clock_alarm.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="Core Drivers" projectFiles="true">
         <itemPath>device_control.c</itemPath>

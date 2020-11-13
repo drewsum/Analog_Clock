@@ -7,6 +7,8 @@
 
 #include "user_interface.h"
 
+#include "clock_alarm.h"
+
 // this function initializes the "Power" capacitive pushbutton interrupt
 void capTouchPushbuttonsInitialize(void) {
     
@@ -37,7 +39,9 @@ void __ISR(_EXTERNAL_2_VECTOR, IPL7SRS) powerCapTouchPushbuttonISR(void) {
     printf("User pressed power button\r\n");
     terminalTextAttributesReset();
     
-    power_button_callback_rq = 1;
+    // clear alarm if it's chiming, else do normal button things
+    if (BUZZER_ENABLE_PIN == HIGH) BUZZER_ENABLE_PIN = LOW;
+    else power_button_callback_rq = 1;
     
     clearInterruptFlag(External_Interrupt_2);
     
@@ -50,7 +54,9 @@ void __ISR(_EXTERNAL_3_VECTOR, IPL7SRS) functionCapTouchPushbuttonISR(void) {
     printf("User pressed function button\r\n");
     terminalTextAttributesReset();
     
-    function_button_callback_rq = 1;
+    // clear alarm if it's chiming, else do normal button things
+    if (BUZZER_ENABLE_PIN == HIGH) BUZZER_ENABLE_PIN = LOW;
+    else function_button_callback_rq = 1;
     
     clearInterruptFlag(External_Interrupt_3);
     
