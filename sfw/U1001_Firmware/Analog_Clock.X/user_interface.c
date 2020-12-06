@@ -259,18 +259,18 @@ void UIUpdateMeters(void) {
             
         case ui_show_time_state:
             // update hours
-            spiDACUpdate(0, ((rtcc_shadow.hours / 23.0) * 15.8) + 3.5);
+            spiDACUpdate(0, ((rtcc_shadow.hours / 23.0) * 15.8) + 4.4);
             // update minutes
-            spiDACUpdate(1, (rtcc_shadow.minutes / 59.0) * 15.74);
+            spiDACUpdate(1, (rtcc_shadow.minutes / 59.0) * 15.0 + 4.2);
             // update minutes
             spiDACUpdate(2, ((rtcc_shadow.seconds / 59.0) * 16.0) + 3.7);
             break;
             
         case ui_show_date_state:
             // update month
-            spiDACUpdate(0, (((rtcc_shadow.month - 1)/ 11.0) * 15.8) + 3.5);
+            spiDACUpdate(0, (((rtcc_shadow.month - 1)/ 11.0) * 15.8) + 4.4);
             // update date
-            spiDACUpdate(1, ((rtcc_shadow.day - 1)/ 31.0) * 15.74);
+            spiDACUpdate(1, ((rtcc_shadow.day - 1)/ 31.0) * 15.0 + 4.2);
             // update year (up to 2030)
             spiDACUpdate(2, (((rtcc_shadow.year - 2020) / 10.0) * 16.0) + 3.7);
             break;
