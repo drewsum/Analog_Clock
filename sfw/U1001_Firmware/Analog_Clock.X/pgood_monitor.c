@@ -37,7 +37,7 @@ void printPGOODStatus(void) {
     
     if (POS3P3_PGL_SHDN_PIN) terminalTextAttributes(RED_COLOR, BLACK_COLOR, NORMAL_FONT);
     else terminalTextAttributes(GREEN_COLOR, BLACK_COLOR, NORMAL_FONT);
-    printf("    PGOOD LED voltage is %s\r\n", VBAT_PGOOD_PIN ? "disabled" : "enabled");
+    printf("    PGOOD LED voltage is %s\r\n", POS3P3_PGL_SHDN_PIN ? "disabled" : "enabled");
     
     terminalTextAttributesReset();
 }
